@@ -4,10 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="./index_files/main.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-
     <title>小树科技 – 集体智慧，更加强大</title>
     <meta name="robots" content="max-image-preview:large">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
@@ -31,87 +28,10 @@
     <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="./index_files/solid.min.css" type="text/css" media="all">
     <link rel="stylesheet" id="elementor-icons-fa-regular-css" href="./index_files/regular.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-
-    <!-- This site uses the Open External Links in a New Window plugin v1.4 by WebFactory Ltd. Download it for free at https://wordpress.org/extend/plugins/open-external-links-in-a-new-window/ -->
-    <script type="text/javascript">
-        //<![CDATA[
-        function external_links_in_new_windows_loop() {
-            if (!document.links) {
-                document.links = document.getElementsByTagName('a');
-            }
-            var change_link = false;
-            var force = '';
-            var ignore = '';
-
-            for (var t = 0; t < document.links.length; t++) {
-                var all_links = document.links[t];
-                change_link = false;
-
-                if (document.links[t].hasAttribute('onClick') == false) {
-                    // forced if the address starts with http (or also https), but does not link to the current domain
-                    if (all_links.href.search(/^http/) != -1 && all_links.href.search('www.minitree.fun') == -1 && all_links.href.search(/^#/) == -1) {
-                        // console.log('Changed ' + all_links.href);
-                        change_link = true;
-                    }
-
-                    if (force != '' && all_links.href.search(force) != -1) {
-                        // forced
-                        // console.log('force ' + all_links.href);
-                        change_link = true;
-                    }
-
-                    if (ignore != '' && all_links.href.search(ignore) != -1) {
-                        // console.log('ignore ' + all_links.href);
-                        // ignored
-                        change_link = false;
-                    }
-
-                    if (change_link == true) {
-                        // console.log('Changed ' + all_links.href);
-                        document.links[t].setAttribute('onClick', 'javascript:window.open(\'' + all_links.href + '\'); return false;');
-                        document.links[t].removeAttribute('target');
-                    }
-                }
-            }
-        }
-
-        // Load
-        function external_links_in_new_windows_load(func) {
-            var oldonload = window.onload;
-            if (typeof window.onload != 'function') {
-                window.onload = func;
-            } else {
-                window.onload = function() {
-                    oldonload();
-                    func();
-                }
-            }
-        }
-
-        external_links_in_new_windows_load(external_links_in_new_windows_loop);
-        //]]>
-
-    </script>
-
-    <style type="text/css" id="wp-custom-css">
-        *:not([class*="icon"]):not(i) {
-            font-family: Segoe UI, "Microsoft Yahei" !important;
-        }
-
-    </style>
-    <style id="theia-sticky-sidebar-stylesheet-TSS">
-        .theiaStickySidebar:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-    </style>
 </head>
 
 <body class="home page-template page-template-elementor_header_footer page page-id-8754 no-sidebar elementor-default elementor-template-full-width elementor-kit-11979 elementor-page elementor-page-8754 e--ua-blink e--ua-edge e--ua-webkit" data-elementor-device-mode="desktop">
     <div id="page" class="site __os-page-wrap__">
-
         <header class="masterheader header-style-1">
             <div class="header-inner">
                 <div class="mid-header">
@@ -143,6 +63,8 @@
                                             <li id="menu-item-11969" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/" aria-current="page">首页</a></li>
                                             <li id="menu-item-11969" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/X-Blog/" aria-current="page">X-Blog</a></li>
                                             <li id="menu-item-11969" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/software/" aria-current="page">软件源</a></li>
+                                            <li id="menu-item-11969" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/s/" aria-current="page">树洞</a></li>
+                                            <li id="menu-item-11969" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/f/" aria-current="page">游戏</a></li>
                                         </ul>
                                     </nav><!-- .site-navigation.site-navigation -->
                                 </div><!-- // os-col os-nav-col-right -->
@@ -152,27 +74,6 @@
                 </div><!-- .bottom-header -->
             </div><!-- .header-inner -->
         </header><!-- .masterheader.header-style-1 -->
-
-        <aside class="mobile-navigation canvas">
-            <div class="canvas-inner">
-                <div class="canvas-container-entry">
-                    <div class="canvas-close-container">
-                        <button class="trigger-mob-nav-close"><i class="bx bx-x"></i></button>
-                    </div><!-- // canvas-close-container -->
-                    <div class="search-form">
-                    </div><!-- // search-form -->
-                    <div class="mobile-nav-entry">
-                        <nav id="site-navigation" class="site-navigation">
-                            <ul id="primary-menu" class="primary-menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/" aria-current="page">首页</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/X-Blog/" aria-current="page">X-Blog</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11969"><a href="https://xiaoshukeji.github.io/software/" aria-current="page">软件源</a></li>
-                            </ul>
-                        </nav><!-- .site-navigation.site-navigation -->
-                    </div><!-- // mobile-nav-entry -->
-                </div><!-- // canvas-container-entry -->
-            </div><!-- // canvas-inner -->
-        </aside><!-- // mobile-navigation-canvas -->
         <div class="mobile-navigation-mask"></div><!-- // mobile-navigation-mask -->
         <div id="content" class="site-content">
             <div data-elementor-type="wp-post" data-elementor-id="8754" class="elementor elementor-8754" data-elementor-settings="[]">
@@ -308,7 +209,6 @@
                 </div>
             </div>
         </div><!-- #content.site-title -->
-
         <footer class="footer secondary-widget-area">
             <div class="footer-inner">
                 <div class="footer-mask">
@@ -329,17 +229,10 @@
                 </div><!-- .footer-mask -->
             </div><!-- .footer-inner -->
         </footer><!-- .footer -->
-
         <div class="orchid-backtotop" style="display: none;"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span></div>
     </div><!-- .__os-page-wrap__ -->
-
     <link rel="stylesheet" id="elementor-gallery-css" href="./index_files/e-gallery.min.css" type="text/css" media="all">
     <link rel="stylesheet" id="e-animations-css" href="./index_files/animations.min.css" type="text/css" media="all">
-    <script type="text/javascript" id="orchid-store-bundle-js-extra">
-        /* <![CDATA[ */
-        var orchid_store_obj = [];
-        /* ]]> */
-
-    </script>
 </body>
+
 </html>
