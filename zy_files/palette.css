@@ -1,0 +1,203 @@
+.PTB .PTB-cp-color1,
+  .PTB .PTB-bcp-color1 {
+    color: rgb(var(--PTB-global-color1));
+  }
+
+  .PTB .PTB-cp-color2,
+  .PTB .PTB-bcp-color2 {
+    color: rgb(var(--PTB-global-color2));
+  }
+
+  .PTB .PTB-cp-color3,
+  .PTB .PTB-bcp-color3 {
+    color: rgb(var(--PTB-global-color3));
+  }
+
+  .PTB .PTB-cp-color4,
+  .PTB .PTB-bcp-color4 {
+    color: rgb(var(--PTB-global-color4));
+  }
+
+  .PTB .PTB-cp-color5,
+  .PTB .PTB-bcp-color5 {
+    color: rgb(var(--PTB-global-color5));
+  }
+
+  .PTB .PTB-cp-color6,
+  .PTB .PTB-bcp-color6 {
+    color: rgb(var(--PTB-global-color6));
+  }
+
+  .PTB .PTB-cp-color7,
+  .PTB .PTB-bcp-color7 {
+    color: rgb(var(--PTB-global-color7));
+  }
+
+  .PTB .PTB-cp-color8,
+  .PTB .PTB-bcp-color8 {
+    color: rgb(var(--PTB-global-color8));
+  }
+
+  :root {
+    --PTB-global-color1: 161, 112, 217;
+    --PTB-global-color2: 28, 28, 28;
+    --PTB-global-color3: 5, 202, 182;
+    --PTB-global-color4: 184, 230, 225;
+    --PTB-global-color5: 245, 212, 209;
+    --PTB-global-color6: 235, 235, 235;
+    --PTB-global-color7: 102, 102, 102;
+    --PTB-global-color8: 255, 255, 255;
+  }
+
+  :root {
+    --PTB-paragraphfontfamily: Overpass, sans-serif;
+    --PTB-paragraphfontsize: 16px;
+    --PTB-paragraphfontsizesuffix: px;
+    --PTB-paragraphfontweight: 400;
+    --PTB-paragraphletterspacing: 0px;
+    --PTB-paragraphlineheight: 1.9;
+    --PTB-paragraphtabletfontsize: 15px;
+    --PTB-paragraphtabletfontweight: 400;
+    --PTB-paragraphtabletletterspacing: 0px;
+    --PTB-paragraphtabletlineheight: 1.6;
+    --PTB-paragraphmobilefontsize: 15px;
+    --PTB-paragraphmobilefontweight: 400;
+    --PTB-paragraphmobileletterspacing: 0px;
+    --PTB-paragraphmobilelineheight: 1.6;
+    --PTB-paragraphstoryfontsize: 3.68%;
+    --PTB-subtitlefontfamily: Overpass, sans-serif;
+    --PTB-subtitlefontsize: 17px;
+    --PTB-subtitlefontsizesuffix: px;
+    --PTB-subtitlefontweight: 400;
+    --PTB-subtitleletterspacing: 0px;
+    --PTB-subtitlelineheight: 1.8;
+    --PTB-subtitletabletfontsize: 17px;
+    --PTB-subtitletabletfontweight: 400;
+    --PTB-subtitletabletletterspacing: 0px;
+    --PTB-subtitletabletlineheight: 1.5;
+    --PTB-subtitlemobilefontsize: 16px;
+    --PTB-subtitlemobilefontweight: 400;
+    --PTB-subtitlemobileletterspacing: 0px;
+    --PTB-subtitlemobilelineheight: 1.5;
+    --PTB-subtitlestoryfontsize: 3.91%;
+    --PTB-abovetitlefontfamily: Overpass, sans-serif;
+    --PTB-abovetitlefontsize: 13px;
+    --PTB-abovetitlefontsizesuffix: px;
+    --PTB-abovetitlefontweight: 700;
+    --PTB-abovetitleletterspacing: 1.1px;
+    --PTB-abovetitlelineheight: 1.5;
+    --PTB-abovetitletabletfontsize: 13px;
+    --PTB-abovetitletabletfontweight: 700;
+    --PTB-abovetitletabletletterspacing: 1px;
+    --PTB-abovetitletabletlineheight: 1.5;
+    --PTB-abovetitlemobilefontsize: 13px;
+    --PTB-abovetitlemobilefontweight: 700;
+    --PTB-abovetitlemobileletterspacing: 1px;
+    --PTB-abovetitlemobilelineheight: 1.5;
+    --PTB-abovetitlestoryfontsize: 2.99%;
+    --PTB-heading1fontfamily: Overpass, sans-serif;
+    --PTB-heading1fontsize: 46px;
+    --PTB-heading1fontsizesuffix: px;
+    --PTB-heading1fontweight: 700;
+    --PTB-heading1letterspacing: -1.5px;
+    --PTB-heading1lineheight: 1.3;
+    --PTB-heading1tabletfontsize: 38px;
+    --PTB-heading1tabletfontweight: 700;
+    --PTB-heading1tabletletterspacing: -1px;
+    --PTB-heading1tabletlineheight: 1.2;
+    --PTB-heading1mobilefontsize: 36px;
+    --PTB-heading1mobilefontweight: 700;
+    --PTB-heading1mobileletterspacing: -1px;
+    --PTB-heading1mobilelineheight: 1.3;
+    --PTB-heading1storyfontsize: 10.58%;
+    --PTB-heading2fontfamily: Overpass, sans-serif;
+    --PTB-heading2fontsize: 36px;
+    --PTB-heading2fontsizesuffix: px;
+    --PTB-heading2fontweight: 700;
+    --PTB-heading2letterspacing: -1.5px;
+    --PTB-heading2lineheight: 1.3;
+    --PTB-heading2tabletfontsize: 30px;
+    --PTB-heading2tabletfontweight: 700;
+    --PTB-heading2tabletletterspacing: -1px;
+    --PTB-heading2tabletlineheight: 1.2;
+    --PTB-heading2mobilefontsize: 28px;
+    --PTB-heading2mobilefontweight: 700;
+    --PTB-heading2mobileletterspacing: -1px;
+    --PTB-heading2mobilelineheight: 1.3;
+    --PTB-heading2storyfontsize: 8.280000000000001%;
+    --PTB-heading3fontfamily: Overpass, sans-serif;
+    --PTB-heading3fontsize: 28px;
+    --PTB-heading3fontsizesuffix: px;
+    --PTB-heading3fontweight: 700;
+    --PTB-heading3letterspacing: -1.5px;
+    --PTB-heading3lineheight: 1.4;
+    --PTB-heading3tabletfontsize: 27px;
+    --PTB-heading3tabletfontweight: 700;
+    --PTB-heading3tabletletterspacing: -1px;
+    --PTB-heading3tabletlineheight: 1.3;
+    --PTB-heading3mobilefontsize: 22px;
+    --PTB-heading3mobilefontweight: 700;
+    --PTB-heading3mobileletterspacing: -0.5px;
+    --PTB-heading3mobilelineheight: 1.3;
+    --PTB-heading3storyfontsize: 6.44%;
+    --PTB-heading4fontfamily: Overpass, sans-serif;
+    --PTB-heading4fontsize: 22px;
+    --PTB-heading4fontsizesuffix: px;
+    --PTB-heading4fontweight: 700;
+    --PTB-heading4letterspacing: -0.5px;
+    --PTB-heading4lineheight: 1.5;
+    --PTB-heading4tabletfontsize: 22px;
+    --PTB-heading4tabletfontweight: 700;
+    --PTB-heading4tabletletterspacing: -0.5px;
+    --PTB-heading4tabletlineheight: 1.4;
+    --PTB-heading4mobilefontsize: 20px;
+    --PTB-heading4mobilefontweight: 700;
+    --PTB-heading4mobileletterspacing: 0px;
+    --PTB-heading4mobilelineheight: 1.4;
+    --PTB-heading4storyfontsize: 5.0600000000000005%;
+    --PTB-heading5fontfamily: Overpass, sans-serif;
+    --PTB-heading5fontsize: 20px;
+    --PTB-heading5fontsizesuffix: px;
+    --PTB-heading5fontweight: 700;
+    --PTB-heading5letterspacing: 0px;
+    --PTB-heading5lineheight: 1.6;
+    --PTB-heading5tabletfontsize: 17px;
+    --PTB-heading5tabletfontweight: 700;
+    --PTB-heading5tabletletterspacing: 0px;
+    --PTB-heading5tabletlineheight: 1.7;
+    --PTB-heading5mobilefontsize: 17px;
+    --PTB-heading5mobilefontweight: 700;
+    --PTB-heading5mobileletterspacing: 0px;
+    --PTB-heading5mobilelineheight: 1.8;
+    --PTB-heading5storyfontsize: 4.6000000000000005%;
+    --PTB-heading6fontfamily: Overpass, sans-serif;
+    --PTB-heading6fontsize: 16px;
+    --PTB-heading6fontsizesuffix: px;
+    --PTB-heading6fontweight: 700;
+    --PTB-heading6letterspacing: 0px;
+    --PTB-heading6lineheight: 1.5;
+    --PTB-heading6tabletfontsize: 16px;
+    --PTB-heading6tabletfontweight: 700;
+    --PTB-heading6tabletletterspacing: 0px;
+    --PTB-heading6tabletlineheight: 1.5;
+    --PTB-heading6mobilefontsize: 16px;
+    --PTB-heading6mobilefontweight: 700;
+    --PTB-heading6mobileletterspacing: 0px;
+    --PTB-heading6mobilelineheight: 1.5;
+    --PTB-heading6storyfontsize: 3.68%;
+    --PTB-buttonfontfamily: Overpass, sans-serif;
+    --PTB-buttonfontsize: 15px;
+    --PTB-buttonfontsizesuffix: px;
+    --PTB-buttonfontweight: 700;
+    --PTB-buttonletterspacing: 0px;
+    --PTB-buttonlineheight: 1.6;
+    --PTB-buttontabletfontsize: 17px;
+    --PTB-buttontabletfontweight: 700;
+    --PTB-buttontabletletterspacing: 0px;
+    --PTB-buttontabletlineheight: 1.6;
+    --PTB-buttonmobilefontsize: 15px;
+    --PTB-buttonmobilefontweight: 700;
+    --PTB-buttonmobileletterspacing: 0px;
+    --PTB-buttonmobilelineheight: 1.6;
+    --PTB-buttonstoryfontsize: 3.45%;
+  }
