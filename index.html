@@ -1,225 +1,479 @@
 <!DOCTYPE html>
-<!-- saved from url=(0027)https://www.octopusjsq.top/ -->
-<html><head>
-  <script type="text/javascript">
-    function browserRedirect() {
-    var sUserAgent = navigator.userAgent.toLowerCase();
-    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-	var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-	var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-	var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-	var bIsAndroid = sUserAgent.match(/android/i) == "android";
-    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-	var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-        window.location.href="./m/index.html";
-    }
-    }
-    browserRedirect(); 
-</script>
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
-    
-    <meta http-equiv="content-language" content="zh-cn">
-    <link rel="canonical" href="https://www.zyjsq6.com/">
-    <link rel="icon" href="./files/favicon.ico" sizes="16x16">
+<!-- saved from url=(0021)https://cn.vuejs.org/ -->
+<html lang="zh-CN" dir="ltr" class="prefer-sfc">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>小树科技网络安全有限公司</title>
-    <meta name="keywords" content="小树科技,网络安全,安全有限公司,小树科技网络安全有限公司">
-    <meta name="description" content="小树科技网络安全有限公司，安全的软件，可靠的服务!">
-    <meta content="summary_large_image" name="twitter:card">
-    <!---定义一些东东-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./zy_files/body.css" class="PTB-style" rel="stylesheet">
-    <link href="./zy_files/palette.css" class="PTB-style PTB-project__style-palette" rel="stylesheet">
-    <link href="./zy_files/main.css" class="PTB-link PTB-link-google" type="text/css" rel="stylesheet">
-    <link href="./zy_files/group-2_3.css" class="PTB-link PTB-link-preview-lib" data-group="group-2_3" rel="stylesheet">
-    <link href="./zy_files/preview.css" class="PTB-link PTB-link-preview" rel="stylesheet">
-    <script src="./zy_files/group-2_3.js" class="PTB-script PTB-script-preview-lib" data-group="group-2_3"></script>
-    <script src="./zy_files/preview.js" class="PTB-script PTB-script-preview"></script>
-    <script type="text/javascript" src="./zy_files/record"></script>
-    <script src="./zy_files/jquery-1.11.0.min.js"></script>
-    <script src="./zy_files/sweetalert.min.js"> </script>
-    <script src="./zy_files/main.js"></script>
-  <style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:13px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.enable_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.enable_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.enable_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.enable_copy_btns_btn:hover{opacity:.8}.enable_copy_btns_btn:active{opacity:1}</style></head>
-    <body class="PTB" inmaintabuse="1">
-    <div class="PTB-root__container PTB-reset-all">
-    <section data-uid="plgywaeamqxzupoijwpPTBqtgaglbirgtkyd" id="plgywaeamqxzupoijwpPTBqtgaglbirgtkyd" class="PTB-section PTB-css-rrkks PTB-css-wauel">
-    <div class="PTB-section__content PTB-section--boxed PTB-css-sjklh PTB-css-igaqt" data-custom-id="vchezlbwgwilkuvirvapobyqudfoeuajsfxy">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"><div class="PTB-bg-image absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover"></div>
-    <div class="PTB-bg-color absolute top-0 left-0 w-full h-full"></div></div>
-    <div class="PTB-container PTB-css-hhsqi">
-    <div class="PTB-row__container PTB-css-qanmg" data-custom-id="ofjmjlbeswqibxelyvmjqlniwfdxjubbljui">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-row PTB-css-vqbpp PTB-css-mphte">
-    <div class="PTB-columns PTB-css-amsaz PTB-css-qpnav" data-custom-id="itsjtaseqafvvzndrftlnaodllglltsixtek">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-column__items PTB-css-epkpx PTB-css-xcles">
-    <div data-iteration-count="1" class="PTB-css-ypxzt PTB-css-yxhqj PTB-wrapper PTB-animated PTB-css-qawne PTB-css-aatgc PTB-initialized PTB-animate-opacity" data-iteration-completed="2">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="pvhxejqrgrrmrfdyzylncrxdtyjchqcixnlq">
-    <div><p class="PTB-css-gghnr" data-uniq-id="dxwxd" data-generated-css="PTB-css-unmzt"><strong style="color: rgb(255, 255, 255);"><em> 中国团队，持续创新</em></strong></p></div></div></div>
-    <div data-iteration-count="1" class="PTB-css-ypxzt PTB-css-nzqro PTB-wrapper PTB-animated PTB-css-kohql PTB-css-ehkkt PTB-initialized PTB-animate-opacity" data-iteration-completed="2">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="vodwqlkatvjaukdliqloeuavcwvmladwqvks">
-    <div><p class="PTB-css-vlxcg" data-generated-css="PTB-css-fpfjw" data-uniq-id="ryrsw"><strong class="PTB-cp-color6" style="color: rgb(235, 235, 235);"><em>周到服务/资源分享/软件开源</em></strong></p></div></div></div>
-    <div data-iteration-count="1" class="PTB-wrapper-clone PTB-css-iifld PTB-css-qmyvw PTB-animated PTB-css-jvlgv PTB-css-mcczg PTB-initialized PTB-animate-opacity" data-iteration-completed="2">
-    <div class="PTB-d-xs-flex PTB-flex-xs-wrap PTB-css-bfwmx"><div class="PTB-wrapper-clone__item PTB-css-yfhof" id="afvciwpajqlgmulgxlpribgasysnipxbspmc">
-    <a class="PTB-a PTB-btn PTB-css-omxwg PTB-css-xaztm" href="javascript:play()" rel="noopener" data-ptb-link-type="external" id="" data-custom-id="afvciwpajqlgmulgxlpribgasysnipxbspmc"><span class="PTB-span PTB-text__editor">立即下载</span></a></div></div></div>
-    <div data-iteration-count="1" class="PTB-css-ypxzt PTB-css-uqhfu PTB-wrapper PTB-animated PTB-css-tlhky PTB-css-eaxca PTB-initialized PTB-animate-opacity" data-iteration-completed="2">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="krrebpxcaymmskogfilniscfwjmtfpnuigmo">
-    <div><p class="PTB-css-dtxku" data-uniq-id="dotyp" data-generated-css="PTB-css-wfdni"><strong class="PTB-cp-color3">合作洽谈  王先生  电话/微信: 13191486995</strong><br><strong><a href="https://xiaoshukeji.github.io/Tipping/">什么！想入股？点这里！</a></strong></p></div></div></div></div></div></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="zlvguygccoumbliritytxphziejjqdxaijwl">
-    <div><p class="PTB-css-ldpzb" data-uniq-id="htgmt" data-generated-css="PTB-css-vpniu"><br></p></div></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="xpysrfodrbpfsoesygjxfazrdrwphorcuaal">
-    <div><p class="PTB-css-ujzlz" data-uniq-id="woufq" data-generated-css="PTB-css-nmaiu"><span class="PTB-cp-color7" style="color: rgb(102, 102, 102);">如果网页加载异常，请更换为谷歌浏览器，小树KMS仅用于系统激活！</span><br><span class="PTB-cp-color7" style="color: rgb(102, 102, 102);">当前缓存区：/two/ 网站模式：电脑端</span><br><span id="jinrishici-sentence">正在加载</span>
-        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script></p><p class="PTB-css-emixw" data-uniq-id="qskvl" data-generated-css="PTB-css-smmlx"><br></p></div></div></div></div></div></section>
-    <section data-uid="rogswuqxrgihnusztxngkaiznidoznawutyp" id="rogswuqxrgihnusztxngkaiznidoznawutyp" class="PTB-section PTB-css-rrkks PTB-css-jfkwu">
-    <div class="PTB-slick-slider PTB-slick-slider__section" data-slides-to-show="1" data-slides-to-scroll="1" data-arrows="true" data-dots="true" data-dots-class="PTB-slick-slider__dots PTB-slick-slider__dots--circle" data-fade="false" data-vertical="false" data-auto-play="false" data-auto-play-speed="6000" data-swipe="true" data-responsive="%5B%7B%22breakpoint%22%3A767%2C%22settings%22%3A%7B%22slidesToShow%22%3A1%2C%22slidesToScroll%22%3A1%7D%7D%5D">
-    <div><div class="PTB-section__content PTB-section--boxed PTB-css-sjklh PTB-css-azsyz" data-custom-id="kwbjhcgkvcoeoexlddwgzqtdlvdybaoadyti">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"><div class="PTB-bg-image absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover"></div>
-    <div class="PTB-bg-color absolute top-0 left-0 w-full h-full"></div></div>
-    <div class="PTB-container PTB-css-hhsqi"><div class="PTB-row__container PTB-css-qanmg" data-custom-id="iydtipiobpwsagjqzzmzdgvqjwopxplsrenr">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-row PTB-css-vqbpp PTB-css-mphte">
-    <div data-iteration-count="1" class="PTB-columns PTB-css-amsaz PTB-css-enjsy PTB-animated PTB-css-kotwt PTB-css-htska PTB-initialized PTB-animate-opacity" data-custom-id="hqeihkgroujvotyybbpuprbxnetalalhxzsg" data-iteration-completed="2">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-column__items PTB-css-epkpx">
-    <div data-iteration-count="1" class="PTB-css-ypxzt PTB-css-fxtos PTB-wrapper PTB-animated PTB-css-ijbcy PTB-css-zlact PTB-initialized PTB-animate-opacity" data-iteration-completed="2">
-    <div class="PTB-image PTB-css-rjrfs PTB-css-eeevl"><picture class="PTB-picture PTB-d-block PTB-p-relative PTB-css-krpbv" data-custom-id="hfczdyzymotinqdcbquwqfxevysgsbfmrknj">
-    <source srcset="https://img.pantabang.top/zyjsq/new/page2-img.png 1x, https://img.pantabang.top/zyjsq/new/page2-img.png 2x" media="(min-width: 992px)">
-    <source srcset="https://img.pantabang.top/zyjsq/new/page2-img.png 1x, https://img.pantabang.top/zyjsq/new/page2-img.png 2x" media="(min-width: 768px)">
-    <img class="PTB-img" srcset="https://img.pantabang.top/zyjsq/new/page2-img.png 1x, https://img.pantabang.top/zyjsq/new/page2-img.png 2x" src="./zy_files/page2-img.png" alt="" draggable="false" loading="lazy"></picture></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="pdihkbquxviinighllnjykamsozrnyyloqgy"><div><ul><li class="PTB-css-xhxfx" data-uniq-id="bkvye" data-generated-css="PTB-css-ohqtp"><span class="PTB-cp-color7">注：XS-KMS 只支持部分系统激活</span></li></ul></div></div></div></div></div>
-    <div data-iteration-count="1" class="PTB-columns PTB-css-amsaz PTB-css-touke PTB-animated PTB-css-ikmka PTB-css-lozhi PTB-initialized PTB-animate-opacity" data-custom-id="tjarcqhjqqwkkzuonrtxqxasgteylfpumofh" data-iteration-completed="2">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-column__items PTB-css-epkpx PTB-css-mvbwz">
-    <div class="PTB-css-ypxzt PTB-wrapper">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="bgcbzaryabkdgsiiwrgmznosxekssgqjkvwy">
-    <div><p class="PTB-css-zhvdm" data-uniq-id="gtzfp" data-generated-css="PTB-css-ypzzq"><span class="PTB-cp-color8">我们的领先</span></p></div></div></div>
-    <div class="PTB-css-ypxzt PTB-css-kxicr PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="mtgewrmvctabspaxrgljsumgurzqgpjiyose">
-    <div><h1 class="PTB-css-sipuy" data-uniq-id="fwtey" data-generated-css="PTB-css-nhxfo"><span style="color: rgb(255, 255, 255);">'XS-KMS '</span></h1></div></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="wgoavxwvhsckvaeztbiukcazmameyibqrffo">
-    <div><p class="PTB-css-pazmb" data-uniq-id="kfjot" data-generated-css="PTB-css-izfhp"><span class="PTB-cp-color6">小树酱独创 “XS-KMS” </span><span class="PTB-cp-color6" style="color: rgb(235, 235, 235);">系统</span><span class="PTB-cp-color6">XS系统优化技术，激活原生系统功能，助力您每一次的高光。</span></p></div></div></div>
-    <div class="PTB-wrapper-clone PTB-css-iifld">
-    <div class="PTB-d-xs-flex PTB-flex-xs-wrap PTB-css-bfwmx PTB-css-erbfv">
-    <div class="PTB-wrapper-clone__item PTB-css-yfhof" id="ivenxpdlisiczqxomnkmbcniojvxyxtqdsku">
-    <a class="PTB-a PTB-btn PTB-css-omxwg PTB-css-hgmbg" href="javascript:play()" rel="noopener" data-ptb-link-type="external" id="" data-custom-id="ivenxpdlisiczqxomnkmbcniojvxyxtqdsku"><span class="PTB-span PTB-text__editor">立即下载</span></a></div></div></div></div></div></div></div></div></div></div>
-    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="PTB-icon-svg align-[initial] PTB-hidden" data-type="editor" data-name="right-arrow-filled">
-    <g class="nc-icon-wrapper" fill="currentColor">
-    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM7 11.4L5.6 10l2-2-2-2L7 4.6 10.4 8 7 11.4z" fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1"></path></g></svg></div></section>
-    <section data-uid="ognwlxfzctfaygsghrkbhjjrvxlldshqbkfz" id="ognwlxfzctfaygsghrkbhjjrvxlldshqbkfz" class="PTB-section PTB-css-rrkks"><div class="PTB-section__content PTB-section--boxed PTB-css-sjklh PTB-css-frdxv" data-custom-id="wazqjrkctyluxjzgbzuqruwggewjmxiymlso">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full">
-    <div class="PTB-bg-image absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover"></div>
-    <div class="PTB-bg-color absolute top-0 left-0 w-full h-full"></div></div>
-    <div class="PTB-container PTB-css-hhsqi"><div class="PTB-row__container PTB-css-qanmg" data-custom-id="ymtgjedxukrdvmvgmqxhkpgtmoxgkecmwxtp">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-row PTB-css-vqbpp PTB-css-mphte">
-    <div data-iteration-count="1" class="PTB-columns PTB-css-amsaz PTB-css-fzeip PTB-animated PTB-css-wzrji PTB-css-msrlw PTB-initialized PTB-animate-opacity" data-custom-id="gfujmhxzbilxnzcravghkxbvkpnkruqbzgnr" data-iteration-completed="2">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div><div class="PTB-column__items PTB-css-epkpx PTB-css-ougyq">
-    <div class="PTB-css-ypxzt PTB-wrapper">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="cvefasdibxnfgihcsllbzucdhwbywxendbva">
-    <div><p class="PTB-css-runvy" data-uniq-id="wsshi" data-generated-css="PTB-css-arxqi"><span style="opacity: 1;" class="PTB-cp-color8">我们的支持服务</span></p></div></div></div>
-    <div class="PTB-css-ypxzt PTB-css-nkgje PTB-css-iztpm PTB-wrapper"><div class="PTB-spacer PTB-css-txulh PTB-css-fnetd"></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="btuvsxlkggmxnthrokliwexpmkxhbaibxfks">
-    <div><h2 data-uniq-id="koaqi" data-generated-css="PTB-css-rmenb" class="PTB-css-rydns"><span style="color: rgb(255, 255, 255);">付费，但</span></h2></div></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="ewrbfpagvmzabgtbhpogvvgyyjhuirgnqcuv">
-    <div><p data-generated-css="PTB-css-swigw" data-uniq-id="qcoym" class="PTB-css-qrrqq"><span style="color: rgb(255, 255, 255);">提供7x12小时，免费 "金牌客服" 服务，支持一对一解决 章鱼网游加速器的问题不想操作？我们也同样支持 "远程支持" 服务，嗖的一下问题就解决了。</span></p></div></div></div>
-    <div class="PTB-css-ypxzt PTB-css-nkgje PTB-css-xddkr PTB-wrapper"><div class="PTB-spacer PTB-css-txulh PTB-css-evpdk"></div></div>
-    <div class="PTB-wrapper-clone PTB-css-iifld"><div class="PTB-d-xs-flex PTB-flex-xs-wrap PTB-css-bfwmx PTB-css-ncvph">
-    <div class="PTB-wrapper-clone__item PTB-css-yfhof" id="nnpetmcbjooxolaelxttsouyqeonjrevhrot">
-    <a class="PTB-a PTB-btn PTB-css-omxwg PTB-css-bqeka" href="javascript:play()" rel="noopener" data-ptb-link-type="external" id="" data-custom-id="nnpetmcbjooxolaelxttsouyqeonjrevhrot"><span class="PTB-span PTB-text__editor">&nbsp;立即下载&nbsp;&nbsp;</span></a></div></div></div></div></div>
-    <div data-iteration-count="1" class="PTB-columns PTB-css-amsaz PTB-css-nqish PTB-animated PTB-css-kotwt PTB-css-ryfaj PTB-initialized PTB-animate-opacity" data-custom-id="btoocjlrcwmqqemkmjdpolqigsturagbcjco" data-iteration-completed="2">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-column__items PTB-css-epkpx PTB-css-qexcc"><div class="PTB-css-ypxzt PTB-wrapper">
-    <div class="PTB-image PTB-css-vpevx PTB-css-nojum"><picture class="PTB-picture PTB-d-block PTB-p-relative PTB-css-zqvuc" data-custom-id="llvfljowivfezfagheiqbpoqiarjsusyisfe">
-    <source srcset="https://img.pantabang.top/zyjsq/new/page3-img.png 1x, https://img.pantabang.top/zyjsq/new/page3-img.png 2x" media="(min-width: 992px)">
-    <source srcset="https://img.pantabang.top/zyjsq/new/page3-img.png 1x, https://img.pantabang.top/zyjsq/new/page3-img.png 2x" media="(min-width: 768px)">
-    <img class="PTB-img" srcset="https://img.pantabang.top/zyjsq/new/page3-img.png 1x, https://img.pantabang.top/zyjsq/new/page3-img.png 2x" src="./zy_files/page3-img.png" alt="" draggable="false" loading="lazy"></picture></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="pojznkrpidzmigxmgfyorovxjeodrglsclfc"><div><ul><li data-uniq-id="nwxqq" data-generated-css="PTB-css-crcfl" class="PTB-css-muqnz"><em class="PTB-cp-color7">还有很多，按加入团队时间排序</em></li></ul></div></div></div></div></div></div></div></div></div></section>
-    <section data-uid="osqsfkzdzjpaxbcczfkengvziznmdedoxrvw" id="osqsfkzdzjpaxbcczfkengvziznmdedoxrvw" class="PTB-section PTB-css-rrkks"><div class="PTB-section__content PTB-section--boxed PTB-css-sjklh PTB-css-lyzep" data-custom-id="oflfwegyhvotjksnimmvkpbcjwuhalvubadz">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full">
-    <div class="PTB-bg-color absolute top-0 left-0 w-full h-full"></div></div>
-    <div class="PTB-container PTB-css-hhsqi">
-    <div class="PTB-row__container PTB-css-qanmg" data-custom-id="sfyzjszuoigmeyhoqzppyxuqlskckerymleo">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-row PTB-css-vqbpp PTB-css-mphte">
-    <div class="PTB-columns PTB-css-amsaz PTB-css-globt" data-custom-id="vespewiagdsqydhwifurbmjutmyhaatqgvce">
-    <div class="PTB-bg overflow-hidden absolute top-0 left-0 w-full h-full"></div>
-    <div class="PTB-column__items PTB-css-epkpx PTB-css-wkhkj">
-    <div class="PTB-css-ypxzt PTB-wrapper">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="yizeebzgruaovtarfptkyqnklaiydpmzlsqp">
-    <div><p class="PTB-css-hjzcu" data-uniq-id="tkarb" data-generated-css="PTB-css-qpwdq"><br></p></div></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper"><div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="bmqlshqzjjlfkceetzeotzoggsisepvaewwk">
-    <div><h1 class="PTB-css-trlwo" data-uniq-id="zvtqb" data-generated-css="PTB-css-slgpg"><span style="color: rgb(255, 255, 255);">小树KMS激活服务已提供：700万次+ 加速服务</span></h1></div></div></div>
-    <div class="PTB-wrapper-clone PTB-css-iifld">
-    <div class="PTB-d-xs-flex PTB-flex-xs-wrap PTB-css-bfwmx PTB-css-qufnf">
-    <div class="PTB-wrapper-clone__item PTB-css-yfhof" id="ziinyplvhbppgsppvzjhssmhuiuicxegqfoo">
-    <a class="PTB-a PTB-btn PTB-css-omxwg PTB-css-krxlo" href="javascript:play()" rel="noopener" data-ptb-link-type="external" id="" data-custom-id="ziinyplvhbppgsppvzjhssmhuiuicxegqfoo">
-    <span class="PTB-span PTB-text__editor">立即下载</span></a></div></div></div>
-    <div class="PTB-css-ypxzt PTB-wrapper">
-    <div class="PTB-rich-text PTB-rich-text__custom PTB-css-yoktp" data-custom-id="veukiegkxiswponnvsyywotddjzexfoqahap">
-    <div><p class="PTB-css-hcrjn" data-uniq-id="tvotg" data-generated-css="PTB-css-wpbze"><span class="PTB-cp-color7">注：数据来源于 X-Cloud 统计Api 截止于 2023/2/21 <br> 友情链接：<a href="https://www.123pan.com/s/rCeKVv-fSiav.html"> 壁纸 </a><a href="https://64051a50.r6.cpolar.top/"> 管理库 </a><a href="https://xiaoshukeji.github.io/software/">资源库 </a><a href="https://xiaoshukeji.github.io/f/">游戏柜 </a><a href="https://xiaoshukeji.github.io/X-Blog/"> X-Blog </a><a href="https://xiaoshukeji.github.io/s/" target="_blank" class="allgame head-tabs-item mr-64"> 树洞</a></span></p></div></div></div></div></div></div></div>
-    <div class="PTB-css-ypxzt PTB-css-nkgje PTB-wrapper"><div class="PTB-spacer PTB-css-txulh PTB-css-trqbh"></div></div>
-    <div data-iteration-count="1" class="PTB-css-ypxzt PTB-css-jxenp PTB-wrapper PTB-animated PTB-css-kquxk PTB-css-iksil PTB-initialized PTB-animate-opacity" data-iteration-completed="2">
-    <div class="PTB-image PTB-css-lexbg PTB-css-dnzbg"><picture class="PTB-picture PTB-d-block PTB-p-relative PTB-css-gldjt" data-custom-id="omsanczrhxnmpmqaswlduvpfutqrhgnczpgd">
-    <source srcset="https://img.pantabang.top/zyjsq/new/clientimg.png 1x, https://img.pantabang.top/zyjsq/new/clientimg.png 2x" media="(min-width: 992px)">
-    <source srcset="https://img.pantabang.top/zyjsq/new/clientimg.png 1x, https://img.pantabang.top/zyjsq/new/clientimg.png 2x" media="(min-width: 768px)">
-    <img class="PTB-img" srcset="https://img.pantabang.top/zyjsq/new/clientimg.png 1x, https://img.pantabang.top/zyjsq/new/clientimg.png 2x" alt="" draggable="false" loading="lazy"></picture></div></div></div></div></section></div>
-    
-    <script class="PTB-script PTB-script-emit">document.addEventListener('DOMContentLoaded', () => window.PTB.emit("init.dom", jQuery(document.body)));</script>
-
-
-
-
-
-
-
-
-<link type="text/css" rel="stylesheet" href="./zy_files/base.css">
-
-    <div id="app">
-        <div id="head">
-    <div class="c">
-        <p class="head-logo">
-            <a href="https://xiaoshukeji.github.io/"><img src="../files/logo.png" alt="小树科技"></a>
-        </p>
-
-        <div class="head-tabs">
-            <a href="https://xiaoshukeji.github.io/" onclick="_xytj.track_event(&#39;website_homepage_btn_click&#39;,{});" class="home head-tabs-item mr-64" style="color: rgba(255,255,255,1)">首页</a>
-            <a href="./buy" onclick="_xytj.track_event(&#39;website_product_btn_click&#39;,{})" class="product head-tabs-item mr-64">会员购买</a>
-            <div class="head-tabs-act">
-                <a href="https://download.octopusjsq.top/zyjsq/video/%E7%AB%A0%E9%B1%BC%E5%8A%A0%E9%80%9F%E5%99%A8%E5%AE%A3%E4%BC%A0%E7%89%87%EF%BC%88%E6%9C%AA%E5%8F%91%E5%B8%83%EF%BC%89.mp4" class="act-new head-tabs-item mr-64">发布</a>
-                <div class="head-tabs-act__hover box-hover">
-                    <a href="https://xiaoshukeji.github.io/#" onclick="_xytj.track_event(&#39;website_activity_btn_click&#39;,{})" class="act-new head-tabs-item">发布</a>
-                    <a href="https://xiaoshukeji.github.io/video" target="_blank" class="gift head-tabs-item">宣传片</a>
+    <meta name="description" content="小树科技网络安全有限公司">
+    <link rel="preload stylesheet" href="https://cn.vuejs.org/assets/style.01714767.css" as="style">
+    <link rel="modulepreload" href="https://cn.vuejs.org/assets/chunks/framework.b5a66c26.js">
+    <link rel="modulepreload" href="https://cn.vuejs.org/assets/chunks/index.a5248e35.js">
+    <link rel="modulepreload" href="https://cn.vuejs.org/assets/chunks/PreferenceSwitch.876eefc4.js">
+    <link rel="modulepreload" href="https://cn.vuejs.org/assets/chunks/SponsorsGroup.8b49262e.js">
+    <link rel="modulepreload" href="https://cn.vuejs.org/assets/guide_introduction.md.4d5b7d14.lean.js">
+    <link rel="icon" href="https://cn.vuejs.org/logo.svg">
+    <link rel="preload" href="https://cn.vuejs.org/assets/inter-roman-latin.2ed14f66.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/index.md.3458bbe8.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/tutorial_index.md.5e2fd8c1.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/examples_index.md.5715fdbd.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_quick-start.md.896a6216.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/api_index.md.1a6b37fa.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/partners_index.md.98709a91.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/ecosystem_themes.md.b4451a9d.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_scaling-up_tooling.md.9504aa84.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/ecosystem_newsletters.md.c9166bd6.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_faq.md.a7679f4d.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_team.md.8bf2ec9a.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_releases.md.1b53d108.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_community-guide.md.bf746fdd.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/sponsor_index.md.dbb427f1.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_application.md.c5f40425.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_template-syntax.md.6ee6410a.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_reactivity-fundamentals.md.0a82cffe.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_computed.md.3e67370c.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_class-and-style.md.04e738cd.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_conditional.md.cba7e6b8.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_list.md.2c75d001.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_event-handling.md.4256360c.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_forms.md.9d75f041.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_lifecycle.md.53a45cc4.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_watchers.md.28e6e812.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_template-refs.md.5b2b4a1d.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_essentials_component-basics.md.59952540.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_registration.md.3ec1ebb9.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_props.md.d7cfb184.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_events.md.df6acc45.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_v-model.md.33064088.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_attrs.md.46a05046.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_slots.md.88dbc4a7.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_provide-inject.md.fe4f69f8.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_components_async.md.2301083b.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_reusability_composables.md.b29f5be5.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_reusability_custom-directives.md.32ed16a2.js">
+    <style>.wwads-horizontal,.wwads-vertical{background-color:#f4f8fa;padding:5px;min-height:120px;margin-top:20px;box-sizing:border-box;border-radius:3px;font-family:sans-serif;display:flex;min-width:150px;position:relative;overflow:hidden}.wwads-horizontal{flex-wrap:wrap;justify-content:center}.wwads-vertical{flex-direction:column;align-items:center;padding-bottom:32px}.wwads-horizontal a,.wwads-vertical a{text-decoration:none}.wwads-horizontal .wwads-content,.wwads-horizontal .wwads-img,.wwads-vertical .wwads-content,.wwads-vertical .wwads-img{margin:5px}.wwads-horizontal .wwads-content{flex:130px;text-align:left}.wwads-vertical .wwads-content{margin-top:10px;text-align:left}.wwads-content .wwads-text,.wwads-horizontal .wwads-text{font-size:14px;line-height:1.4;color:#0e1011;-webkit-font-smoothing:antialiased;word-break:break-word}.wwads-horizontal .wwads-poweredby,.wwads-vertical .wwads-poweredby{display:flex;align-items:center;margin-top:1em}.wwads-vertical .wwads-poweredby{position:absolute;left:10px;bottom:10px;display:flex;align-items:center}.wwads-horizontal .wwads-poweredby .wwads-logo,.wwads-vertical .wwads-poweredby .wwads-logo{background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 210' fill='%23a6b7bf'%3E%3Cpath d='M24.25 211.46L0 197.46l57-98.73a74.004 74.004 0 11128.18 74l-7 12.12-24.25-14 7-12.12a46.002 46.002 0 00-79.68-46z'/%3E%3Cpath d='M121.21 209.73a74.07 74.07 0 01-64.21-37l-7-12.12 24.25-14 7 12.12a46.002 46.002 0 1079.68-46l-57-98.73 24.25-14 57 98.73a74 74 0 01-64 111z'/%3E%3Cpath d='M235.09 209.73h-114a74 74 0 010-148h14v28h-14a46 46 0 000 92h114z'/%3E%3C/svg%3E") no-repeat;padding:0 1px 11px 11px}.wwads-horizontal .wwads-poweredby .wwads-logo-text,.wwads-vertical .wwads-poweredby .wwads-logo-text{font-size:11px;margin-left:3px;color:#a6b7bf}.wwads-horizontal .wwads-hide,.wwads-vertical .wwads-hide{position:absolute;right:-23px;bottom:-23px;width:46px;height:46px;border-radius:23px;transition:all .3s ease-in-out;cursor:pointer}.wwads-horizontal .wwads-hide .hide-svg,.wwads-vertical .wwads-hide .hide-svg{position:absolute;left:10px;top:10px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='7' fill='%23a6b7bf'%3E%3Cpath d='M.879.672L3 2.793 5.121.672a.5.5 0 11.707.707L3.708 3.5l2.12 2.121a.5.5 0 11-.707.707l-2.12-2.12-2.122 2.12a.5.5 0 11-.707-.707l2.121-2.12L.172 1.378A.5.5 0 01.879.672z'/%3E%3C/svg%3E") no-repeat}.wwads-horizontal .wwads-hide:hover,.wwads-vertical .wwads-hide:hover{background:rgb(0 0 0/.05)}</style>
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_introduction.md.4d5b7d14.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/guide_quick-start.md.896a6216.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_faq.md.a7679f4d.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_team.md.8bf2ec9a.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_releases.md.1b53d108.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/about_community-guide.md.bf746fdd.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/ecosystem_themes.md.b4451a9d.js">
+    <link rel="prefetch" href="https://cn.vuejs.org/assets/ecosystem_newsletters.md.c9166bd6.js">
+</head>
+<body style="">
+<div id="app">
+    <div class="VPApp" data-v-5b776d18="">
+        <header class="VPNav nav-bar stick" data-v-5b776d18="" data-v-ed537c22="">
+            <div class="VPNavBar" data-v-ed537c22="" data-v-efcf92b1="">
+                <div class="container" data-v-efcf92b1="">
+                    <a class="VPNavBarTitle" href="https://cn.vuejs.org/" data-v-efcf92b1="" data-v-7b849662="">
+                        <!--[-->
+                        <svg class="logo" viewBox="0 0 128 128" width="24" height="24" data-v-7b849662="">
+                            <path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-7b849662=""></path>
+                            <path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-7b849662=""></path>
+                        </svg>
+                        <span class="text" data-v-7b849662="">小树科技网络安全有限公司</span>
+                        <!--]-->
+                    </a>
+                    <div class="content" data-v-efcf92b1="">
+                        <div class="vt-social-links VPNavBarSocialLinks social-links" data-v-efcf92b1="" data-v-3393db1b="">
+                            <!--[-->
+                            <a class="vt-social-link is-small" href="https://github.com/xiaoshukeji/" title="github" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="vt-social-link-icon">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+                                </svg>
+                                <span class="visually-hidden">github</span>
+                            </a>
+                            <a class="vt-social-link is-small" href="https://twitter.com/vuejs" title="twitter" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="vt-social-link-icon">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+                                </svg>
+                                <span class="visually-hidden">twitter</span>
+                            </a>
+                            <!--]-->
+                        </div>
+                    </div>
                 </div>
             </div>
-            <a href="https://xiaoshukeji.github.io/Music/index.html" target="_blank" class="allgame head-tabs-item mr-64">音乐</a>
-            <div class="head-tabs-my">
-                <a href="https://xiaoshukeji.github.io/Little-Tree-Blog/" target="_blank" class="head-tabs-item mr-64">官方论坛</a>
+            <!---->
+        </header>
+        <!---->
+        <!---->
+        <div id="VPContent" class="VPContent" data-v-5b776d18="" data-v-15a907d6="">
+            <div data-v-15a907d6="" class="VPContentPage">
+                <main>
+                    <div style="position: relative;">
+                        <div>
+                            <section id="hero" data-v-29ad6230="">
+                                <h1 class="tagline" data-v-29ad6230="">
+                                    <span class="accent" data-v-29ad6230="">小树科技</span>
+                                    <br data-v-29ad6230="">网络安全有限公司
+                                </h1>
+                                <p class="description" data-v-29ad6230=""> 周到服务，资源分享，软件开源，适用丰富的 Windows 系统激活。 </p>
+                                <p class="actions" data-v-29ad6230="">
+                                    <a class="get-started" href="https://xiaoshukeji.github.io/X-Blog/" data-v-29ad6230=""> 立即购买 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" data-v-29ad6230="">
+                                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" data-v-29ad6230=""></path>
+                                    </svg>
+                                    </a>
+                                    <a class="setup" href="https://xiaoshukeji.github.io/BBS/" data-v-29ad6230="">论坛</a>
+                                </p>
+                            </section>
+                            <section data-v-29ad6230="" id="special-sponsor">
+                                <span data-v-29ad6230="">中国超级赞助</span>
+                                <a data-v-29ad6230="" class="logo" href="https://aircode.io/" target="_blank" rel="sponsored noopener">
+                                    <picture data-v-29ad6230="">
+                                        <source data-v-29ad6230="" type="image/avif" srcset="https://xiaoshukeji.github.io/X-Blog/">
+                                        <img data-v-29ad6230="" src="./IN_files/aircode.png" alt="Aircode" style="height: 50px;">
+                                    </picture>
+                                </a>
+                                <a data-v-29ad6230="" href="https://xiaoshukeji.github.io/X-Blog/" target="_blank" rel="sponsored noopener">5 分钟用 XS-KMS 激活 Windows</a>
+                            </section>
+                            <section data-v-29ad6230="" id="highlights" class="vt-box-container">
+                                <div data-v-29ad6230="" class="vt-box">
+                                    <h2 data-v-29ad6230="">易学易用</h2>
+                                    <p data-v-29ad6230=""> 基于标准 HTML、Python 和 cmd 构建，提供容易上手的 KMS 和一流的激活系统。 </p>
+                                </div>
+                                <div data-v-29ad6230="" class="vt-box">
+                                    <h2 data-v-29ad6230="">性能出色</h2>
+                                    <p data-v-29ad6230="">经过编译器优化、完全响应式的渲染系统，几乎不需要手动激活。</p>
+                                </div>
+                                <div data-v-29ad6230="" class="vt-box">
+                                    <h2 data-v-29ad6230="">灵活多变</h2>
+                                    <p data-v-29ad6230=""> 丰富的、可渐进式集成的激活系统，可以根据系统规模在库和系统间切换自如。 </p>
+                                </div>
+                            </section>
+                            <section data-v-29ad6230="" id="sponsors">
+                                <h2 data-v-29ad6230="">白金赞助商</h2>
+                                <div data-v-e2f014f4="" data-v-29ad6230="" class="sponsor-container platinum landing">
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/vuemastery.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/vuemastery.png" alt="VueMastery">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://vueschool.io/?utm_source=Vuejs.org&amp;utm_medium=Banner&amp;utm_campaign=Sponsored%20Banner&amp;utm_content=V1" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/vueschool.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/vueschool.png" alt="VueSchool">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://vehikl.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/vehikl.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/vehikl.png" alt="Vehikl">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/passionate_people.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/passionate_people.png" alt="Passionate People">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.storyblok.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/storyblok.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/storyblok.png" alt="Storyblok">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://ionicframework.com/vue?utm_source=partner&amp;utm_medium=referral&amp;utm_campaign=vuesponsorship&amp;utm_content=vuedocs" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/ionic.png" alt="Ionic">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/sanofi.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/sanofi.png" alt="Sanofi">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://code-dict.com/" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/codedict.svg" alt="CodeDict">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/chrome_frameworks_fund.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/herodevs.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/herodevs.png" alt="HeroDevs">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" href="https://xiaoshukeji.github.io/Tipping/" class="sponsor-item action">成为赞助商</a>
+                                </div>
+                                <h2 data-v-29ad6230="">金牌赞助商</h2>
+                                <div data-v-e2f014f4="" data-v-29ad6230="" class="sponsor-container gold landing">
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://volta.net/?utm_source=vuejs.org&amp;utm_campaign=sponsoring/" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/volta.svg" alt="Volta">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://laravel.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/laravel.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/laravel.png" alt="Laravel">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://htmlburger.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/html_burger.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/html_burger.png" alt="HTML Burger">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://tidelift.com/subscription/npm/vue" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/tidelift.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/tidelift.png" alt="Tidelift">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://intygrate.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/intygrate.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/intygrate.png" alt="Intygrate">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.bacancytechnology.com/hire-vuejs-developer" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/bacancy_technology.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/bacancy_technology.png" alt="Bacancy Technology">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.y8.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/y8.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/y8.png" alt="Y8">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://js.devexpress.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/devexpress.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/devexpress.png" alt="DevExpress">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://fastcoding.jp/javascript/" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/fastcoding_inc.svg" alt="FASTCODING Inc">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://linecorp.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/line_corporation.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/line_corporation.png" alt="LINE Corporation">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.emqx.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/emq.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/emq.png" alt="EMQ">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.fenetre.nl/" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/fen_tre_online_solutions.svg" alt="Fenêtre Online Solutions">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://antdv.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/ant_design_vue.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/ant_design_vue.png" alt="Ant Design Vue">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://mqttx.app/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/mqtt_x.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/mqtt_x.png" alt="MQTT X">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://crisp.chat/en/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/crisp.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/crisp.png" alt="Crisp">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://localazy.com/blog/how-to-localize-vuejs-app-with-vue-i18n-and-localazy?utm_source=vuejs&amp;utm_medium=banner&amp;utm_campaign=sponsorships_vuejs&amp;utm_content=logo" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/localazy.svg" alt="Localazy">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://learnvue.co/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/learnvue.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/learnvue.png" alt="LearnVue">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://casinoburst.com/casino-utan-licens/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/casinoburst_com.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/casinoburst_com.png" alt="Casinoburst.com">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.spinsify.com/uk/new-casinos" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/spinsify_com_uk.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/spinsify_com_uk.png" alt="spinsify.com/uk">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.enkrypt.com/" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/enkrypt__ethereum_and_polkadot_web3_wallet.svg" alt="Enkrypt: Ethereum and Polkadot Web3 Wallet">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.uudetkasinot.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/uudetkasinot_com.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/uudetkasinot_com.png" alt="uudetkasinot.com">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://usefathom.com/" target="_blank" rel="sponsored noopener">
+                                        <img data-v-e2f014f4="" src="./IN_files/fathom_analytics.svg" alt="Fathom Analytics">
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://goread.io/buy-instagram-followers" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/goread_io.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/goread_io.png" alt="Goread.io">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://twicsy.com/buy-instagram-likes" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/twicsy.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/twicsy.png" alt="Twicsy">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://cn.vuejs.org/sentry.io/for/vue?utm_source=vuejs.org&amp;utm_medium=paid-community" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/sentry.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/sentry.png" alt="Sentry">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.fontbolt.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/famous_fonts.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/famous_fonts.png" alt="Famous Fonts">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://justanotherpanel.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/justanotherpanel.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/justanotherpanel.png" alt="Justanotherpanel">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://likes.io/buy-instagram-followers" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/likes_io.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/likes_io.png" alt="Likes.io">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://howsociable.com/buy-instagram-followers/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/howsociable.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/howsociable.png" alt="Howsociable">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://poprey.com/" target="_blank" rel="sponsored noopener">
+                                        <picture data-v-e2f014f4="">
+                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/poprey_com.avif">
+                                            <img data-v-e2f014f4="" src="./IN_files/poprey_com.png" alt="Poprey.com">
+                                        </picture>
+                                    </a>
+                                    <a data-v-e2f014f4="" href="https://xiaoshukeji.github.io/Tipping/" class="sponsor-item action">成为赞助商</a>
+                                </div>
+                            </section>
+                            <section data-v-29ad6230="" id="sitemap">
+                                <div class="container">
+                                    <div class="sitemap-col">
+                                        <h4>发布</h4>
+                                        <ul>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/X-Blog/disclaimer/index.html" target="_blank" rel="noopener noreferrer">宣传片<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/Music/index.html" target="_blank" rel="noopener noreferrer">音乐<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="sitemap-col">
+                                        <h4>论坛</h4>
+                                        <ul>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/Little-Tree-Blog/" target="_blank" rel="noopener noreferrer">小树科技STBBS<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/BBS/" target="_blank" rel="noopener noreferrer">BBS 论坛<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="sitemap-col">
+                                        <h4>其他</h4>
+                                        <ul>
+                                            <li>
+                                                <a class="vt-link link" href="https://www.123pan.com/s/rCeKVv-fSiav.html" target="_blank" rel="noopener noreferrer">壁纸<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="vt-link link" href="https://64051a50.r6.cpolar.top/" target="_blank" rel="noopener noreferrer">管理库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/software/" target="_blank" rel="noopener noreferrer">软件库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/f/" target="_blank" rel="noopener noreferrer">游戏柜<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/X-Blog/" target="_blank" rel="noopener noreferrer">X-Blog<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/s/" target="_blank" rel="noopener noreferrer">树洞<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
+                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
+                                                </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </main>
+                <div data-v-43edf09f="" class="VPFooter">
+                    <p data-v-43edf09f="" class="license">
+                        <a data-v-43edf09f="" class="vt-link link link" href="https://xiaoshukeji.github.io/X-Blog/disclaimer/index.html" target="_blank" rel="noopener noreferrer">版权声明
+                            <!---->
+                        </a>
+                    </p>
+                    <p data-v-43edf09f="" class="copyright">本网站由小树科技网络安全有限公司版权©所有，保留所有权利。</p>
+                </div>
             </div>
         </div>
+        <div class="visually-hidden" aria-live="polite" data-v-5b776d18="">小树科技网络安全 已经加载完毕</div>
     </div>
 </div>
-<!--head end-->
-<!--check passed by PTB 2022/9/21--></div><script src="chrome-extension://nhiheekdcnmfbapkmpbhmplfddenhjic/sm.bundle.js" data-pname="supercopy-v3" data-asset-path="https://spc3.s3.ap-east-1.amazonaws.com"></script><div class="swal-overlay" tabindex="-1">
-  <div class="swal-modal" role="dialog" aria-modal="true"><div class="swal-text" style="">您好，感谢您的下载，但本站运营成本极高，使用副站下载可以助力我们运营，您是否需要继续下载？十分感谢主子的理解与支持!</div><div class="swal-footer"><div class="swal-button-container">
-
-    <button class="swal-button swal-button--cancel">取消下载</button>
-
-    <div class="swal-button__loader">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-  </div><div class="swal-button-container">
-
-    <button class="swal-button swal-button--allow">立即下载</button>
-
-    <div class="swal-button__loader">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-  </div></div></div></div></body></html>
+</body>
+</html>
