@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<script>
+		// 获取URL参数
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+
+		// 如果有参数，则根据参数显示不同的图片
+		if (urlParams.has('1')) {
+			document.write('<img src="1.png">');
+		} else if (urlParams.has('2')) {
+			document.write('<img src="2.png">');
+		} else {
+			// 否则跳转到index-1.html
+			window.location.href = 'index-1.html';
+		}
+	</script>
+</body>
+</html>
