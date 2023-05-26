@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>王kaiyan 的成绩</title>
+  <script type="text/javascript" src="./pdfobject.js"></script>
+</head>
+<body>
+<div id="example1"></div>
+<style>
+  .pdfobject-container { width: 936px; height: 902px; }
+</style>
+<script>
+  var options = {
+    pdfOpenParams: {
+      page: 1, // 第几页，没有则默认缓存上次打开的页数
+      toolbar: 0,  // 关闭第几栏
+      navpanes: 0, // 关闭导航
+      statusbar: 0, // 关闭状态栏
+      view: "FitH", // 视图顶对齐
+      scrollbars: "0" // 滚动条关闭
+    }
+  };
+
+  PDFObject.embed("./小树科技Python小测验(一)-王恺岩-考试答卷.pdf", "#example1", options);
+</script>
+</body>
+</html>
