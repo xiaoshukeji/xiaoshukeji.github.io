@@ -1,478 +1,657 @@
 <!DOCTYPE html>
-<!-- saved from url=(0021)https://cn.vuejs.org/ -->
-<html lang="zh-CN" dir="ltr" class="prefer-sfc">
+<html lang="cn" class="light">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>小树科技网络安全有限公司</title>
-    <meta
-            name="description"
-            content="小树科技网络安全有限公司是一家致力于为客户提供优质网络服务的公司。我们提供包括网络安全、网盘服务和程序编写工作等方面的服务。我们的团队由一批经验丰富、专业技术过硬的技术人员组成，我们的目标是为客户提供最好的服务，让客户的网络更加安全、高效、稳定。我们的服务范围涵盖了各种企业、机构和个人，我们的客户来自不同的行业，包括政府、金融、制造、医疗、教育等等。我们以客户的需求为出发点，为客户提供量身定制的服务方案，满足客户的不同需求。我们的使命是让科技改变生活，让网络更加安全，让客户更加满意！" />
-
-    <link rel="stylesheet" href="./IN_files/main.css">
-    <link rel="preload stylesheet" href="./IN_files/style.css" as="style">
-    <link rel="icon" href="https://cn.vuejs.org/logo.svg">
-    <link rel="preload" href="./IN_files/inter-roman-latin.2ed14f66.woff2" as="font" type="font/woff2" crossorigin="">
-    <style>.wwads-horizontal,.wwads-vertical{background-color:#f4f8fa;padding:5px;min-height:120px;margin-top:20px;box-sizing:border-box;border-radius:3px;font-family:sans-serif;display:flex;min-width:150px;position:relative;overflow:hidden}.wwads-horizontal{flex-wrap:wrap;justify-content:center}.wwads-vertical{flex-direction:column;align-items:center;padding-bottom:32px}.wwads-horizontal a,.wwads-vertical a{text-decoration:none}.wwads-horizontal .wwads-content,.wwads-horizontal .wwads-img,.wwads-vertical .wwads-content,.wwads-vertical .wwads-img{margin:5px}.wwads-horizontal .wwads-content{flex:130px;text-align:left}.wwads-vertical .wwads-content{margin-top:10px;text-align:left}.wwads-content .wwads-text,.wwads-horizontal .wwads-text{font-size:14px;line-height:1.4;color:#0e1011;-webkit-font-smoothing:antialiased;word-break:break-word}.wwads-horizontal .wwads-poweredby,.wwads-vertical .wwads-poweredby{display:flex;align-items:center;margin-top:1em}.wwads-vertical .wwads-poweredby{position:absolute;left:10px;bottom:10px;display:flex;align-items:center}.wwads-horizontal .wwads-poweredby .wwads-logo,.wwads-vertical .wwads-poweredby .wwads-logo{background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 210' fill='%23a6b7bf'%3E%3Cpath d='M24.25 211.46L0 197.46l57-98.73a74.004 74.004 0 11128.18 74l-7 12.12-24.25-14 7-12.12a46.002 46.002 0 00-79.68-46z'/%3E%3Cpath d='M121.21 209.73a74.07 74.07 0 01-64.21-37l-7-12.12 24.25-14 7 12.12a46.002 46.002 0 1079.68-46l-57-98.73 24.25-14 57 98.73a74 74 0 01-64 111z'/%3E%3Cpath d='M235.09 209.73h-114a74 74 0 010-148h14v28h-14a46 46 0 000 92h114z'/%3E%3C/svg%3E") no-repeat;padding:0 1px 11px 11px}.wwads-horizontal .wwads-poweredby .wwads-logo-text,.wwads-vertical .wwads-poweredby .wwads-logo-text{font-size:11px;margin-left:3px;color:#a6b7bf}.wwads-horizontal .wwads-hide,.wwads-vertical .wwads-hide{position:absolute;right:-23px;bottom:-23px;width:46px;height:46px;border-radius:23px;transition:all .3s ease-in-out;cursor:pointer}.wwads-horizontal .wwads-hide .hide-svg,.wwads-vertical .wwads-hide .hide-svg{position:absolute;left:10px;top:10px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='7' fill='%23a6b7bf'%3E%3Cpath d='M.879.672L3 2.793 5.121.672a.5.5 0 11.707.707L3.708 3.5l2.12 2.121a.5.5 0 11-.707.707l-2.12-2.12-2.122 2.12a.5.5 0 11-.707-.707l2.121-2.12L.172 1.378A.5.5 0 01.879.672z'/%3E%3C/svg%3E") no-repeat}.wwads-horizontal .wwads-hide:hover,.wwads-vertical .wwads-hide:hover{background:rgb(0 0 0/.05)}</style>
+    <title _msttexthash="55199716" _msthash="0">小树科技网络安全有限公司</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:image" content="./img/small.ico">
+    <meta property="og:site_name" content="小树网络">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta property="og:title" content="小树科技网络安全有限公司">
+    <link rel="preload" as="style" href="./Websitefiles/entry.f916f1c6.css">
+    <link rel="preload" as="style" href="./Websitefiles/TheHeader.d0722af6.css">
+    <link rel="prefetch" as="style" href="https://learnvue.co/_nuxt/useStudio.3a12f635.css">
+    <link rel="prefetch" as="style" href="https://learnvue.co/_nuxt/error-component.dc73bd12.css">
+    <link rel="prefetch" as="image" type="image/svg+xml" href="https://learnvue.co/_nuxt/scribble.c91bbb4a.svg">
+    <link rel="stylesheet" href="./Websitefiles/entry.f916f1c6.css">
+    <link rel="stylesheet" href="./Websitefiles/TheHeader.d0722af6.css">
+    <link rel="stylesheet" href="./Websitefiles/Icon.58dc69d3.css">
+    <link rel="stylesheet" href="./Websitefiles/index.48258df8.css">
+    <link rel="stylesheet" href="./Websitefiles/PageHeader.2536b764.css">
+    <link rel="stylesheet" href="./Websitefiles/index.e3ea0569.css">
+    <link rel="stylesheet" href="./Websitefiles/index.684e2bd1.css">
+    <link rel="stylesheet" href="./Websitefiles/waitlist.a4439b01.css">
+    <link rel="stylesheet" href="./Websitefiles/sponsors.ff3926b6.css">
+    <link rel="stylesheet" href="./Websitefiles/vue-3-essentials-cheatsheet.bcc068d9.css">
 </head>
-<body style="">
-<div id="app">
-    <div class="VPApp" data-v-5b776d18="">
-        <header class="VPNav nav-bar stick" data-v-5b776d18="" data-v-ed537c22="">
-            <div class="VPNavBar" data-v-ed537c22="" data-v-efcf92b1="">
-                <div class="container" data-v-efcf92b1="">
-                    <a class="VPNavBarTitle" href="#" data-v-efcf92b1="" data-v-7b849662="">
-
-                        <img src="./files/小树科技有限公司.png" alt="小树科技" width="350">
-                    </a>
-                    <div class="content" data-v-efcf92b1="">
-                        <div class="vt-social-links VPNavBarSocialLinks social-links" data-v-efcf92b1="" data-v-3393db1b="">
-                            <div class="hamburger-menu">
-                                <input id="menu__toggle" type="checkbox" />
-                                <label class="menu__btn" for="menu__toggle">
-                                    <span></span>
-                                </label>
-
-                                <ul class="menu__box">
-                                    <li><a class="menu__item" href="#">Home</a></li>
-                                    <li><a class="menu__item" href="#">About</a></li>
-                                    <li><a class="menu__item" href="#">Team</a></li>
-                                    <li><a class="menu__item" href="https://github.com/xiaoshukeji/" title="github" target="_blank" rel="noopener noreferrer">github
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="vt-social-link-icon" width="40">
-                                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
-                                        </svg>
-                                        <span class="visually-hidden">github</span>
-                                    </a></li>
-                                    <li><a class="menu__item" href="https://twitter.com/vuejs" title="twitter" target="_blank" rel="noopener noreferrer">twitter
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="vt-social-link-icon" width="40">
-                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-                                        </svg>
-                                        <span class="visually-hidden">twitter</span>
-                                    </a></li>
-                                </ul>
-                            </div>
-                        </div>
+<body>
+<div id="__nuxt">
+    <div class="text-default bg-default flex-start relative flex min-h-screen w-full flex-col">
+        <div></div>
+        <header class="text-default bg-default sticky top-0 z-40 flex h-16 w-full shrink-0 items-center backdrop-blur backdrop-filter" data-v-8e65a94f="">
+            <div class="container flex items-center" data-v-8e65a94f="">
+                <div class="items-center justify-start md:flex-1" data-v-8e65a94f="">
+                    <div class="relative inline-block" data-v-8e65a94f="">
+                        <!--[-->
+                        <a aria-current="page" href="https://learnvue.co/" class="router-link-active router-link-exact-active inline-flex items-center transition-opacity" data-v-8e65a94f="">
+                            <img src="./img/Smalltreenetwork.png" alt="小树科技网络安全" width="200px">
+                        </a>
+                        <!--]-->
+                        <!---->
                     </div>
                 </div>
+                <nav class="text-highlight relative mx-auto hidden items-center justify-center md:flex" data-v-8e65a94f="">
+                    <!--[-->
+                    <a href="https://v.douyin.com/UXjn4s8/" class="hover:bg-highlight relative z-10 mr-4 flex items-center rounded px-2 py-1 hover:transition-colors" data-v-8e65a94f="" _msttexthash="4262297" _msthash="4">抖音</a>
+                    <a href="https://blog.csdn.net/wanghanduo491" class="hover:bg-highlight relative z-10 mr-4 flex items-center rounded px-2 py-1 hover:transition-colors" data-v-8e65a94f="" _msttexthash="5636605" _msthash="5">CSDN</a>
+                    <a href="https://github.com/xiaoshukeji/" rel="noopener noreferrer" class="hover:bg-highlight relative z-10 mr-4 flex items-center rounded px-2 py-1 hover:transition-colors" data-v-8e65a94f="" _msttexthash="5715424" _msthash="6">Github</a>
+                    <!--]-->
+                </nav>
             </div>
+            <!---->
             <!---->
         </header>
         <!---->
-        <!---->
-        <div id="VPContent" class="VPContent" data-v-5b776d18="" data-v-15a907d6="">
-            <div data-v-15a907d6="" class="VPContentPage">
-                <main>
-                    <div style="position: relative;">
-                        <div>
-                            <section id="hero" data-v-29ad6230="">
-                                <h1 class="tagline" data-v-29ad6230="">
-                                    <span class="accent" data-v-29ad6230="">小树科技</span>
-                                    <br data-v-29ad6230="">网络安全有限公司
-                                </h1>
-                                <p class="description" data-v-29ad6230=""> 周到服务，资源分享，软件开源，适用丰富的 Windows 系统激活。 </p>
-                                <p class="actions" data-v-29ad6230="">
-                                    <a class="get-started" href="https://xiaoshukeji.github.io/X-Blog/" data-v-29ad6230=""> 立即购买 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" data-v-29ad6230="">
-                                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" data-v-29ad6230=""></path>
-                                    </svg>
-                                    </a>
-                                    <a class="setup" href="https://xiaoshukeji.github.io/BBS/" data-v-29ad6230="">论坛</a>
-                                    <a class="setup" href="https://www.123pan.com/s/rCeKVv-nTzav.html" data-v-29ad6230="">软件</a>
-                                </p>
-                            </section>
-                            <section data-v-29ad6230="" id="special-sponsor">
-                                <span data-v-29ad6230="">中国超级赞助</span>
-                                <a data-v-29ad6230="" class="logo" href="https://aircode.io/" target="_blank" rel="sponsored noopener">
-                                    <picture data-v-29ad6230="">
-                                        <source data-v-29ad6230="" type="image/avif" srcset="https://sponsors.vuejs.org/images/aircode.png">
-                                        <img data-v-29ad6230="" src="./IN_files/aircode.png" alt="Aircode" style="height: 50px;">
-                                    </picture>
-                                </a>
-                                <a data-v-29ad6230="" href="https://xiaoshukeji.github.io/X-Blog/" target="_blank" rel="sponsored noopener">5 分钟用 XS-KMS 激活 Windows</a>
-                            </section>
-                            <section data-v-29ad6230="" id="highlights" class="vt-box-container">
-                                <div data-v-29ad6230="" class="vt-box">
-                                    <h2 data-v-29ad6230="">易学易用</h2>
-                                    <p data-v-29ad6230=""> 基于标准 HTML、Python 和 cmd 构建，提供容易上手的 KMS 和一流的激活系统。 </p>
-                                </div>
-                                <div data-v-29ad6230="" class="vt-box">
-                                    <h2 data-v-29ad6230="">性能出色</h2>
-                                    <p data-v-29ad6230="">经过编译器优化、完全响应式的渲染系统，几乎不需要手动激活。</p>
-                                </div>
-                                <div data-v-29ad6230="" class="vt-box">
-                                    <h2 data-v-29ad6230="">灵活多变</h2>
-                                    <p data-v-29ad6230=""> 丰富的、可渐进式集成的激活系统，可以根据系统规模在库和系统间切换自如。 </p>
-                                </div>
-                            </section>
-                            <section data-v-29ad6230="" id="sponsors">
-                                <h2 data-v-29ad6230="">白金赞助商</h2>
-                                <div data-v-e2f014f4="" data-v-29ad6230="" class="sponsor-container platinum landing">
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/vuemastery.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/vuemastery.png" alt="VueMastery">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://vueschool.io/?utm_source=Vuejs.org&amp;utm_medium=Banner&amp;utm_campaign=Sponsored%20Banner&amp;utm_content=V1" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/vueschool.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/vueschool.png" alt="VueSchool">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://vehikl.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/vehikl.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/vehikl.png" alt="Vehikl">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/passionate_people.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/passionate_people.png" alt="Passionate People">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.storyblok.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/storyblok.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/storyblok.png" alt="Storyblok">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://ionicframework.com/vue?utm_source=partner&amp;utm_medium=referral&amp;utm_campaign=vuesponsorship&amp;utm_content=vuedocs" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/ionic.png" alt="Ionic">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/sanofi.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/sanofi.png" alt="Sanofi">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://code-dict.com/" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/codedict.svg" alt="CodeDict">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/chrome_frameworks_fund.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/herodevs.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/herodevs.png" alt="HeroDevs">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" href="https://xiaoshukeji.github.io/Tipping/" class="sponsor-item action">成为赞助商</a>
-                                </div>
-                                <h2 data-v-29ad6230="">金牌赞助商</h2>
-                                <div data-v-e2f014f4="" data-v-29ad6230="" class="sponsor-container gold landing">
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://volta.net/?utm_source=vuejs.org&amp;utm_campaign=sponsoring/" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/volta.svg" alt="Volta">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://laravel.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/laravel.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/laravel.png" alt="Laravel">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://htmlburger.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/html_burger.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/html_burger.png" alt="HTML Burger">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://tidelift.com/subscription/npm/vue" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/tidelift.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/tidelift.png" alt="Tidelift">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://intygrate.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/intygrate.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/intygrate.png" alt="Intygrate">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.bacancytechnology.com/hire-vuejs-developer" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/bacancy_technology.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/bacancy_technology.png" alt="Bacancy Technology">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.y8.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/y8.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/y8.png" alt="Y8">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://js.devexpress.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/devexpress.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/devexpress.png" alt="DevExpress">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://fastcoding.jp/javascript/" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/fastcoding_inc.svg" alt="FASTCODING Inc">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://linecorp.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/line_corporation.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/line_corporation.png" alt="LINE Corporation">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.emqx.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/emq.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/emq.png" alt="EMQ">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.fenetre.nl/" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/fen_tre_online_solutions.svg" alt="Fenêtre Online Solutions">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://antdv.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/ant_design_vue.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/ant_design_vue.png" alt="Ant Design Vue">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://mqttx.app/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/mqtt_x.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/mqtt_x.png" alt="MQTT X">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://crisp.chat/en/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/crisp.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/crisp.png" alt="Crisp">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://localazy.com/blog/how-to-localize-vuejs-app-with-vue-i18n-and-localazy?utm_source=vuejs&amp;utm_medium=banner&amp;utm_campaign=sponsorships_vuejs&amp;utm_content=logo" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/localazy.svg" alt="Localazy">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://learnvue.co/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/learnvue.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/learnvue.png" alt="LearnVue">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://casinoburst.com/casino-utan-licens/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/casinoburst_com.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/casinoburst_com.png" alt="Casinoburst.com">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.spinsify.com/uk/new-casinos" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/spinsify_com_uk.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/spinsify_com_uk.png" alt="spinsify.com/uk">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.enkrypt.com/" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/enkrypt__ethereum_and_polkadot_web3_wallet.svg" alt="Enkrypt: Ethereum and Polkadot Web3 Wallet">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.uudetkasinot.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/uudetkasinot_com.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/uudetkasinot_com.png" alt="uudetkasinot.com">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://usefathom.com/" target="_blank" rel="sponsored noopener">
-                                        <img data-v-e2f014f4="" src="./IN_files/fathom_analytics.svg" alt="Fathom Analytics">
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://goread.io/buy-instagram-followers" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/goread_io.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/goread_io.png" alt="Goread.io">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://twicsy.com/buy-instagram-likes" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/twicsy.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/twicsy.png" alt="Twicsy">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://cn.vuejs.org/sentry.io/for/vue?utm_source=vuejs.org&amp;utm_medium=paid-community" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/sentry.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/sentry.png" alt="Sentry">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://www.fontbolt.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/famous_fonts.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/famous_fonts.png" alt="Famous Fonts">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://justanotherpanel.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/justanotherpanel.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/justanotherpanel.png" alt="Justanotherpanel">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://likes.io/buy-instagram-followers" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/likes_io.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/likes_io.png" alt="Likes.io">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://howsociable.com/buy-instagram-followers/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/howsociable.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/howsociable.png" alt="Howsociable">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" class="sponsor-item" href="https://poprey.com/" target="_blank" rel="sponsored noopener">
-                                        <picture data-v-e2f014f4="">
-                                            <source data-v-e2f014f4="" type="image/avif" srcset="https://sponsors.vuejs.org/images/poprey_com.avif">
-                                            <img data-v-e2f014f4="" src="./IN_files/poprey_com.png" alt="Poprey.com">
-                                        </picture>
-                                    </a>
-                                    <a data-v-e2f014f4="" href="https://xiaoshukeji.github.io/Tipping/" class="sponsor-item action">成为赞助商</a>
-                                </div>
-                            </section>
-                            <section data-v-29ad6230="" id="sitemap">
-                                <div class="container">
-                                    <div class="sitemap-col">
-                                        <h4>发布</h4>
-                                        <ul>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/X-Blog/disclaimer/index.html" target="_blank" rel="noopener noreferrer">宣传片<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/Music/index.html" target="_blank" rel="noopener noreferrer">音乐<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/learn/index.html" target="_blank" rel="noopener noreferrer">学习<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="sitemap-col">
-                                        <h4>论坛</h4>
-                                        <ul>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/Little-Tree-Blog/" target="_blank" rel="noopener noreferrer">小树科技STBBS<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/BBS/" target="_blank" rel="noopener noreferrer">BBS 论坛<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="sitemap-col">
-                                        <h4>其他</h4>
-                                        <ul>
-                                            <li>
-                                                <a class="vt-link link" href="https://www.123pan.com/s/rCeKVv-fSiav.html" target="_blank" rel="noopener noreferrer">壁纸<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://64051a50.r6.cpolar.top/" target="_blank" rel="noopener noreferrer">管理库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/software/" target="_blank" rel="noopener noreferrer">软件库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/f/" target="_blank" rel="noopener noreferrer">游戏柜<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/X-Blog/" target="_blank" rel="noopener noreferrer">X-Blog<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/s/" target="_blank" rel="noopener noreferrer">树洞<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="sitemap-col">
-                                        <h4>工具</h4>
-                                        <ul>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/pdf/" target="_blank" rel="noopener noreferrer">文件管理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/p/" target="_blank" rel="noopener noreferrer">人力资源部<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/search/" target="_blank" rel="noopener noreferrer">小树极简搜索<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="vt-link link" href="https://xiaoshukeji.github.io/api/" target="_blank" rel="noopener noreferrer">小树付款api<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="24px" viewBox="0 0 24 24" width="24px" class="vt-link-icon">
-                                                    <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                                    <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z"></path>
-                                                </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+        <!--[-->
+        <main class="enter-slide w-full overflow-hidden" data-v-d80c7b65="">
+            <section class="container relative grid grid-cols-12 pb-36 md:pt-20 lg:gap-16" data-v-d80c7b65="">
+                <header class="block bg-one relative z-10 col-span-12 pt-8 text-center md:col-span-6 md:text-left" data-v-d80c7b65="">
+                    <!--[-->
+                    <!--[-->
+                    <div class="bg-highlight !dark:bg-opacity-100 relative inline-flex items-center overflow-hidden rounded-lg border-2 bg-opacity-100 text-sm font-medium" data-v-d80c7b65="">
+								<span class="flex h-7 w-7 shrink-0 items-center justify-center" data-v-d80c7b65="">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-highlight inline-block text-lg" data-v-d80c7b65="" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+										<path fill="currentColor" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10Zm1-10V7h-2v7h6v-2h-4Z"></path>
+									</svg>
+								</span>
+                        <span class="shrink-0 py-1 pr-2" data-v-d80c7b65="" _msttexthash="10107149" _msthash="7">6月3日</span>
                     </div>
-                </main>
-                <div data-v-43edf09f="" class="VPFooter">
-                    <p data-v-43edf09f="" class="license">
-                        <a data-v-43edf09f="" class="vt-link link link" href="https://xiaoshukeji.github.io/X-Blog/disclaimer/index.html" target="_blank" rel="noopener noreferrer">版权声明
-                            <!---->
-                        </a>
-                    </p>
-                    <p data-v-43edf09f="" class="copyright">本网站由小树科技网络安全有限公司版权©所有，保留所有权利。<br>王先生：13191486995</p>
+                    <!--]-->
+                    <!---->
+                    <h1 class="text-3xl font-bold mt-4 text-5xl font-extrabold md:text-6xl">
+                        <!--[-->
+                        <span class="relative" data-v-d80c7b65="">
+									<font _mstmutation="1" _msttexthash="30863170" _msthash="8">小树科技网络安全</font>
+									<span class="text-gradient" data-v-d80c7b65="" _msttexthash="4255589" _msthash="9">项目制作</span>
+								</span>
+                        <!--]-->
+                    </h1>
+                    <div class="mt-4">
+                        <!--[-->
+                        <p class="prose-lg dark:prose-invert" data-v-d80c7b65="" _msttexthash="193800386" _msthash="10">为丰富的信息时代制作成果<strong class="text-highlight" data-v-d80c7b65="" _istranslated="1">需要您的主持</strong>。</p>
+                        <div class="relative !mt-12" data-v-d80c7b65="">
+                            <div class="group relative p-[2px] inline-block rounded-lg" data-v-d80c7b65="">
+                                <span aria-hidden="true" class="absolute inset-0 animate-[pulse_5s_infinite] bg-gradient-to-br from-green to-purple-600 blur-lg transition-all hover:animate-none"></span>
+                                <span aria-hidden="true" class="absolute left-0 top-0 h-full w-full rounded-lg bg-gradient-to-br from-green to-purple-400 transition-all"></span>
+                                <!--[-->
+                                <a href="./xblog" class="inline-block rounded-lg px-4 py-2 font-medium no-underline disabled:cursor-not-allowed group bg-default relative inline-block text-center text-base hover:text-white group-hover:bg-transparent lg:text-left" data-v-d80c7b65="">
+                                    <!--[-->
+                                    <!--[-->
+                                    <font _mstmutation="1" _msttexthash="77158263" _msthash="77">购买<svg width="10px" height="4px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="inline h-3 w-3 stroke-white ml-1" _mstMutation="1" _isTranslated="1">
+                                        <desc _isTranslated="1">使用 Sketch 创建的</desc>候补名单<title _isTranslated="1">箭头</title>。<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" _isTranslated="1">
+                                        <g id="Custom-Preset-4" transform="translate(-5.000000, -1.000000)" class="stroke-current" stroke-width="1.5" _isTranslated="1">
+                                            <g id="Group" transform="translate(5.000000, 2.000000)" _isTranslated="1">
+                                                <polyline points="5.0034619 3.55271368e-15 8.51271866 3.34880668 5.0034619 6.35387318" class="-translate-x-[4px] transition-all duration-200 group-hover:translate-x-0" _isTranslated="1"></polyline>
+                                                <line x1="7" y1="3.34880668" x2="0" y2="3.34880668" class="w-0 scale-x-0 transform opacity-0 transition-all duration-200 group-hover:scale-x-110 group-hover:opacity-100" _isTranslated="1"></line>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    </svg>
+                                    </font>
+                                    <!--]-->
+                                    <!--]-->
+                                </a>
+                                <!--]-->
+                            </div>
+                        </div>
+                        <!--]-->
+                    </div>
+                    <!--]-->
+                </header>
+                <div class="bg-two relative col-span-12 pt-16 md:col-span-6" data-v-d80c7b65="">
+                    <img src="./Websitefiles/vue-bg.png" class="relative h-auto w-full" data-v-d80c7b65="">
+                </div>
+            </section>
+            <!---->
+            <div class="relative pb-72" data-v-d80c7b65="">
+                <div class="bg-three container relative" data-v-d80c7b65="">
+                    <header class="block relative max-w-2xl" data-v-d80c7b65="">
+                        <!--[-->
+                        <!--[-->
+                        <div class="border-green flex aspect-square h-12 w-12 items-center justify-center rounded-lg border-2 bg-green-50 bg-opacity-40 text-green-900 dark:bg-opacity-20" data-v-d80c7b65="">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon relative h-7 w-7 text-green-800 dark:text-green-50" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                <path fill="currentColor" d="M21.998 7v2.5a6.5 6.5 0 0 1-6.5 6.5h-2.5v5h-2v-7l.019-1a6.5 6.5 0 0 1 6.481-6h4.5Zm-16-4a7.003 7.003 0 0 1 6.643 4.786A7.48 7.48 0 0 0 10.014 13H8.998a7 7 0 0 1-7-7V3h4Z"></path>
+                            </svg>
+                        </div>
+                        <!--]-->
+                        <!---->
+                        <h2 class="text-3xl font-bold mt-4 text-4xl">
+                            <span _msttexthash="81427190" _msthash="12">适合所有经验水平和学习风格的内容</span>
+                        </h2>
+                        <div class="mt-4">
+                            <!--[-->
+                            <p class="prose dark:prose-invert" data-v-d80c7b65="" _msttexthash="451307116" _msthash="13">无论你是已经构建了几个 XS 应用程序，还是刚刚开始使用 XS，LearnXS 都有内容可以教你一些新的东西。</p>
+                            <a href="./learn" class="inline-block rounded-lg px-4 py-2 font-medium no-underline disabled:cursor-not-allowed group mt-4 inline-block !px-0 !font-semibold text-green" data-v-d80c7b65="">
+                                <!--[-->
+                                <!--[-->
+                                <font _mstmutation="1" _msttexthash="69290325" _msthash="76">查看所有 LearnXS+ 内容 <svg width="10px" height="4px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="inline h-3 w-3 stroke-white ml-1" _mstMutation="1" _isTranslated="1">
+                                    <title _isTranslated="1">Arrow</title>
+                                    <desc _isTranslated="1">使用 Sketch 创建。</desc>
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" _isTranslated="1">
+                                        <g id="Custom-Preset-4" transform="translate(-5.000000, -1.000000)" class="stroke-green" stroke-width="1.5" _isTranslated="1">
+                                            <g id="Group" transform="translate(5.000000, 2.000000)" _isTranslated="1">
+                                                <polyline points="5.0034619 3.55271368e-15 8.51271866 3.34880668 5.0034619 6.35387318" class="-translate-x-[4px] transition-all duration-200 group-hover:translate-x-0" _isTranslated="1"></polyline>
+                                                <line x1="7" y1="3.34880668" x2="0" y2="3.34880668" class="w-0 scale-x-0 transform opacity-0 transition-all duration-200 group-hover:scale-x-110 group-hover:opacity-100" _isTranslated="1"></line>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                </font>
+                                <!--]-->
+                                <!--]-->
+                            </a>
+                            <!--]-->
+                        </div>
+                        <!--]-->
+                    </header>
+                </div>
+                <section class="page-header mt-24 py-24" style="opacity: 1; transform: translateZ(0px);" data-v-d80c7b65="">
+                    <div class="container relative grid grid-cols-12 gap-y-16 lg:gap-x-24" data-v-d80c7b65="">
+                        <header class="block col-span-12 flex flex-col md:col-span-4" data-v-d80c7b65="">
+                            <!--[-->
+                            <!--[-->
+                            <!--]-->
+                            <h4 class="text-highlight text-base font-bold opacity-50" _msttexthash="19151002" _msthash="15">担心太难</h4>
+                            <h2 class="text-3xl font-bold mt-2 text-3xl">
+                                <span _msttexthash="17119102" _msthash="16">易学易用</span>
+                            </h2>
+                            <div class="mt-4">
+                                <!--[-->
+                                <p class="prose dark:prose-invert" data-v-d80c7b65="" _msttexthash="310180156" _msthash="17">基于标准 HTML、Python 和 cmd 构建，提供容易上手的 KMS 和一流的激活系统。</p>
+                                <!--]-->
+                            </div>
+                            <!--]-->
+                        </header>
+                        <header class="block col-span-12 md:col-span-4" data-v-d80c7b65="">
+                            <!--[-->
+                            <!--[-->
+                            <!--]-->
+                            <h4 class="text-highlight text-base font-bold opacity-50" _msttexthash="40580319" _msthash="18">想简单快捷</h4>
+                            <h2 class="text-3xl font-bold mt-2 text-3xl">
+                                <span _msttexthash="12953941" _msthash="19">性能出色</span>
+                            </h2>
+                            <div class="mt-4">
+                                <!--[-->
+                                <p class="prose dark:prose-invert" data-v-d80c7b65="" _msttexthash="279485687" _msthash="20">经过编译器优化、完全响应式的渲染系统，几乎不需要手动激活。</p>
+                                <!--]-->
+                            </div>
+                            <!--]-->
+                        </header>
+                        <header class="block col-span-12 md:col-span-4" data-v-d80c7b65="">
+                            <!--[-->
+                            <!--[-->
+                            <!--]-->
+                            <h4 class="text-highlight text-base font-bold opacity-50" _msttexthash="50218103" _msthash="21">如果您喜欢快速编码测试</h4>
+                            <h2 class="text-3xl font-bold mt-2 text-3xl">
+                                <span _msttexthash="11264526" _msthash="22">灵活多变</span>
+                            </h2>
+                            <div class="mt-4">
+                                <!--[-->
+                                <p class="prose dark:prose-invert" data-v-d80c7b65="" _msttexthash="286545155" _msthash="23">丰富的、可渐进式集成的激活系统，可以根据系统规模在库和系统间切换自如。</p>
+                                <!--]-->
+                            </div>
+                            <!--]-->
+                        </header>
+                    </div>
+                </section>
+                <!---->
+            </div>
+            <div class="youtube-bg container relative -mt-48 grid grid-cols-12 gap-y-8 rounded-lg lg:gap-x-16 lg:gap-y-0" data-v-d80c7b65="">
+                <header class="block relative col-span-12 lg:col-span-6" data-v-d80c7b65="">
+                    <!--[-->
+                    <!--[-->
+                    <!--]-->
+                    <h4 class="text-highlight text-base font-bold opacity-50" _msttexthash="26533715" _msthash="24">如果你是 XS 的新手...</h4>
+                    <h2 class="text-3xl font-bold mt-2 text-3xl">
+                        <span _msttexthash="10999781" _msthash="25">免费学习</span>
+                    </h2>
+                    <div class="mt-4">
+                        <!--[-->
+                        <div class="prose dark:prose-invert" data-v-d80c7b65="">
+                            <p data-v-d80c7b65="" _msttexthash="159451747" _msthash="26">如果你刚刚开始你的 XS 之旅，我建议从免费资源开始。</p>
+                            <p data-v-d80c7b65="" _msttexthash="313432743" _msthash="27">尽管我对 LearnXS+ 感到兴奋，但有很多内容（包括 XS 文档）是最好的起点。</p>
+                            <p data-v-d80c7b65="" _msttexthash="604934928" _msthash="28">我有一个YouTube频道，有数小时的免费内容，或者你可以随时免费注册LearnXS+，这要归功于你想要的付费模式。</p>
+                            <a href="./learn" rel="noopener noreferrer" class="inline-block rounded-lg px-4 py-2 font-medium no-underline disabled:cursor-not-allowed group mt-4 inline-block !px-0 text-green" data-v-d80c7b65="">
+                                <!--[-->
+                                <!--[-->
+                                <font _mstmutation="1" _msttexthash="99051290" _msthash="75">在YouTube上观看LearnXS <svg width="10px" height="4px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="inline h-3 w-3 stroke-white ml-1" _mstMutation="1" _isTranslated="1">
+                                    <title _isTranslated="1">Arrow</title>
+                                    <desc _isTranslated="1">，使用Sketch创建。</desc>
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" _isTranslated="1">
+                                        <g id="Custom-Preset-4" transform="translate(-5.000000, -1.000000)" class="stroke-green" stroke-width="1.5" _isTranslated="1">
+                                            <g id="Group" transform="translate(5.000000, 2.000000)" _isTranslated="1">
+                                                <polyline points="5.0034619 3.55271368e-15 8.51271866 3.34880668 5.0034619 6.35387318" class="-translate-x-[4px] transition-all duration-200 group-hover:translate-x-0" _isTranslated="1"></polyline>
+                                                <line x1="7" y1="3.34880668" x2="0" y2="3.34880668" class="w-0 scale-x-0 transform opacity-0 transition-all duration-200 group-hover:scale-x-110 group-hover:opacity-100" _isTranslated="1"></line>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                </font>
+                                <!--]-->
+                                <!--]-->
+                            </a>
+                        </div>
+                        <!--]-->
+                    </div>
+                    <!--]-->
+                </header>
+                <div class="relative col-span-12 flex flex-col items-center justify-center rounded-lg pb-8 pt-8 text-center font-handwritten lg:col-span-6" data-v-d80c7b65="">
+                    <p class="text-2xl" data-v-d80c7b65="" _msttexthash="11839269" _msthash="30">加入我们</p>
+                    <p class="text-highlight mt-4 text-6xl" data-v-d80c7b65="" _msttexthash="35373" _msthash="31">30,000</p>
+                    <p class="mt-4 text-2xl" data-v-d80c7b65="" _msttexthash="97097" _msthash="32">XS devs</p>
                 </div>
             </div>
-        </div>
-        <div class="visually-hidden" aria-live="polite" data-v-5b776d18="">小树科技网络安全 已经加载完毕</div>
+            <section class="pt-32" style="opacity: 1; transform: translateZ(0px);" data-v-d80c7b65="">
+                <div class="container grid grid-cols-12 gap-y-8 lg:gap-x-16 lg:gap-y-0" data-v-d80c7b65="">
+                    <div class="order-1 col-span-12 lg:order-2 lg:col-span-6" data-v-d80c7b65="">
+                        <header class="block" data-v-d80c7b65="">
+                            <!--[-->
+                            <!--[-->
+                            <div class="border-green flex aspect-square h-12 w-12 items-center justify-center rounded-lg border-2 bg-green-50 bg-opacity-40 text-green-900 dark:bg-opacity-20 inline-block text-3xl" data-v-d80c7b65="">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon inline-block text-3xl relative h-7 w-7 text-green-800 dark:text-green-50" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="M20 20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9H1l10.327-9.388a1 1 0 0 1 1.346 0L23 11h-3v9Zm-8-3l3.359-3.359a2.25 2.25 0 0 0-3.182-3.182l-.177.177l-.177-.177a2.25 2.25 0 1 0-3.182 3.182L12 17.001Z"></path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!---->
+                            <h2 class="text-3xl font-bold mt-4 text-4xl">
+                                <span _msttexthash="23210941" _msthash="33">随心所欲地支付</span>
+                            </h2>
+                            <div class="mt-4">
+                                <!--[-->
+                                <div class="prose dark:prose-invert" data-v-d80c7b65="">
+                                    <p data-v-d80c7b65="" _msttexthash="293633080" _msthash="34">当您订阅 LearnXS+ 时，您可以设置自己的每月价格 - 是的，甚至是 0 RMB。</p>
+                                    <p data-v-d80c7b65="" _msttexthash="224414801" _msthash="35">您订阅的 25% 用于支持开源开发人员，使我们的所有项目成为可能。</p>
+                                    <a href="https://learnvue.co/blog/why-pay-what-you-want" class="inline-block rounded-lg px-4 py-2 font-medium no-underline disabled:cursor-not-allowed group mt-4 inline-block !px-0 !font-semibold text-green" data-v-d80c7b65="">
+                                        <!--[-->
+                                        <!--[-->
+                                        <font _mstmutation="1" _msttexthash="17258228" _msthash="74">了解更多 <svg width="10px" height="4px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="inline h-3 w-3 stroke-white ml-1" _mstMutation="1" _isTranslated="1">
+                                            <title _isTranslated="1">Arrow</title>
+                                            <desc _isTranslated="1">Create with Sketch。</desc>
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" _isTranslated="1">
+                                                <g id="Custom-Preset-4" transform="translate(-5.000000, -1.000000)" class="stroke-green" stroke-width="1.5" _isTranslated="1">
+                                                    <g id="Group" transform="translate(5.000000, 2.000000)" _isTranslated="1">
+                                                        <polyline points="5.0034619 3.55271368e-15 8.51271866 3.34880668 5.0034619 6.35387318" class="-translate-x-[4px] transition-all duration-200 group-hover:translate-x-0" _isTranslated="1"></polyline>
+                                                        <line x1="7" y1="3.34880668" x2="0" y2="3.34880668" class="w-0 scale-x-0 transform opacity-0 transition-all duration-200 group-hover:scale-x-110 group-hover:opacity-100" _isTranslated="1"></line>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        </font>
+                                        <!--]-->
+                                        <!--]-->
+                                    </a>
+                                </div>
+                                <!--]-->
+                            </div>
+                            <!--]-->
+                        </header>
+                    </div>
+                    <div class="bg-dollar relative order-2 col-span-12 flex flex-col items-center justify-center lg:order-1 lg:col-span-6" data-v-d80c7b65="">
+                        <div class="group relative flex w-full max-w-xs flex-wrap content-start justify-center -space-x-2 relative" data-v-d80c7b65="" _msthidden="11">
+                            <!--[-->
+                            <a href="https://github.com/yyx990803" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/499550" loading="lazy" alt="Evan You" _msthidden="A" _mstalt="94016" _msthash="37">
+                            </a>
+                            <a href="https://github.com/antfu" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/11247099" loading="lazy" alt="Anthony Fu" _msthidden="A" _mstalt="133484" _msthash="38">
+                            </a>
+                            <a href="https://github.com/pi0" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/5158436" loading="lazy" alt="pooya parsa" _msthidden="A" _mstalt="161538" _msthash="39">
+                            </a>
+                            <a href="https://github.com/danielroe" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/28706372" loading="lazy" alt="Daniel Roe" _msthidden="A" _mstalt="127842" _msthash="40">
+                            </a>
+                            <a href="https://github.com/patak-dev" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/583075" loading="lazy" alt="patak" _msthidden="A" _mstalt="61763" _msthash="41">
+                            </a>
+                            <a href="https://github.com/johnsoncodehk" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/16279759" loading="lazy" alt="Johnson Chu" _msthidden="A" _mstalt="153907" _msthash="42">
+                            </a>
+                            <a href="https://github.com/Tahul" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/1385263" loading="lazy" alt="Yaël Guilloux" _msthidden="A" _mstalt="223613" _msthash="43">
+                            </a>
+                            <a href="https://github.com/posva" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/664177" loading="lazy" alt="Eduardo San Martin Morote" _msthidden="A" _mstalt="518401" _msthash="44">
+                            </a>
+                            <a href="https://github.com/cyberalien" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/822287" loading="lazy" alt="Vjacheslav Trushkin" _msthidden="A" _mstalt="384995" _msthash="45">
+                            </a>
+                            <a href="https://github.com/harlan-zw" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/5326365" loading="lazy" alt="Harlan Wilton" _msthidden="A" _mstalt="204321" _msthash="46">
+                            </a>
+                            <a href="https://github.com/sxzz" rel="noopener noreferrer" class="block aspect-square h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 outline-none hover:z-10 hover:border-green focus-visible:z-10 focus-visible:border-green" _msthidden="1">
+                                <img src="./Websitefiles/6481596" loading="lazy" alt="三咲智子 Kevin Deng" _msthidden="A" _mstalt="10355722" _msthash="47">
+                            </a>
+                            <!--]-->
+                        </div>
+                        <p class="relative mx-auto mt-2 max-w-xs text-center text-sm font-medium" data-v-d80c7b65="" _msttexthash="116946063" _msthash="48">感谢 XS 社区，LearnXS 可以赞助开源开发人员。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="container relative mt-32 grid grid-cols-12 gap-y-8 pb-64 lg:gap-x-16 lg:gap-y-0" data-v-d80c7b65="">
+                <div class="relative col-span-12 lg:col-span-6" data-v-d80c7b65="">
+                    <header class="block sticky top-24" data-v-d80c7b65="">
+                        <!--[-->
+                        <!--[-->
+                        <div class="border-green flex aspect-square h-12 w-12 items-center justify-center rounded-lg border-2 bg-green-50 bg-opacity-40 text-green-900 dark:bg-opacity-20 inline-block" data-v-d80c7b65="">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon inline-block relative h-7 w-7 text-green-800 dark:text-green-50" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                <path fill="currentColor" d="M8 18h10.237L20 19.385V9h1a1 1 0 0 1 1 1v13.5L17.546 20H9a1 1 0 0 1-1-1v-1Zm-2.545-2L1 19.5V4a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v12H5.455Z"></path>
+                            </svg>
+                        </div>
+                        <!--]-->
+                        <!---->
+                        <h2 class="text-3xl font-bold mt-4 text-4xl">
+                            <span _msttexthash="15431494" _msthash="49">常见问题</span>
+                        </h2>
+                        <div class="mt-4">
+                            <!--[-->
+                            <p data-v-d80c7b65="" _msttexthash="102633154" _msthash="50">有问题吗？我希望你能在这里找到答案。</p>
+                            <!--]-->
+                        </div>
+                        <!--]-->
+                    </header>
+                </div>
+                <div class="col-span-12 lg:col-span-6" data-v-d80c7b65="">
+                    <!--[-->
+                    <div class="border-b-2 py-6" data-v-d80c7b65="" style="position: relative;">
+                        <div role="button" tabindex="0" data-cy="collapsible-section">
+                            <!--[-->
+                            <!--[-->
+                            <div class="text-highlight group flex w-full items-center text-2xl font-semibold duration-75">
+                                <!--[-->
+                                <h3 class="text-xl font-bold" data-v-d80c7b65="" _msttexthash="32029023" _msthash="51">你什么时候推出？</h3>
+                                <!--]-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon ml-auto inline-block text-3xl transition-transform rotate-180 transform" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414L12 15.001Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                        <div data-v-d80c7b65="" class="prose mt-3 dark:prose-invert">
+                            <p>
+                                <font _mstmutation="1" _msttexthash="651537445" _msthash="96">我的目标是在 2023 年夏季推出。老实说，我现在的重点是
+                                    <a href="https://youtube.com/learnXS" rel="nofollow" _mstmutation="1" _istranslated="1">LearnXS YouTube</a>，所以请务必查看并在
+                                    <a href="https://twitter.com/mattmaribojoc" rel="nofollow" _mstmutation="1" _istranslated="1">Twitter</a>上关注我以获取最新更新。</font>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b-2 py-6" data-v-d80c7b65="" style="position: relative;">
+                        <div role="button" tabindex="0" data-cy="collapsible-section">
+                            <!--[-->
+                            <!--[-->
+                            <div class="text-highlight group flex w-full items-center text-2xl font-semibold duration-75">
+                                <!--[-->
+                                <h3 class="text-xl font-bold" data-v-d80c7b65="" _msttexthash="53261936" _msthash="52">什么是随心所欲的支付？</h3>
+                                <!--]-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon ml-auto inline-block text-3xl transition-transform rotate-180 transform" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414L12 15.001Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                        <div data-v-d80c7b65="" class="prose mt-3 dark:prose-invert">
+                            <p>
+                                <font _mstmutation="1" _msttexthash="889584722" _msthash="92">支付你想要的正是它听起来的样子。您可以为课程支付任何费用。您可以支付 0 美元、1 美元、10 美元、20 美元甚至 100 美元。这取决于你和你认为 LearnXS+ 会给你的价值。</font>
+                            </p>
+                            <p>
+                                <font _mstmutation="1" _msttexthash="588925493" _msthash="93">我的目标是构建任何人都可以访问的优质教育内容，无论他们的财务状况如何。我想确保每个人都能获得最好的 XS 教育。</font>
+                            </p>
+                            <p>
+                                <font _mstmutation="1" _msttexthash="557705642" _msthash="94">我敢打赌，有足够多的人会发现它足够有价值，可以付费，但那些通常买不起这种内容的人仍然可以免费获得它。</font>
+                            </p>
+                            <p>
+                                <font _mstmutation="1" _msttexthash="411412404" _msthash="95">此外，25% 的收入用于支持开源开发人员，因此付费的人越多，我们回馈社区的次数就越多。</font>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b-2 py-6" data-v-d80c7b65="" style="position: relative;">
+                        <div role="button" tabindex="0" data-cy="collapsible-section">
+                            <!--[-->
+                            <!--[-->
+                            <div class="text-highlight group flex w-full items-center text-2xl font-semibold duration-75">
+                                <!--[-->
+                                <h3 class="text-xl font-bold" data-v-d80c7b65="" _msttexthash="48953931" _msthash="53">你们接受哪些付款方式？</h3>
+                                <!--]-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon ml-auto inline-block text-3xl transition-transform rotate-180 transform" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414L12 15.001Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                        <div data-v-d80c7b65="" class="prose mt-3 dark:prose-invert">
+                            <p>
+                                <font _mstmutation="1" _msttexthash="264609800" _msthash="91">LearnXS+ 在 Stripe 上运行，因此可以接受来自世界任何地方的卡付款。</font>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b-2 py-6" data-v-d80c7b65="" style="position: relative;">
+                        <div role="button" tabindex="0" data-cy="collapsible-section">
+                            <!--[-->
+                            <!--[-->
+                            <div class="text-highlight group flex w-full items-center text-2xl font-semibold duration-75">
+                                <!--[-->
+                                <h3 class="text-xl font-bold" data-v-d80c7b65="" _msttexthash="39213356" _msthash="54">你们有学生折扣吗？</h3>
+                                <!--]-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon ml-auto inline-block text-3xl transition-transform rotate-180 transform" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414L12 15.001Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                        <div data-v-d80c7b65="" class="prose mt-3 dark:prose-invert">
+                            <p>
+                                <font _mstmutation="1" _msttexthash="172542435" _msthash="89">有了随心所欲的付费系统，我认为学生折扣是不必要的。</font>
+                            </p>
+                            <p>
+                                <font _mstmutation="1" _msttexthash="350327913" _msthash="90">我自己大学毕业才几年，我知道支付学费有多难，所以我不希望成本成为学习 XS 的障碍。</font>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b-2 py-6" data-v-d80c7b65="" style="position: relative;">
+                        <div role="button" tabindex="0" data-cy="collapsible-section">
+                            <!--[-->
+                            <!--[-->
+                            <div class="text-highlight group flex w-full items-center text-2xl font-semibold duration-75">
+                                <!--[-->
+                                <h3 class="text-xl font-bold" data-v-d80c7b65="" _msttexthash="35506042" _msthash="55">退款政策是什么？</h3>
+                                <!--]-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon ml-auto inline-block text-3xl transition-transform rotate-180 transform" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414L12 15.001Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                        <div data-v-d80c7b65="" class="prose mt-3 dark:prose-invert">
+                            <p>
+                                <font _mstmutation="1" _msttexthash="879064199" _msthash="88">如果您对购买不满意，可以随时取消订阅并获得结算周期的全额退款。我唯一的要求是，如果您选择取消，请告诉我原因，以便我改进内容。</font>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b-2 py-6" data-v-d80c7b65="" style="position: relative;">
+                        <div role="button" tabindex="0" data-cy="collapsible-section">
+                            <!--[-->
+                            <!--[-->
+                            <div class="text-highlight group flex w-full items-center text-2xl font-semibold duration-75">
+                                <!--[-->
+                                <h3 class="text-xl font-bold" data-v-d80c7b65="" _msttexthash="67882880" _msthash="56">为什么不直接在YouTube上发帖呢？</h3>
+                                <!--]-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon ml-auto inline-block text-3xl transition-transform rotate-180 transform" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414L12 15.001Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                        <div data-v-d80c7b65="" class="prose mt-3 dark:prose-invert">
+                            <p>
+                                <font _mstmutation="1" _msttexthash="210279693" _msthash="84">虽然我喜欢
+                                    <a href="https://youtube.com/learnXS" rel="nofollow" _mstmutation="1" _istranslated="1">YouTube</a>，但我想建立自己的平台和社区。有几个原因——</font>
+                            </p>
+                            <ol>
+                                <li>
+                                    <font _mstmutation="1" _msttexthash="124923448" _msthash="85">某些内容（例如代码挑战在YouTube上不起作用）</font>
+                                </li>
+                                <li>
+                                    <font _mstmutation="1" _msttexthash="103279579" _msthash="86">一些最有价值的视频内容对“YouTube算法”不友好</font>
+                                </li>
+                                <li>
+                                    <font _mstmutation="1" _msttexthash="609439142" _msthash="87">老实说，有一种方法可以为LearnXS创造收入会很好。我在日常工作之外这样做，所以任何收入都有助于我继续这样做。</font>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="border-b-2 py-6" data-v-d80c7b65="" style="position: relative;">
+                        <div role="button" tabindex="0" data-cy="collapsible-section">
+                            <!--[-->
+                            <!--[-->
+                            <div class="text-highlight group flex w-full items-center text-2xl font-semibold duration-75">
+                                <!--[-->
+                                <h3 class="text-xl font-bold" data-v-d80c7b65="" _msttexthash="40714154" _msthash="57">LearnXS+ 适合我吗？</h3>
+                                <!--]-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon ml-auto inline-block text-3xl transition-transform rotate-180 transform" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                                    <path fill="currentColor" d="m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414L12 15.001Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                        <div data-v-d80c7b65="" class="prose mt-3 dark:prose-invert">
+                            <p>
+                                <font _mstmutation="1" _msttexthash="759245175" _msthash="78">LearnXS+ 专为已经拥有一些 XS 经验并希望通过学习高级 XS 概念和最佳实践将他们的技能提升到一个新的水平的开发人员而设计。</font>
+                            </p>
+                            <p>
+                                <font _mstmutation="1" _msttexthash="1393566499" _msthash="79">如果你刚刚开始，有大量免费的 XS 内容可以开始学习。我能给出的最好的建议是继续构建您觉得很酷的项目！通过这种方式，您将学到更多，而不是通过观看教程和盲目遵循。</font>
+                            </p>
+                        </div>
+                    </div>
+                    <!--]-->
+                </div>
+            </section>
+        </main>
+        <!--]-->
+        <footer class="mt-32 pt-16 text-sm transition-colors duration-200">
+            <div class="container grid grid-cols-12 pb-8">
+                <div class="order-5 hidden text-center md:order-1 md:col-span-4 md:flex md:flex-col md:text-left">
+                    <img src="./img/Smalltreenetwork.png" alt="小树科技" width="200px">
+                </div>
+                <!--[-->
+                <div class="col-span-6 mb-6 md:order-2 md:col-span-2 md:mb-0">
+                    <h2 class="text-highlight mb-8 font-bold uppercase" _msttexthash="4215874" _msthash="61">发布</h2>
+                    <ul>
+                        <!--[-->
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/X-Blog/disclaimer/index.html" class="hover:text-highlight hover:underline" _msttexthash="5636605" _msthash="62">宣传片</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/Music/index.html" class="hover:text-highlight hover:underline" _msttexthash="10730447" _msthash="63">音乐</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/learn/index.html" class="hover:text-highlight hover:underline" _msttexthash="10730447" _msthash="63">学习</a>
+                        </li>
+                        <!--]-->
+                    </ul>
+                </div>
+                <div class="col-span-6 mb-6 md:order-2 md:col-span-2 md:mb-0">
+                    <h2 class="text-highlight mb-8 font-bold uppercase" _msttexthash="6004466" _msthash="64">论坛</h2>
+                    <ul>
+                        <!--[-->
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/Little-Tree-Blog/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">小树科技STBBS</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/BBS/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">BBS 论坛</a>
+                        </li>
+                        <!--]-->
+                    </ul>
+                </div>
+                <div class="col-span-6 mb-6 md:order-2 md:col-span-2 md:mb-0">
+                    <h2 class="text-highlight mb-8 font-bold uppercase" _msttexthash="6004466" _msthash="64">其他</h2>
+                    <ul>
+                        <!--[-->
+                        <li class="mb-2">
+                            <a href="https://www.123pan.com/s/rCeKVv-fSiav.html" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">壁纸</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://64051a50.r6.cpolar.top/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">管理库</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/software/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">软件库</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/f/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">游戏柜</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/X-Blog/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">X-Blog</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/s/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">树洞</a>
+                        </li>
+                        <!--]-->
+                    </ul>
+                </div>
+                <div class="col-span-6 mb-6 md:order-2 md:col-span-2 md:mb-0">
+                    <h2 class="text-highlight mb-8 font-bold uppercase" _msttexthash="6004466" _msthash="64">其他</h2>
+                    <ul>
+                        <!--[-->
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/pdf/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">文件管理</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/p/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">人力资源部</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/search/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">小树极简搜索</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="http://xiaoshukeji.ltd/api/" class="hover:text-highlight hover:underline" _msttexthash="8048144" _msthash="65">小树付款api</a>
+                        </li>
+                        <!--]-->
+                    </ul>
+                </div>
+            </div>
+            <div class="container my-4 flex items-center justify-between border-t-2 pt-4 text-xs">
+                <p class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon mr-1 inline-block text-sm" style="" width="1em" height="1em" viewBox="0 0 24 24" data-v-3bd93ca1="">
+                        <path fill="currentColor" d="M16.288 9.428A4.999 4.999 0 0 0 7 12a4.999 4.999 0 0 0 9.288 2.572l-1.715-1.028A3 3 0 1 1 12 9c1.093 0 2.05.584 2.573 1.457l1.715-1.03ZM22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10s10-4.48 10-10ZM4 12c0-4.42 3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8s-8-3.58-8-8Z"></path>
+                    </svg>
+                    <font _mstmutation="1" _msttexthash="45280534" _msthash="73">2023 小树科技网络安全有限责任公司</font>
+                </p>
+                <ul class="flex items-center justify-end gap-2 text-right sm:gap-8">
+                    <!--[-->
+                    <li>
+                        <a href="http://xiaoshukeji.ltd/X-Blog/disclaimer/index.html" class="hover:text-highlight hover:underline" _msttexthash="6749080" _msthash="71">隐私</a>
+                    </li>
+                    <li>
+                        <a href="http://xiaoshukeji.ltd/X-Blog/about/index.html" class="hover:text-highlight hover:underline" _msttexthash="6810024" _msthash="72">关于我们</a>
+                    </li>
+                    <!--]-->
+                </ul>
+            </div>
+        </footer>
     </div>
 </div>
 </body>
