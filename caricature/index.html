@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>小树漫画-年龄验证</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<script>
+    function checkAge() {
+        var age = prompt("请输入您的年龄：");
+        if (age < 18) {
+            alert("未满18岁禁止进入");
+            window.location.href = "https://www.iqiyi.com/";  // 可替换为跳转到其他页面的URL
+        }else{
+            alert("欢迎使用小树漫画");
+            window.location.href = "./caricature.html";  // 可替换为跳转到其他页面的URL
+        }
+    }
+</script>
+<h1>年龄验证</h1>
+<button onclick="checkAge()">进入</button>
+</body>
+</html>
