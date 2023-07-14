@@ -3,6 +3,11 @@
 <head>
     <title>小树漫画-年龄验证</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <script>
@@ -17,7 +22,14 @@
         }
     }
 </script>
-<h1>年龄验证</h1>
-<button onclick="checkAge()">进入</button>
+<center><h1>年龄验证</h1></center>
+<div class="container">
+  <div class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>警告!</strong> 未满18周岁禁止进入。
+  </div>
+</div>
+<center><button onclick="checkAge()" class="btn btn-danger" style="height:100px;width:100px;">进入</button></center>
+<a href="./disclaimer/18岁禁止进入免责声明.html">小树漫画18岁禁止进入免责声明</a>·<a href="./disclaimer/漫画版权免责声明.html">小树漫画版权免责声明</a>
 </body>
 </html>
