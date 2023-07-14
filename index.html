@@ -26,8 +26,14 @@
     <link rel="stylesheet" href="./Websitefiles/waitlist.a4439b01.css">
     <link rel="stylesheet" href="./Websitefiles/sponsors.ff3926b6.css">
     <link rel="stylesheet" href="./Websitefiles/vue-3-essentials-cheatsheet.bcc068d9.css">
+    <link rel="manifest" href="./manifest.json">
 </head>
 <body>
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' });
+}
+</script>
 <div id="__nuxt">
     <div class="text-default bg-default flex-start relative flex min-h-screen w-full flex-col">
         <div></div>
