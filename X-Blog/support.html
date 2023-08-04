@@ -36,7 +36,31 @@
   }
 </style>
 </head>
-<body>
+<body onkeydown="KeyDown()" onbeforeunload="location=location"oncontextmenu="event.returnValue=false" leftmargin="2" topmargin="0" marginwidth="0" marginheight="0" oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="document.selection.empty()" oncopy="document.selection.empty()" onbeforecopy="return false" onmouseup="document.selection.empty()">
+
+<noscript><iframe src="./*>";</iframe></noscript>
+<script language="Javascript">
+document.oncontextmenu = new Function('event.returnValue=false;');
+document.onselectstart = new Function('event.returnValue=false;');
+<!-- 
+function KeyDown(){ 
+if ((window.event.altKey)&& 
+     ((window.event.keyCode==37)||   
+      (window.event.keyCode==39))){alert("请访问我的主页"); 
+    event.returnValue=false; 
+    } 
+if ((event.keyCode==8)||(event.keyCode==116)){//屏蔽 F5 刷新键 
+    event.keyCode=0; 
+    event.returnValue=false; 
+    } 
+if ((event.ctrlKey)&&(event.keyCode==78)){   //屏蔽 Ctrl+n 
+    event.returnValue=false; 
+    } 
+if ((event.shiftKey)&&(event.keyCode==121)){ //屏蔽 shift+F10 
+    event.returnValue=false; 
+    } 
+} 
+</script> 
   <h1>感谢您的支持！</h1>
   <p>我们由衷地感谢您的厚爱和支持。<br>您的支持是我们前进的动力。</p>
 <center>
