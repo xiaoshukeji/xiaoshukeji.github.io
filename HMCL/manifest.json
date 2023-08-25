@@ -1,0 +1,17 @@
+{
+    "lang": "zh-cn",
+    "name": "Minecraft HMCL",
+    "short_name": "Minecraft HMCL",
+    "description": "Minecraft HMCLWeb应用",
+    "start_url": "/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./HMCL_files/favicon.ico",
+            "sizes": "32x32"
+        }
+    ]
+}
