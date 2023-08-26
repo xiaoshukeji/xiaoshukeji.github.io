@@ -19,6 +19,18 @@
     <link rel="stylesheet" href="./HMCL_files/download.css">
     <link rel="stylesheet" href="./HMCL_files/notifications.css">
     <script src="https://kit.fontawesome.com/d82620443d.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var system ={};
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        if(system.win||system.mac||system.xll){//如果是电脑跳转到
+            window.location.href="./index.html";
+        }else{  //如果是手机,跳转到
+            window.location.href="./mobile.html";
+        }
+    </script>
 </head>
 <body class="" data-lm-environment="production" data-dev-mode="false" data-new-design="1" inmaintabuse="1" data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
 
@@ -30,8 +42,8 @@
             <span id="top"></span>
             <nav id="navigation" class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
-                    <a class="navbar-brand" href="./HMCL.html">
-                        <h1>Minecraft HMCL - Download</h1>
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./HMCL_files/logo.png" alt="Logo" width="300">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -39,7 +51,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 beforeload">
                             <li class="nav-item">
-                                <a class="nav-link position-relative" href="./HMCL.html" target="_self">
+                                <a class="nav-link position-relative" href="./index.html" target="_self">
                                     首页 </a>
                             </li>
                             <li class="nav-item">
@@ -93,33 +105,33 @@
                                 <h1 class="mb-3">下载 HMCL 开发版 3.5.4.2</h1>
                                 <p id="download-desc">安装 HMCL 启动器后，您可以使用所需的 Minecraft 版本启动 HMCL。</p>
                                 <h3 class="mb-0"><strong>Windows</strong><h3>
-                                <div class="row g-0">
-                                    <div class="col-sm-6">
-                                        <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.exe" class="more-download-btn"><i class="fa fa-windows"></i>
-                                            Windows (.exe)</a>
+                                    <div class="row g-0">
+                                        <div class="col-sm-6">
+                                            <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.exe" class="more-download-btn"><i class="fa fa-windows"></i>
+                                                Windows (.exe)</a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.jar" class="more-download-btn"><i class="fa fa-windows"></i>
+                                                Windows (.jar)</a>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.jar" class="more-download-btn"><i class="fa fa-windows"></i>
-                                            Windows (.jar)</a>
-                                    </div>
-                                </div>
-                                <h3 class="mb-0"><strong>Linux</strong><h3>
-                                <div class="row g-0">
-                                    <div class="col-sm-12">
-                                        <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.jar" class="more-download-btn"><i class="fa fa-linux"></i>
-                                            Linux (.jar)</a>
-                                    </div>
-                                </div>
-                                <h3 class="mb-0"><strong>Mac</strong></h3>
-                                <div class="row g-0">
-                                    <div class="col-sm-12">
-                                        <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.jar" class="more-download-btn"><i class="fa fa-apple"></i>
-                                            Apple Mac (.jar)</a>
-                                    </div>
-                                </div>
-                                <p class="small mc-note">
-                                    <img src="./download_files/steve_head.webp" alt="Steve Minecraft Head"> 您可以使用<strong> Minecraft 正版帐号</strong> 登录，也可以使用离线账号登录 <strong> HMCL</strong>！
-                                </p>
+                                    <h3 class="mb-0"><strong>Linux</strong><h3>
+                                        <div class="row g-0">
+                                            <div class="col-sm-12">
+                                                <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.jar" class="more-download-btn"><i class="fa fa-linux"></i>
+                                                    Linux (.jar)</a>
+                                            </div>
+                                        </div>
+                                        <h3 class="mb-0"><strong>Mac</strong></h3>
+                                        <div class="row g-0">
+                                            <div class="col-sm-12">
+                                                <a href="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/org/glavo/hmcl/hmcl-dev/3.5.4.234/hmcl-dev-3.5.4.234.jar" class="more-download-btn"><i class="fa fa-apple"></i>
+                                                    Apple Mac (.jar)</a>
+                                            </div>
+                                        </div>
+                                        <p class="small mc-note">
+                                            <img src="./HMCL_files/steve_head.webp" alt="Steve Minecraft Head"> 您可以使用<strong> Minecraft 正版帐号</strong> 登录，也可以使用离线账号登录 <strong> HMCL</strong>！
+                                        </p>
                             </div>
                         </div>
                         </div>
