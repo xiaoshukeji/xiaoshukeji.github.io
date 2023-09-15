@@ -26,7 +26,15 @@
     <link rel="stylesheet" href="./Websitefiles/waitlist.a4439b01.css">
     <link rel="stylesheet" href="./Websitefiles/sponsors.ff3926b6.css">
     <link rel="stylesheet" href="./Websitefiles/vue-3-essentials-cheatsheet.bcc068d9.css">
-    <link rel="stylesheet" href="online.css">
+    <style>
+        .status {
+            width: 25px; /* 将宽度调整为25px */
+            height: 25px; /* 将高度调整为25px */
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -339,6 +347,31 @@ var _hmt = _hmt || [];
     var openInDefaultBrowserBtn = document.getElementById('open-in-default-browser');
     openInDefaultBrowserBtn.addEventListener('click', openInDefaultBrowser);
 </script>
-<script src="online.js"></script>
+<script>
+    const statusIndicator = document.getElementById('statusIndicator');
+    const statusText = document.getElementById('statusText');
+
+    function updateStatus(online) {
+        if (online) {
+            statusIndicator.style.backgroundColor = 'green';
+            statusText.textContent = '在线';
+        } else {
+            statusIndicator.style.backgroundColor = 'red';
+            statusText.textContent = '掉线';
+        }
+    }
+
+    // 监听网络状态的变化
+    window.addEventListener('online', () => {
+        updateStatus(true);
+    });
+
+    window.addEventListener('offline', () => {
+        updateStatus(false);
+    });
+
+    // 页面加载时初始状态
+    updateStatus(navigator.onLine);
+</script>
 </body>
 </html>
