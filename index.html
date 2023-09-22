@@ -28,8 +28,8 @@
     <link rel="stylesheet" href="./Websitefiles/vue-3-essentials-cheatsheet.bcc068d9.css">
     <style>
         .status {
-            width: 25px; /* 将宽度调整为25px */
-            height: 25px; /* 将高度调整为25px */
+            width: 10px; /* 将宽度调整为25px */
+            height: 10px; /* 将高度调整为25px */
             border-radius: 50%;
             display: inline-block;
             margin-right: 10px;
@@ -210,7 +210,7 @@ var _hmt = _hmt || [];
                             <a href="http://xiaoshukeji.ltd/learn/index.html" class="hover:text-highlight hover:underline" _msttexthash="10730447" _msthash="63">学习</a>
                         </li>
                         <li class="mb-2">
-                            <a href="http://xiaoshukeji.ltd/HMCL/index.html" class="hover:text-highlight hover:underline" _msttexthash="10730447" _msthash="63">我的世界HMCL启动器</a>
+                            <a href="http://xiaoshukeji.ltd/HMCL/index.html" class="hover:text-highlight hover:underline" _msttexthash="10730447" _msthash="63">HMCL启动器</a>
                         </li>
                         <li class="mb-2">
                             <a href="http://xiaoshukeji.ltd/airLook/index.html" class="hover:text-highlight hover:underline" _msttexthash="10730447" _msthash="63">航拍中国</a>
@@ -305,9 +305,8 @@ var _hmt = _hmt || [];
 <!--微信检测-->
 <div id="wechat-warning" style="display: none;">
     <!-- 在微信内置浏览器中显示的警告消息 -->
-    <h1>无法使用微信内置浏览器访问！</h1>
-    <p>请点击下方按钮尝试在默认浏览器中打开。</p>
-    <button id="open-in-default-browser">在默认浏览器中打开</button>
+    <h1>我建议你别用微信内置浏览器！</h1>
+    <p>请点击右上角，并在浏览器中打开。</p>
 </div>
 <script>
     // 检测是否在微信内置浏览器中
@@ -327,16 +326,6 @@ var _hmt = _hmt || [];
         } else {
             contentDiv.style.display = 'block';
             wechatWarningDiv.style.display = 'none';
-        }
-    }
-
-    // 尝试在默认浏览器中打开网页
-    function openInDefaultBrowser() {
-        if (isWeChat()) {
-            // 使用微信 JS-SDK 中的方法尝试跳转到默认浏览器
-            // 这里需要你自行调用微信 JS-SDK 的方法来实现跳转
-            // 参考微信 JS-SDK 文档来执行此操作
-            alert('请点击下方按钮尝试在默认浏览器中打开！');
         }
     }
 
