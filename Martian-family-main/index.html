@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>火星家族 | 官网</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="https://xiaoshukeji.ltd/file/favicon.ico">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题 */
+.header {
+    padding: 80px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* 主要的内容区域 */
+.main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 底部 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+	
+	
+	
+*{margin:0px;padding:0px;box-sizing:border-box}
+	body{margin:0 auto;font-size:12px;font-family:"微软雅黑";line-height:normal;min-width:1200px}
+	ul{list-style:none}
+	a{text-decoration:none}
+
+	.footer{width:100%;background-color:#323A45;padding-top:70px;height:auto;overflow:hidden}
+	.other-link{width:1200px;margin:0 auto;height:auto;overflow:hidden}
+	.other-link>div{float:left}
+	.other-link .sucai-contact{float:right}
+	.link-look{width:960px;padding-bottom:45px}
+	.link-list{float:left;width:20%}
+	.link-list h3{height:45px;line-height:20px;font-size:20px;color:#ffffff}
+	.link-list ul li a{line-height:33px;color:#ABACAF;font-size:15px}
+	.link-list ul li a:hover{color:#FF6666}
+	.sucai-contact{width:240px}
+	.bottom-logo{width:132px;height:38px}
+	.bottom-logo a{display:block;width:100%;height:100%;}
+	.sucai-companyname{height:40px;line-height:18px;font-size:18px;color:#ffffff;margin-top:25px}
+	.sucai-phone,.sucai-qq{height:34px;line-height:15px;font-size:15px;color:#ABACAF}
+	.erweima-box{margin-top:34px}
+	.erweima-box>div{float:left;width:100px}
+	.erweima-box>div:first-child{margin-right:30px}
+	.wechat-erwei div:first-child,.phonenet-erwei div:first-child{height:30px;line-height:14px;font-size:14px;color:#ABACAF}
+	.footer-bottom{height:100px;text-align:center;padding-top:27px;border-top:1px solid #42444B}
+	.footer-bottom p{line-height:26px;font-size:14px;color:#6C6E73}
+	.footer-bottom p span{margin-left:17px}
+	.footer-bottom p span.police-icon{display:inline-block;width:25px;height:20px;vertical-align:top}
+	.sucai_wechat,.sucai_web{width:100%;height:100px}
+	.sucai_wechat{background:url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=620579142,3051099267&fm=26&gp=0.jpg") no-repeat -250px -206px}
+	.sucai_web{background:url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=620579142,3051099267&fm=26&gp=0.jpg") no-repeat -360px -206px}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="./index.html">火星家族教育</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav"> 
+				<li><a href="./index.html">首页</a></li>
+			    <li><a href="./404.html">昆区</a></li>
+		    	<li><a href="https://www.baidu.com/?tn=62095104_43_oem_dg">百度</a></li>
+			    <li><a href="https://pages.tmall.com/wow/portal/act/jxtmall" class="right">天猫</a></li>	
+			</ul>
+		</div>
+	</div>
+</nav>
+<div>
+	<img src="./img/1.png" alt="" width="100%"/>
+</div>
+<div class="row">
+  <div class="side">
+      <h1>关于我们</h1>
+      <h3>我的照片:</h3>
+      <div><img src="./img/logo.png" alt="" width="400"></div>
+      <h4>创客火星家族旗下的火星家族机器人、创客火星编程是专注于4-17岁的青少年人工智能教育培训、考级赛事为一体的编程科技类教育学校，拥有开发完整的线上线下教学体验和软硬件结合的编程学习线上平台，引领中国青少年编程教学新模式，自主全新研发软、硬件编程教学体系，打造中国少儿AI顶尖人才培养基地火星，散发着光和热，是能量的释放.</h4>
+      <h3>更多内容</h3>
+      <h4>火星家族中的每一个火星人之间设有血缘关系，但却亲如亲人，他们有着一致的目标，相同的理想，一起披荆斩林，奋力前行，为实现梦想不断学习不断进步。</h4></br>
+      <img src="./img/2.jpg" alt="" width="100%">
+	  <img src="./img/3.jpg" alt="" width="100%">
+	  <img src="./img/4.jpg" alt="" width="100%">
+  </div>
+  <div class="main">
+      <h1>精彩瞬间</h1>
+      <h3>我们的快乐时光</h3>
+      <div>
+		  <img src="./img/5.jpg" alt="" width="25%">
+		  <img src="./img/6.jpg" alt="" width="25%">
+		  <img src="./img/7.jpg" alt="" width="25%">
+		  <img src="./img/8.jpg" alt="" width="25%">
+	  </div>
+      <p>创客火星家族成立于2016年9月，四年的时间里我们共让50000余位小朋友了解到了什么是机器人教育，智能机器人目前及未来在我们生活中扮演的角色.</p>
+      <br>
+      <h2>开营</h2>
+      <h5>我们的快乐时光</h5>
+      <img src="./img/9.jpg" alt="" width="350">
+	  <img src="./img/10.jpg" alt="" width="350">
+	  <img src="./img/11.jpg" alt="" width="350">
+	  <img src="./img/12.jpg" alt="" width="350">
+      <p>期间我们共主办了16次全国青少年机器人技术等级考试，学员通过率超过 99%。</p>
+      <p>目前我们共设迪卡侬旗舰店、一宫校区、昆区校区、东河校区、临河校区、固阳校区。</p>
+  </div>
+  <div class="main">
+      <h2>作品展示</h2>
+      <h5>我们的炫酷作品</h5>
+      <img src="./img/13.jpg" alt="" width="350">
+	  <img src="./img/14.jpg" alt="" width="200">
+	  <img src="./img/15.jpg" alt="" width="200">
+	  <img src="./img/16.jpg" alt="" width="360">
+	  <img src="./img/17.jpg" alt="" width="350">
+  </div>
+</div>
+
+</body>
+</html>
