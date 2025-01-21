@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAI 用量查询</title>
+  <link rel="icon" href="../assets/img/ShurongGroup/树融集团-徽章-透明.png" type="image/png">
+  <script>
+    const apiKey = "sk-9Mczo2yzjjmUlwYGANW7vU76y9rBjFi8s8VRloE3LgghcGJ7";
+
+    async function fetchOpenAIUsage() {
+      const now = new Date();
+      const startDate = new Date(now - 90 * 24 * 60 * 60 * 1000); // 最近90天
+      const endDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 当前时间的次日
+
+      const urls = {
+        subscription: 'https://chatapi.littlewheat.com/v1/dashboard/billing/subscription',
+        usage: `https://chatapi.littlewheat.com/v1/dashboard/billing/usage?start_date=${formatDate(startDate)}&end_date=${formatDate(endDate)}`
+      };
+
+      const headers = {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      };
+
+      try {
+        // 获取订阅信息
+        const subscriptionRes = await fetch(urls.subscription, { headers });
+        if (!subscriptionRes.ok) throw new Error("无法获取订阅信息");
+        const subscriptionData = await subscriptionRes.json();
+
+        const totalGranted = subscriptionData.hard_limit_usd;
+        const accessUntil = subscriptionData.access_until;
+
+        // 获取使用情况
+        const usageRes = await fetch(urls.usage, { headers });
+        if (!usageRes.ok) throw new Error("无法获取使用量信息");
+        const usageData = await usageRes.json();
+
+        const totalUsage = usageData.total_usage / 100;
+        const totalAvailable = totalGranted - totalUsage;
+
+        // 更新 UI
+        document.getElementById("total-granted").textContent = totalGranted.toFixed(2);
+        document.getElementById("total-used").textContent = totalUsage.toFixed(2);
+        document.getElementById("total-available").textContent = totalAvailable.toFixed(2);
+
+      } catch (error) {
+        alert(error.message || "发生未知错误，请稍后重试。");
+      }
+    }
+
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+  </script>
+</head>
+<body onload="fetchOpenAIUsage()" style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+<div style="max-width: 800px; margin: 50px auto; text-align: center;">
+  <h1 style="font-size: 24px; color: #333;">OpenAI 用量查询</h1>
+  <p style="color: #666;">以下为您账户的用量信息：</p>
+  <div style="display: flex; justify-content: space-between; margin-top: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+    <div style="flex: 1; text-align: center;">
+      <p style="font-size: 18px; font-weight: bold;" id="total-granted">加载中...</p>
+      <p style="color: #888;">总额度 (美元)</p>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <p style="font-size: 18px; font-weight: bold;" id="total-used">加载中...</p>
+      <p style="color: #888;">已使用额度</p>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <p style="font-size: 18px; font-weight: bold;" id="total-available">加载中...</p>
+      <p style="color: #888;">剩余额度 (美元)</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
