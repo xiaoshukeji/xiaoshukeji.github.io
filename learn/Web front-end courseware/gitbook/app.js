@@ -24765,7 +24765,7 @@ state.update = function(dom) {
     // Absolute url to the root of the book (inner book)
     state.root = url.resolve(
         location.protocol+'//'+location.host,
-        path.dirname(path.resolve(location.pathname.replace(/\/$/, '/index.html'), state.basePath))
+        path.dirname(path.resolve(location.pathname.replace(/\/$/, '/index-home.html'), state.basePath))
     ).replace(/\/?$/, '/');
 
     // Absolute root to the language (for multilingual book)
