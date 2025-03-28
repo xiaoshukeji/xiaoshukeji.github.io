@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>树融科技集团有限公司</title>
-  <link rel="icon" href="../assets/img/ShurongGroup/树融集团-徽章-透明.png" type="image/png">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>树融科技集团有限公司-网络检查</title>
+    <!-- Bootstrap CSS -->
+    <link href="http://39.104.27.195:8096/assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .status-button {
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-<iframe src="http://39.104.27.195" allowfullscreen></iframe>
+<div class="container text-center mt-5">
+    <h1>树融科技集团有限公司-网络检查</h1>
+    <span>检测到您的网络不稳定！</span>
+    <div id="button-container" class="d-flex flex-column align-items-center mt-4">
+        <button id="url1" class="btn btn-secondary status-button" disabled>检查中...</button>
+        <button id="url2" class="btn btn-secondary status-button" disabled>检查中...</button>
+    </div></br>
+    <span>两个站点均已同步！(2025/3/28)</span>
+</div>
+
+<!-- JavaScript -->
+<script>
+    const urls = [
+        { id: 'url1', url: 'http://39.104.27.195/', text: '高速访问' },
+        { id: 'url2', url: './index-home.html', text: '常规访问' }
+    ];
+
+    function checkURLStatus() {
+        urls.forEach(({ id, url, text }) => {
+            fetch(url, { method: 'GET' }) // Changed to GET to improve compatibility
+                .then(response => {
+                    const statusClass = response.ok ? 'btn-success' : 'btn-danger';
+                    updateButton(id, text, url, statusClass);
+                })
+                .catch(() => {
+                    updateButton(id, text, url, 'btn-danger');
+                });
+        });
+    }
+
+    function updateButton(id, text, url, statusClass) {
+        const button = document.getElementById(id);
+        button.textContent = text;
+        button.className = `btn ${statusClass} status-button`;
+        button.disabled = false;
+        button.onclick = () => window.location.href = url;
+    }
+
+    document.addEventListener('DOMContentLoaded', checkURLStatus);
+</script>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="http://39.104.27.195:8096/assets/JS/bootstrap.bundle.min.js"></script>
 </body>
 </html>
