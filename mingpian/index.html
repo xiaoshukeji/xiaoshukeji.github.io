@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>王瀚铎的个人名片</title>
+
+  <!-- 主要 Favicon -->
+  <link rel="icon" href="path_to_icon/favicon.ico" type="image/x-icon" />
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="path_to_icon/apple-icon-180x180.png">
+
+  <!-- Android Chrome 图标 -->
+  <link rel="icon" sizes="192x192" href="path_to_icon/android-icon-192x192.png">
+
+  <!-- 高分辨率图标 -->
+  <link rel="icon" sizes="512x512" href="path_to_icon/favicon-512x512.png">
+
+  <!-- Web Manifest -->
+  <link rel="manifest" href="path_to_icon/manifest.json">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- iOS 优化 -->
+  <link rel="apple-touch-icon" href="./image/icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+<!-- 名片内容 -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12" style="width: 70%; max-width: 600px;">
+      <div class="bg-white shadow-xl rounded-2xl p-6 text-center relative w-full">
+        <!-- 头像 -->
+        <img src="./image/header.png" alt="头像" class="mx-auto rounded-full mb-4 w-24 h-24">
+
+        <!-- 名字和职位 -->
+        <h2 class="text-xl font-semibold text-gray-800">王瀚铎</h2>
+        <p class="text-gray-500 mb-3">树融科技工作室创始人</p>
+
+        <!-- 性别和年龄 -->
+        <div class="mb-3">
+          <div class="flex justify-center items-center space-x-4 border p-2 rounded-lg bg-gray-50">
+            <!-- 性别 -->
+            <p class="text-sm text-gray-700 flex items-center">
+              <strong>性别：</strong>
+              男
+              <span class="text-blue-500 ml-2">
+                  <i class="bi bi-gender-male"></i>
+                </span>
+            </p>
+            <!-- 年龄 -->
+            <p class="text-sm text-gray-700 flex items-center">
+              <strong>年龄：</strong>
+              <span id="age" class="text-black ml-2"></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <p class="text-sm text-gray-700">
+            <strong>电话：</strong>
+            <a href="tel:+8613191486995" class="text-black">+86 131-9148-6995</a>
+          </p>
+          <p class="text-sm text-gray-700">
+            <strong>邮箱：</strong>
+            <a href="mailto:wanghanduo2023@outlook.com" class="text-black">wanghanduo2023@outlook.com</a>
+          </p>
+        </div>
+
+        <!-- 人生成就 -->
+        <div class="mb-4 mt-6 text-left">
+          <div class="p-4 space-y-6 border p-2 rounded-lg bg-gray-50">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">人生成就</h3>
+            <!-- 成就卡片 -->
+            <div class="bg-white p-3 rounded-lg shadow-sm border">
+              <p class="text-sm font-medium text-gray-700">2022年</p>
+              <p class="text-sm text-gray-600">获得中国电子学会机器人技术等级考试<span class="text-black font-bold">四级证书</span>></p>
+            </div>
+
+            <div class="bg-white p-3 rounded-lg shadow-sm border">
+              <p class="text-sm font-medium text-gray-700">2022年</p>
+              <p class="text-sm text-gray-600">创立<span class="text-black font-bold">星瀚科技</span>>(树融科技前身)</p>
+            </div>
+
+            <div class="bg-white p-3 rounded-lg shadow-sm border">
+              <p class="text-sm font-medium text-gray-700">2024年</p>
+              <p class="text-sm text-gray-600">担任青山区第一中学(原北重一中)校庆文艺汇演<span class="text-black font-bold">视频导演、视频监制、视频剪辑制作师</span></p>
+            </div>
+
+            <div class="bg-white p-3 rounded-lg shadow-sm border">
+              <p class="text-sm font-medium text-gray-700">2025年</p>
+              <p class="text-sm text-gray-600">担任青山区第一中学(原北重一中)2022届百日誓师<span class="text-black font-bold">视频总设计、剪辑师</span>></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center space-x-4 mt-4">
+          <button onclick="showModal('wechat')" class="text-green-500 hover:text-green-700" aria-label="微信">
+            <i class="bi bi-wechat fs-4"></i>
+          </button>
+          <button onclick="showModal('tiktok')" class="text-black hover:text-red-600" aria-label="抖音">
+            <i class="bi bi-tiktok fs-4"></i>
+          </button>
+          <button onclick="window.location.href='https://github.com/xiaoshukeji'" class="text-gray-800 hover:text-black" aria-label="GitHub">
+            <i class="bi bi-github fs-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 二维码弹窗 -->
+<div id="qrModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden transition-opacity duration-300 ease-out">
+  <div id="qrContent" class="bg-white rounded-xl p-6 w-80 text-center relative shadow-lg transform transition-all duration-300 ease-out scale-95 opacity-0 translate-y-4">
+    <button onclick="hideModal()" class="absolute -top-3 -right-3 bg-white border border-gray-300 rounded-full w-8 h-8 flex items-center justify-center text-gray-600 hover:text-red-500 hover:border-red-300 transition duration-300 shadow-md" aria-label="关闭二维码窗口">
+      &times;
+    </button>
+    <p class="text-gray-700 mb-3 text-sm font-medium" id="modalTitle">二维码</p>
+    <img id="qrImage" src="" alt="二维码" class="mx-auto w-40 h-40 border rounded" />
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- 弹窗控制脚本 -->
+<script>
+  // 计算年龄的函数
+  function calculateAge() {
+    const birthYear = 2009;
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - birthYear;
+    document.getElementById('age').textContent = age;
+  }
+
+  // 页面加载时计算年龄
+  window.onload = function() {
+    calculateAge();
+  };
+
+  function showModal(platform) {
+    const modal = document.getElementById('qrModal');
+    const content = document.getElementById('qrContent');
+    const img = document.getElementById('qrImage');
+    const title = document.getElementById('modalTitle');
+
+    const map = {
+      wechat: { title: '微信二维码', src: './image/wechat-qr.png' },
+      tiktok: { title: '抖音二维码', src: './image/tiktok-qr.png' },
+    };
+
+    if (map[platform]) {
+      img.src = map[platform].src;
+      title.textContent = map[platform].title;
+    }
+
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      content.classList.remove('scale-95', 'opacity-0', 'translate-y-4');
+      content.classList.add('scale-100', 'opacity-100', 'translate-y-0');
+    }, 10);
+  }
+
+  function hideModal() {
+    const modal = document.getElementById('qrModal');
+    const content = document.getElementById('qrContent');
+
+    content.classList.remove('scale-100', 'opacity-100', 'translate-y-0');
+    content.classList.add('scale-95', 'opacity-0', 'translate-y-4');
+
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+
+  // 点击遮罩关闭
+  document.getElementById('qrModal').addEventListener('click', function (e) {
+    if (e.target.id === 'qrModal') hideModal();
+  });
+
+  // Esc 键关闭
+  document.addEventListener('keydown', function (e) {
+    const modal = document.getElementById('qrModal');
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      hideModal();
+    }
+  });
+</script>
+
+</body>
+</html>
