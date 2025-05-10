@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小树天气</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 页面切换相关样式 */
+        .page {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            background-color: white;
+            z-index: 100;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        /* App容器样式修改 */
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            height: 100vh;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 隐藏原型标题和描述 */
+        .prototype-container, .prototype-title, .prototype-description {
+            display: none;
+        }
+        
+        /* 调整APP页面大小 */
+        .weather-app {
+            height: 100vh;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        
+        /* 加载动画 */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(52, 152, 219, 0.3);
+            border-radius: 50%;
+            border-top-color: #3498db;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* 下拉刷新样式 */
+        .pull-to-refresh {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            background-color: #f5f7fa;
+            z-index: 5;
+        }
+        
+        .pull-to-refresh.active {
+            transform: translateY(0);
+        }
+        
+        .pull-to-refresh .refresh-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            border-radius: 50%;
+            border-top-color: #3498db;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        .pull-to-refresh .refresh-text {
+            color: #3498db;
+            font-size: 14px;
+        }
+
+        /* 天气刷新按钮样式 */
+        .weather-refresh {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .weather-refresh i {
+            margin-right: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .weather-refresh:hover i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loader" id="app-loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- 下拉刷新指示器 -->
+        <div class="pull-to-refresh" id="pull-refresh">
+            <div class="refresh-spinner"></div>
+            <div class="refresh-text">正在更新天气数据...</div>
+        </div>
+
+        <!-- 主页 -->
+        <div class="page active" id="home-page">
+            <div class="weather-app">
+                <div class="app-header">
+                    <h2 class="app-title">小树天气</h2>
+                </div>
+                <div class="app-body home-page">
+                    <div class="location-bar">
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="current-location">北京市</span>
+                        </div>
+                        <div class="weather-refresh" id="refresh-button">
+                            <i class="fas fa-sync-alt"></i>
+                            <span id="update-time">更新于 14:30</span>
+                        </div>
+                    </div>
+                    
+                    <div class="current-weather">
+                        <i class="fas fa-sun weather-icon" id="current-weather-icon"></i>
+                        <h1 class="temperature" id="current-temperature">23°</h1>
+                        <div class="weather-desc" id="current-weather-desc">晴</div>
+                        <div class="weather-detail">
+                            <div class="detail-item">
+                                <div class="detail-label">湿度</div>
+                                <div class="detail-value" id="current-humidity">45%</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">风向</div>
+                                <div class="detail-value" id="current-wind-direction">东北风</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">风速</div>
+                                <div class="detail-value" id="current-wind-speed">3级</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-forecast">
+                        <h3 class="forecast-title">24小时预报</h3>
+                        <div class="hourly-forecast" id="hourly-forecast-container">
+                            <!-- 动态生成小时预报 -->
+                        </div>
+                        
+                        <div class="daily-forecast">
+                            <div class="daily-item" id="forecast-today">
+                                <div class="daily-date">今天</div>
+                                <div class="daily-weather">
+                                    <i class="fas fa-sun daily-icon"></i>
+                                    <span>晴</span>
+                                </div>
+                                <div class="daily-temp">
+                                    <span class="temp-high">25°</span>
+                                    <span class="temp-low">15°</span>
+                                </div>
+                            </div>
+                            <div class="daily-item" id="forecast-tomorrow">
+                                <div class="daily-date">明天</div>
+                                <div class="daily-weather">
+                                    <i class="fas fa-cloud-sun daily-icon"></i>
+                                    <span>多云</span>
+                                </div>
+                                <div class="daily-temp">
+                                    <span class="temp-high">26°</span>
+                                    <span class="temp-low">16°</span>
+                                </div>
+                            </div>
+                            <div class="daily-item" id="forecast-day-after">
+                                <div class="daily-date">后天</div>
+                                <div class="daily-weather">
+                                    <i class="fas fa-cloud daily-icon"></i>
+                                    <span>阴</span>
+                                </div>
+                                <div class="daily-temp">
+                                    <span class="temp-high">24°</span>
+                                    <span class="temp-low">14°</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <a href="#" class="nav-item active" data-page="home-page">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-label">首页</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="forecast-page">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            <span class="nav-label">预报</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="air-page">
+                            <i class="fas fa-wind nav-icon"></i>
+                            <span class="nav-label">空气</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="life-page">
+                            <i class="fas fa-umbrella nav-icon"></i>
+                            <span class="nav-label">生活</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="more-menu">
+                            <i class="fas fa-ellipsis-h nav-icon"></i>
+                            <span class="nav-label">更多</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 预报页面 -->
+        <div class="page" id="forecast-page">
+            <div class="back-button" data-target="home-page">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="weather-app">
+                <div class="app-header">
+                    <h2 class="app-title">天气预报</h2>
+                </div>
+                <div class="app-body forecast-page">
+                    <div class="forecast-tabs">
+                        <div class="forecast-tab active">24小时</div>
+                        <div class="forecast-tab">7天</div>
+                    </div>
+                    
+                    <div class="forecast-content">
+                        <div class="forecast-section hour24-forecast">
+                            <div class="hour24-container" id="hour24-container">
+                                <!-- 动态生成24小时预报 -->
+                            </div>
+                        </div>
+                        
+                        <div class="forecast-section daily7-forecast" style="display: none;">
+                            <div id="daily7-container">
+                                <!-- 动态生成7天预报 -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <a href="#" class="nav-item" data-page="home-page">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-label">首页</span>
+                        </a>
+                        <a href="#" class="nav-item active" data-page="forecast-page">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            <span class="nav-label">预报</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="air-page">
+                            <i class="fas fa-wind nav-icon"></i>
+                            <span class="nav-label">空气</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="life-page">
+                            <i class="fas fa-umbrella nav-icon"></i>
+                            <span class="nav-label">生活</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="more-menu">
+                            <i class="fas fa-ellipsis-h nav-icon"></i>
+                            <span class="nav-label">更多</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 空气质量页面 -->
+        <div class="page" id="air-page">
+            <div class="back-button" data-target="home-page">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="weather-app">
+                <div class="app-header">
+                    <h2 class="app-title">空气质量</h2>
+                </div>
+                <div class="app-body air-page">
+                    <div class="air-quality-card">
+                        <h3 class="air-quality-title">北京市 - 空气质量指数</h3>
+                        <div class="air-quality-index">
+                            <div class="aqi-value" id="aqi-value">75</div>
+                            <div class="aqi-category" id="aqi-category">良</div>
+                            <p class="aqi-desc" id="aqi-desc">空气质量可接受，但对少数异常敏感人群可能存在轻度影响。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="air-details">
+                        <h3 class="air-details-title">污染物指数</h3>
+                        <div class="air-pollutants">
+                            <div class="air-pollutant-item">
+                                <div class="pollutant-name">PM2.5</div>
+                                <div class="pollutant-value" id="pm25-value">35</div>
+                            </div>
+                            <div class="air-pollutant-item">
+                                <div class="pollutant-name">PM10</div>
+                                <div class="pollutant-value" id="pm10-value">68</div>
+                            </div>
+                            <div class="air-pollutant-item">
+                                <div class="pollutant-name">NO2</div>
+                                <div class="pollutant-value" id="no2-value">25</div>
+                            </div>
+                            <div class="air-pollutant-item">
+                                <div class="pollutant-name">SO2</div>
+                                <div class="pollutant-value" id="so2-value">8</div>
+                            </div>
+                            <div class="air-pollutant-item">
+                                <div class="pollutant-name">CO</div>
+                                <div class="pollutant-value" id="co-value">0.8</div>
+                            </div>
+                            <div class="air-pollutant-item">
+                                <div class="pollutant-name">O3</div>
+                                <div class="pollutant-value" id="o3-value">96</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="air-advice">
+                        <div class="air-advice-title">
+                            <i class="fas fa-info-circle"></i>
+                            <span>空气质量建议</span>
+                        </div>
+                        <div class="air-advice-content">
+                            <p>敏感人群需注意防护，建议适当减少户外活动，出行佩戴口罩。一般人群可正常活动。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="air-aqi-scale">
+                        <div class="air-aqi-scale-title">空气质量指数等级</div>
+                        <div class="aqi-scale-bar">
+                            <div class="aqi-scale-marker" style="left: 30%;"></div>
+                        </div>
+                        <div class="aqi-scale-labels">
+                            <span>优</span>
+                            <span>良</span>
+                            <span>轻度污染</span>
+                            <span>中度污染</span>
+                            <span>重度污染</span>
+                            <span>严重污染</span>
+                        </div>
+                    </div>
+                    
+                    <div class="aqi-hour-trend">
+                        <div class="aqi-hour-title">今日空气质量趋势</div>
+                        <div class="aqi-hour-chart">
+                            <div class="aqi-hour-bar" style="height: 40%; margin-right: 15px;">
+                                <div class="aqi-hour-time">8:00</div>
+                            </div>
+                            <div class="aqi-hour-bar" style="height: 45%; margin-right: 15px;">
+                                <div class="aqi-hour-time">10:00</div>
+                            </div>
+                            <div class="aqi-hour-bar" style="height: 50%; margin-right: 15px;">
+                                <div class="aqi-hour-time">12:00</div>
+                            </div>
+                            <div class="aqi-hour-bar" style="height: 55%; margin-right: 15px;">
+                                <div class="aqi-hour-time">14:00</div>
+                            </div>
+                            <div class="aqi-hour-bar" style="height: 60%; margin-right: 15px;">
+                                <div class="aqi-hour-time">16:00</div>
+                            </div>
+                            <div class="aqi-hour-bar" style="height: 55%; margin-right: 15px;">
+                                <div class="aqi-hour-time">18:00</div>
+                            </div>
+                            <div class="aqi-hour-bar" style="height: 45%; margin-right: 15px;">
+                                <div class="aqi-hour-time">20:00</div>
+                            </div>
+                            <div class="aqi-hour-bar" style="height: 35%;">
+                                <div class="aqi-hour-time">22:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <a href="#" class="nav-item" data-page="home-page">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-label">首页</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="forecast-page">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            <span class="nav-label">预报</span>
+                        </a>
+                        <a href="#" class="nav-item active" data-page="air-page">
+                            <i class="fas fa-wind nav-icon"></i>
+                            <span class="nav-label">空气</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="life-page">
+                            <i class="fas fa-umbrella nav-icon"></i>
+                            <span class="nav-label">生活</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="more-menu">
+                            <i class="fas fa-ellipsis-h nav-icon"></i>
+                            <span class="nav-label">更多</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 生活指数页面 -->
+        <div class="page" id="life-page">
+            <div class="back-button" data-target="home-page">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="weather-app">
+                <div class="app-header">
+                    <h2 class="app-title">生活指数</h2>
+                </div>
+                <div class="app-body life-page">
+                    <div class="life-header">
+                        <div class="life-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>北京市</span>
+                        </div>
+                        <div class="life-date">
+                            <span>5月10日 星期三</span>
+                        </div>
+                    </div>
+                    
+                    <div class="life-index-grid">
+                        <div class="life-index-card">
+                            <div class="life-index-header">
+                                <div class="life-index-icon">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                                <div>
+                                    <div class="life-index-title">穿衣指数</div>
+                                    <div class="life-index-level">较舒适</div>
+                                </div>
+                            </div>
+                            <div class="life-index-desc">
+                                建议穿薄长袖类衣物，如T恤衫、衬衫，长裙等，年老体弱者应适当选择长袖衣物。
+                            </div>
+                        </div>
+                        
+                        <div class="life-index-card">
+                            <div class="life-index-header">
+                                <div class="life-index-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div>
+                                    <div class="life-index-title">运动指数</div>
+                                    <div class="life-index-level">适宜</div>
+                                </div>
+                            </div>
+                            <div class="life-index-desc">
+                                天气较好，户外运动请注意防晒。
+                            </div>
+                        </div>
+                        
+                        <div class="life-index-card">
+                            <div class="life-index-header">
+                                <div class="life-index-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div>
+                                    <div class="life-index-title">洗车指数</div>
+                                    <div class="life-index-level">适宜</div>
+                                </div>
+                            </div>
+                            <div class="life-index-desc">
+                                适宜洗车，未来持续两天无雨天气较好，适合擦洗汽车。
+                            </div>
+                        </div>
+                        
+                        <div class="life-index-card">
+                            <div class="life-index-header">
+                                <div class="life-index-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div>
+                                    <div class="life-index-title">紫外线指数</div>
+                                    <div class="life-index-level">强</div>
+                                </div>
+                            </div>
+                            <div class="life-index-desc">
+                                紫外线辐射强，建议涂擦SPF20以上、PA++的防晒霜。
+                            </div>
+                        </div>
+                        
+                        <div class="life-index-card">
+                            <div class="life-index-header">
+                                <div class="life-index-icon">
+                                    <i class="fas fa-temperature-low"></i>
+                                </div>
+                                <div>
+                                    <div class="life-index-title">感冒指数</div>
+                                    <div class="life-index-level">低风险</div>
+                                </div>
+                            </div>
+                            <div class="life-index-desc">
+                                感冒机率较低，避免长期处于空调屋中。
+                            </div>
+                        </div>
+                        
+                        <div class="life-index-card">
+                            <div class="life-index-header">
+                                <div class="life-index-icon">
+                                    <i class="fas fa-couch"></i>
+                                </div>
+                                <div>
+                                    <div class="life-index-title">舒适度指数</div>
+                                    <div class="life-index-level">舒适</div>
+                                </div>
+                            </div>
+                            <div class="life-index-desc">
+                                白天温度适宜，风力不大，相信您在这样的天气里，应会感到比较清爽和舒适。
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="life-travel-section">
+                        <div class="life-travel-header">旅行建议</div>
+                        <div class="life-travel-card">
+                            <div class="life-travel-title">
+                                <i class="fas fa-suitcase"></i>
+                                <span>本地出行</span>
+                            </div>
+                            <div class="life-travel-content">
+                                <p>今天天气晴朗，非常适合本地出行。建议可以选择户外公园、博物馆等地点，但注意防晒，随身携带防晒霜和水。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="life-search-box">
+                        <div class="life-search-title">查询其他城市</div>
+                        <div class="life-search-input">
+                            <i class="fas fa-search"></i>
+                            <div class="life-search-text">搜索城市...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <a href="#" class="nav-item" data-page="home-page">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-label">首页</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="forecast-page">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            <span class="nav-label">预报</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="air-page">
+                            <i class="fas fa-wind nav-icon"></i>
+                            <span class="nav-label">空气</span>
+                        </a>
+                        <a href="#" class="nav-item active" data-page="life-page">
+                            <i class="fas fa-umbrella nav-icon"></i>
+                            <span class="nav-label">生活</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="more-menu">
+                            <i class="fas fa-ellipsis-h nav-icon"></i>
+                            <span class="nav-label">更多</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 更多页面菜单 -->
+        <div class="page" id="more-menu">
+            <div class="back-button" data-target="home-page">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="weather-app">
+                <div class="app-header">
+                    <h2 class="app-title">更多功能</h2>
+                </div>
+                <div class="app-body more-page">
+                    <div class="more-list">
+                        <div class="more-item" data-page="alert-page">
+                            <div class="more-item-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="more-item-text">
+                                <div class="more-item-title">天气预警</div>
+                                <div class="more-item-desc">查看当前和历史预警信息</div>
+                            </div>
+                            <i class="fas fa-chevron-right more-item-arrow"></i>
+                        </div>
+                        
+                        <div class="more-item" data-page="location-page">
+                            <div class="more-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="more-item-text">
+                                <div class="more-item-title">城市管理</div>
+                                <div class="more-item-desc">添加、删除和查找城市</div>
+                            </div>
+                            <i class="fas fa-chevron-right more-item-arrow"></i>
+                        </div>
+                        
+                        <div class="more-item" data-page="settings-page">
+                            <div class="more-item-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="more-item-text">
+                                <div class="more-item-title">设置</div>
+                                <div class="more-item-desc">通知、单位和显示设置</div>
+                            </div>
+                            <i class="fas fa-chevron-right more-item-arrow"></i>
+                        </div>
+                        
+                        <div class="more-item">
+                            <div class="more-item-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="more-item-text">
+                                <div class="more-item-title">深色模式</div>
+                                <div class="more-item-desc">切换应用显示模式</div>
+                            </div>
+                            <div class="more-item-toggle">
+                                <div class="toggle-container" id="dark-mode-toggle">
+                                    <div class="toggle-slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="more-item">
+                            <div class="more-item-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="more-item-text">
+                                <div class="more-item-title">分享天气</div>
+                                <div class="more-item-desc">分享当前天气信息</div>
+                            </div>
+                            <i class="fas fa-chevron-right more-item-arrow"></i>
+                        </div>
+                        
+                        <div class="more-item" data-page="about-page">
+                            <div class="more-item-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="more-item-text">
+                                <div class="more-item-title">关于</div>
+                                <div class="more-item-desc">软件版本和信息</div>
+                            </div>
+                            <i class="fas fa-chevron-right more-item-arrow"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <a href="#" class="nav-item" data-page="home-page">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-label">首页</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="forecast-page">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            <span class="nav-label">预报</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="air-page">
+                            <i class="fas fa-wind nav-icon"></i>
+                            <span class="nav-label">空气</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="life-page">
+                            <i class="fas fa-umbrella nav-icon"></i>
+                            <span class="nav-label">生活</span>
+                        </a>
+                        <a href="#" class="nav-item active" data-page="more-menu">
+                            <i class="fas fa-ellipsis-h nav-icon"></i>
+                            <span class="nav-label">更多</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 天气预警页面 -->
+        <div class="page" id="alert-page">
+            <div class="back-button" data-target="more-menu">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="weather-app">
+                <div class="app-header">
+                    <h2 class="app-title">天气预警</h2>
+                </div>
+                <div class="app-body alert-page">
+                    <div class="alert-header">
+                        <div class="alert-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>北京市</span>
+                        </div>
+                        <div class="alert-date">
+                            <span>5月10日 星期三</span>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-tab-bar">
+                        <div class="alert-tab active">当前预警</div>
+                        <div class="alert-tab">历史预警</div>
+                    </div>
+                    
+                    <div class="alert-content">
+                        <!-- 无预警状态 -->
+                        <div class="alert-empty">
+                            <i class="fas fa-check-circle alert-empty-icon"></i>
+                            <div class="alert-empty-title">当前无预警信息</div>
+                            <div class="alert-empty-desc">您所在地区暂无活动预警信息，请保持关注</div>
+                        </div>
+                        
+                        <!-- 预警示例（默认隐藏） -->
+                        <div class="alert-list" style="display: none;">
+                            <div class="alert-item">
+                                <div class="alert-item-header">
+                                    <div class="alert-item-type">
+                                        <i class="fas fa-bolt alert-item-icon"></i>
+                                        <div class="alert-item-title">雷电预警</div>
+                                    </div>
+                                    <div class="alert-item-level">橙色</div>
+                                </div>
+                                <div class="alert-item-content">
+                                    <div class="alert-item-time">发布时间：2023-05-10 08:30</div>
+                                    <div class="alert-item-desc">
+                                        北京市气象台2023年5月10日08时30分发布雷电橙色预警信号：预计未来6小时内，本市大部分地区将出现雷电活动，局地伴有短时强降水、冰雹和7-9级雷暴大风，请注意防范。
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert-item">
+                                <div class="alert-item-header">
+                                    <div class="alert-item-type">
+                                        <i class="fas fa-cloud-rain alert-item-icon"></i>
+                                        <div class="alert-item-title">暴雨预警</div>
+                                    </div>
+                                    <div class="alert-item-level">黄色</div>
+                                </div>
+                                <div class="alert-item-content">
+                                    <div class="alert-item-time">发布时间：2023-05-10 07:45</div>
+                                    <div class="alert-item-desc">
+                                        北京市气象台2023年5月10日07时45分发布暴雨黄色预警信号：预计未来12小时内，本市部分地区将出现小时雨量30-50毫米的强降水，请注意防范。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-info-section">
+                        <div class="alert-info-header">预警信息</div>
+                        <div class="alert-info-card">
+                            <div class="alert-info-title">
+                                <i class="fas fa-info-circle"></i>
+                                <span>什么是气象预警？</span>
+                            </div>
+                            <div class="alert-info-content">
+                                <p>气象预警是气象部门对可能发生的或即将发生的对人身安全和财产构成威胁的气象灾害所发布的预警信息。</p>
+                                <p>预警级别从低到高分为：蓝色、黄色、橙色、红色四个等级。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-service-button">
+                        <i class="fas fa-bell"></i>
+                        <span>开启预警通知服务</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 位置搜索页面 -->
+        <div class="page" id="location-page">
+            <div class="back-button" data-target="more-menu">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="weather-app">
+                <div class="app-header">
+                    <h2 class="app-title">城市管理</h2>
+                </div>
+                <div class="app-body location-page">
+                    <div class="location-search-container">
+                        <div class="location-search-bar">
+                            <i class="fas fa-search location-search-icon"></i>
+                            <input type="text" class="location-search-input" placeholder="搜索城市...">
+                            <i class="fas fa-times location-search-clear"></i>
+                        </div>
+                        
+                        <div class="location-search-results">
+                            <div class="location-result-item">
+                                <i class="fas fa-map-marker-alt location-result-icon"></i>
+                                <div class="location-result-name">北京市</div>
+                                <div class="location-result-detail">中国</div>
+                            </div>
+                            <div class="location-result-item">
+                                <i class="fas fa-map-marker-alt location-result-icon"></i>
+                                <div class="location-result-name">北京市海淀区</div>
+                                <div class="location-result-detail">中国</div>
+                            </div>
+                            <div class="location-result-item">
+                                <i class="fas fa-map-marker-alt location-result-icon"></i>
+                                <div class="location-result-name">北京市朝阳区</div>
+                                <div class="location-result-detail">中国</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-title">当前位置</div>
+                    <div class="location-current">
+                        <div class="location-current-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-current-info">
+                            <div class="location-current-name">北京市</div>
+                            <div class="location-current-desc">当前位置 · 已开启自动定位</div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-title">我的城市</div>
+                    <div class="location-list">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt location-item-icon"></i>
+                            <div class="location-item-name">上海市</div>
+                            <div class="location-item-temp">26°</div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt location-item-icon"></i>
+                            <div class="location-item-name">广州市</div>
+                            <div class="location-item-temp">30°</div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt location-item-icon"></i>
+                            <div class="location-item-name">深圳市</div>
+                            <div class="location-item-temp">31°</div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-title">热门城市</div>
+                    <div class="location-hot-cities">
+                        <div class="location-hot-city">北京</div>
+                        <div class="location-hot-city">上海</div>
+                        <div class="location-hot-city">广州</div>
+                        <div class="location-hot-city">深圳</div>
+                        <div class="location-hot-city">杭州</div>
+                        <div class="location-hot-city">南京</div>
+                        <div class="location-hot-city">武汉</div>
+                        <div class="location-hot-city">成都</div>
+                        <div class="location-hot-city">重庆</div>
+                        <div class="location-hot-city">西安</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    
+    <!-- 关于页面 -->
+    <div class="page" id="about-page">
+        <div class="back-button" data-target="more-menu">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="weather-app">
+            <div class="app-header">
+                <h2 class="app-title">关于小树天气</h2>
+            </div>
+            <div class="app-body about-page">
+                <div class="about-logo">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h2>小树天气</h2>
+                </div>
+                
+                <div class="about-version">
+                    <div class="version-label">版本</div>
+                    <div class="version-value">1.2.0</div>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-card-title">
+                        <i class="fas fa-info-circle"></i>
+                        <span>产品信息</span>
+                    </div>
+                    <div class="about-card-content">
+                        <p>小树天气是一款精美的天气预报应用，提供实时天气、预报、空气质量、生活指数和天气预警等服务。</p>
+                        <p>数据由和风天气提供。</p>
+                    </div>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-card-title">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>隐私政策</span>
+                    </div>
+                    <div class="about-card-content">
+                        <p>我们十分重视您的隐私保护。小树天气会收集您的位置信息，仅用于提供天气服务。您可以随时在设置中关闭位置权限。</p>
+                    </div>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-card-title">
+                        <i class="fas fa-headset"></i>
+                        <span>联系我们</span>
+                    </div>
+                    <div class="about-card-content">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@xiaoshuweather.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>www.xiaoshuweather.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-footer">
+                    <p>© 2025 小树天气团队</p>
+                    <p>保留所有权利</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 设置页面 -->
+    <div class="page" id="settings-page">
+        <div class="back-button" data-target="more-menu">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="weather-app">
+            <div class="app-header">
+                <h2 class="app-title">设置</h2>
+            </div>
+            <div class="app-body settings-page">
+                <div class="settings-section">
+                    <div class="settings-section-title">常规设置</div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">自动定位</div>
+                        <div class="settings-toggle">
+                            <div class="toggle-container active">
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">启动时自动更新</div>
+                        <div class="settings-toggle">
+                            <div class="toggle-container active">
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">后台刷新</div>
+                        <div class="settings-toggle">
+                            <div class="toggle-container">
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <div class="settings-section-title">显示设置</div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">深色模式</div>
+                        <div class="settings-toggle">
+                            <div class="toggle-container" id="dark-mode-toggle">
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">温度单位</div>
+                        <div class="settings-select">
+                            <select id="temp-unit">
+                                <option value="c" selected>摄氏度 (°C)</option>
+                                <option value="f">华氏度 (°F)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">风速单位</div>
+                        <div class="settings-select">
+                            <select id="wind-unit">
+                                <option value="kmh" selected>公里/小时 (km/h)</option>
+                                <option value="ms">米/秒 (m/s)</option>
+                                <option value="mph">英里/小时 (mph)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <div class="settings-section-title">通知设置</div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">天气预警通知</div>
+                        <div class="settings-toggle">
+                            <div class="toggle-container active">
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-item">
+                        <div class="settings-item-title">每日天气推送</div>
+                        <div class="settings-toggle">
+                            <div class="toggle-container">
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <div class="settings-section-title">数据与隐私</div>
+                    
+                    <div class="settings-item button-item">
+                        <div class="settings-button">清除缓存数据</div>
+                    </div>
+                    
+                    <div class="settings-item button-item">
+                        <div class="settings-button">重置所有设置</div>
+                    </div>
+                </div>
+                
+                <div class="settings-version">
+                    <p>小树天气 v1.2.0</p>
+                    <p>API: 和风天气 v7</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
