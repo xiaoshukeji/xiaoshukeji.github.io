@@ -1,256 +1,971 @@
 <!DOCTYPE html>
-<html lang="ZH_cn">
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="description" content="树融创新 - 科技智慧生活掌控者">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/svg+xml" href="./resource/img/favicon.png">
+		<meta name="generator" content="Astro v4.16.18"><!-- SEO Meta Tags -->
+		<meta property="og:title" content="树融创新 - 科技智慧生活掌控者">
+		<meta property="og:description" content="树融创新 - 科技智慧生活掌控者">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="./resource/img/overview-full.png">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="树融创新 - 科技智慧生活掌控者">
+		<meta name="twitter:description" content="树融创新 - 科技智慧生活掌控者"><!-- Keywords -->
+		<meta name="keywords" content="树融创新,树融文化,创新软件编程技术,项目个性化定制,小树天气,小树AI-GPT,小树音乐,XS-Bootstap,树科学,HMCL启动器">
+		<title>树融创新 - 科技智慧生活掌控者</title><!-- Preload critical fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="树融科技集团有限公司">
-    <meta name="author" content="Shurong">
-    <!-- Bing look -->
-    <meta name="msvalidate.01" content="3DB22C1E9648DC73D7E3AD64E114386D" />
-    <title>树融科技集团有限公司-404</title>
-    <!-- Preloader -->
-    <style>
-        @keyframes hidePreloader {
-            0% {
-                width: 100%;
-                height: 100%;
-            }
+		<style>
+			.text-1panel {
+				color: var(--color-1panel);
+			}
+			.bg-1panel {
+				background-color: var(--color-1panel);
+			}
+			.text-1panel-gradient {
+				background: linear-gradient(to right, var(--color-1panel), #4f46e5);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+			/* 添加动画类 */
+			.fade-in-up {
+				opacity: 0;
+				transform: translateY(20px);
+				animation: fadeInUp 0.8s ease forwards;
+				animation-play-state: paused;
+			}
+			
+			/* 移动菜单动画样式 */
+			#mobile-menu.opacity-100 {
+				opacity: 1;
+				transform: translateY(0);
+				max-height: 500px;
+			}
+			
+			#mobile-menu a {
+				opacity: 0;
+				transform: translateY(10px);
+				transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+			}
+			
+			#mobile-menu.opacity-100 a {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			@keyframes fadeInUp {
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			.animate-float {
+				animation: float 8s ease-in-out infinite;
+			}
+			@keyframes float {
+				0%, 100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-20px);
+				}
+			}
+			@keyframes fadeInRight {
+				from {
+					opacity: 0;
+					transform: translateX(40px); /* 从右侧开始 */
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);    /* 回到原位置 */
+				}
+			}
 
-            100% {
-                width: 0;
-                height: 0;
-            }
-        }
+			.fade-in-right {
+				opacity: 0;
+				animation: fadeInRight 1.2s ease-out forwards;
+				animation-fill-mode: both;
+				animation-play-state: paused;
+			}
+			@keyframes fadeInLeft {
+				from {
+					opacity: 0;
+					transform: translateX(-40px); /* 从左侧开始 */
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);    /* 回到原位置 */
+				}
+			}
 
-        body>div.preloader {
-            position: fixed;
-            background: white;
-            width: 100%;
-            height: 100%;
-            z-index: 1071;
-            opacity: 0;
-            transition: opacity .5s ease;
-            overflow: hidden;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+			.fade-in-left {
+				opacity: 0;
+				animation: fadeInLeft 1.2s ease-out forwards;
+				animation-fill-mode: both;
+				animation-play-state: paused;
+			}
+			
+			@keyframes fadeInRight {
+				from {
+					opacity: 0;
+					transform: translateX(40px); /* 从右侧开始 */
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);    /* 回到原位置 */
+				}
+			}
 
-        body:not(.loaded)>div.preloader {
-            opacity: 1;
-        }
+			.fade-in-right {
+				opacity: 0;
+				animation: fadeInRight 1.2s ease-out forwards;
+				animation-fill-mode: both;
+				animation-play-state: paused;
+			}
 
-        body:not(.loaded) {
-            overflow: hidden;
-        }
+		</style>
+		<link href="./resource/css/main.css" rel="stylesheet">
+		<link rel="stylesheet" href="./resource/css/about.css">
+		<script type="module" src="./resource/js/typewriter.js"></script>
+		
+		<script>
+			// 页面滚动时触发动画效果
+			document.addEventListener('DOMContentLoaded', function() {
+				const animateOnScroll = () => {
+					const elements = document.querySelectorAll('.fade-in-up, .fade-in-right');
+					
+					elements.forEach(element => {
+						const elementTop = element.getBoundingClientRect().top;
+						const elementVisible = 150; // 元素距离视口顶部多少像素时触发动画
+						
+						if (elementTop < window.innerHeight - elementVisible) {
+							element.style.animationPlayState = 'running';
+						}
+					});
+				};
+				
+				// 初始化时检查一次
+				animateOnScroll();
+				
+				// 滚动时检查
+				window.addEventListener('scroll', animateOnScroll);
+			});
+		</script>
+	</head>
+	<body class="bg-dark-900 text-gray-100 antialiased">
+		<!-- 微信浏览器检测提示 -->
+		<div id="wechat-tip" class="fixed inset-0 bg-black bg-opacity-80 z-[9999] hidden flex-col items-center justify-center px-4 transition-all duration-300 opacity-0">
+			<div class="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl transform transition-all duration-500 scale-95">
+				<div class="flex justify-between items-center mb-4">
+					<div class="flex items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500 mr-2">
+							<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+							<line x1="12" y1="9" x2="12" y2="13"></line>
+							<line x1="12" y1="17" x2="12.01" y2="17"></line>
+						</svg>
+						<h2 class="text-lg font-bold text-gray-900">浏览器提示</h2>
+					</div>
+					<button id="close-wechat-tip" class="text-gray-500 hover:text-gray-700">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<line x1="18" y1="6" x2="6" y2="18"></line>
+							<line x1="6" y1="6" x2="18" y2="18"></line>
+						</svg>
+					</button>
+				</div>
+				<div class="mb-6">
+					<p class="text-gray-700 mb-4">检测到您正在使用<strong class="text-green-600">微信内置浏览器</strong>，可能会影响网站功能和显示效果。</p>
+					<p class="text-gray-700 mb-4">为获得最佳体验，建议您：</p>
+					<div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+						<ol class="list-decimal pl-5 space-y-2">
+							<li class="text-gray-700">点击右上角的<span class="inline-block px-1">⋮</span>或<span class="inline-block px-1">⋯</span>按钮</li>
+							<li class="text-gray-700">选择"在浏览器中打开"或"在Safari中打开"</li>
+							<li class="text-gray-700">使用系统浏览器访问本网站</li>
+						</ol>
+					</div>
+				</div>
+				<div class="flex justify-between items-center">
+					<div class="flex items-center">
+						<input type="checkbox" id="dont-show-again" class="mr-2">
+						<label for="dont-show-again" class="text-sm text-gray-600">不再提示</label>
+					</div>
+					<button id="continue-anyway" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-300">
+						继续访问
+					</button>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Background particles -->
+		<div id="particles-background" class="fixed inset-0 z-0">
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 9.32263%; top: 43.6632%; animation-delay: 1.90361s; animation-duration: 6.17328s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 15.7051%; top: 28.0402%; animation-delay: 5.3032s; animation-duration: 6.9073s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 30.8472%; top: 76.4126%; animation-delay: 5.41718s; animation-duration: 5.84295s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 77.4857%; top: 40.6913%; animation-delay: 6.03576s; animation-duration: 6.45844s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 33.989%; top: 24.787%; animation-delay: 6.11778s; animation-duration: 5.52303s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 9.91511%; top: 37.3319%; animation-delay: 5.24273s; animation-duration: 5.77165s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 6.85632%; top: 96.4399%; animation-delay: 6.78745s; animation-duration: 7.15881s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 72.9074%; top: 19.764%; animation-delay: 3.90352s; animation-duration: 7.96571s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 58.4178%; top: 37.6654%; animation-delay: 6.92407s; animation-duration: 5.86137s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 31.0439%; top: 0.391484%; animation-delay: 1.53194s; animation-duration: 6.80065s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 1.42212%; top: 56.0592%; animation-delay: 1.52533s; animation-duration: 5.27746s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 90.5658%; top: 20.3253%; animation-delay: 1.88718s; animation-duration: 5.72136s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 9.5749%; top: 90.4381%; animation-delay: 3.81367s; animation-duration: 7.24686s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 92.7907%; top: 24.5308%; animation-delay: 5.56997s; animation-duration: 7.40703s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 78.6996%; top: 18.3777%; animation-delay: 4.19747s; animation-duration: 7.41852s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 13.0238%; top: 68.126%; animation-delay: 1.24293s; animation-duration: 7.13204s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 78.6473%; top: 57.4696%; animation-delay: 3.36435s; animation-duration: 5.69694s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 39.4932%; top: 71.2858%; animation-delay: 3.8939s; animation-duration: 7.85089s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 68.2636%; top: 51.6434%; animation-delay: 3.01025s; animation-duration: 6.68195s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 54.2954%; top: 85.7357%; animation-delay: 0.375846s; animation-duration: 5.57537s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 56.8461%; top: 78.1602%; animation-delay: 0.505716s; animation-duration: 6.2743s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 1.67814%; top: 49.8898%; animation-delay: 1.63203s; animation-duration: 5.16671s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 97.7126%; top: 25.003%; animation-delay: 5.03544s; animation-duration: 6.56999s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 35.3777%; top: 75.1553%; animation-delay: 4.71848s; animation-duration: 6.79s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 70.3877%; top: 59.4767%; animation-delay: 2.23359s; animation-duration: 7.00705s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 70.1607%; top: 90.0105%; animation-delay: 3.39096s; animation-duration: 7.1612s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 60.0633%; top: 94.3939%; animation-delay: 1.89574s; animation-duration: 7.41019s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 51.8603%; top: 9.20791%; animation-delay: 7.98452s; animation-duration: 7.53561s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 35.5089%; top: 98.1374%; animation-delay: 0.252701s; animation-duration: 5.49723s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 76.5674%; top: 47.2635%; animation-delay: 6.36424s; animation-duration: 5.94212s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 74.4076%; top: 24.1089%; animation-delay: 1.13884s; animation-duration: 7.95732s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 32.4411%; top: 46.151%; animation-delay: 5.76095s; animation-duration: 5.19723s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 8.26866%; top: 67.2564%; animation-delay: 5.45081s; animation-duration: 7.62187s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 56.0005%; top: 88.1464%; animation-delay: 5.72157s; animation-duration: 6.97623s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 59.6439%; top: 17.3017%; animation-delay: 6.11407s; animation-duration: 5.71453s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 60.6927%; top: 36.0035%; animation-delay: 7.78915s; animation-duration: 6.0658s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 29.2527%; top: 10.0044%; animation-delay: 0.924362s; animation-duration: 6.46292s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 28.091%; top: 93.2949%; animation-delay: 6.57232s; animation-duration: 5.72691s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 96.2824%; top: 2.8125%; animation-delay: 0.230392s; animation-duration: 7.45654s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 23.3636%; top: 16.5407%; animation-delay: 1.11792s; animation-duration: 6.44994s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 81.237%; top: 51.2482%; animation-delay: 3.15904s; animation-duration: 5.76928s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 54.03%; top: 93.4682%; animation-delay: 2.94281s; animation-duration: 6.24648s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 58.8378%; top: 32.2443%; animation-delay: 7.34443s; animation-duration: 7.84706s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 83.0015%; top: 44.6803%; animation-delay: 6.67538s; animation-duration: 7.25002s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 15.0301%; top: 90.0303%; animation-delay: 5.50191s; animation-duration: 5.53322s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 3.55577%; top: 34.0333%; animation-delay: 2.16502s; animation-duration: 5.91892s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 79.3534%; top: 64.7379%; animation-delay: 1.05376s; animation-duration: 7.2165s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 48.5508%; top: 10.7015%; animation-delay: 3.34327s; animation-duration: 6.23599s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 90.8195%; top: 98.4221%; animation-delay: 7.42437s; animation-duration: 7.6265s;"></div>
+			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 7.50985%; top: 96.1863%; animation-delay: 1.09471s; animation-duration: 7.77054s;"></div>
+		</div> <!-- Main content -->
+		<div class="relative z-10">
+			<header class="fixed top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
+				<nav class="container-custom">
+					<div class="flex items-center justify-between h-16 lg:h-20">
+						<!-- Logo -->
+						<div class="flex items-center space-x-3">
+							<img src="./resource/img/logo-blue.png" alt="shurong Logo" class="h-12">
+						</div>
+						<!-- Desktop Navigation -->
+						<div class="hidden lg:flex items-center space-x-8">
+							<a href="https://xiaoshukeji.ltd/xiaoshuWeather/app/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">树融天气</a>
+							<a href="https://xiaoshukeji.ltd/GPT/" target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">树融 AI<span class="relative -left-1 bottom-2">🔥</span></a>
+							<a href="https://xiaoshukeji.ltd/learn/index.html" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">树融教育</a>
+							<a href="https://xiaoshukeji.ltd/xiaoshuBBS/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">论坛求助</a>
+							<div class="flex items-center space-x-4">
+								<a href="https://www.douyin.com/user/MS4wLjABAAAAKClOsRoVCN83rNU4tcRzUW4JO3fSPbe5QFLZ0MkO6UIgKgSAr0TwIF0SduqCSRjA?from_tab_name=main" target="_blank" class="btn-secondary text-sm text-center inline-flex items-center text-gray-900 hover:text-black">
+									<!-- 抖音 SVG 图标（黑色） -->
+									<svg class="w-5 h-5 mr-2" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path d="M33.5 5c1.6 0 3.2.2 4.6.6v7.5c-2.2-.1-4.3-.7-6.1-1.7v14.8c0 5.9-4.8 10.7-10.7 10.7S11.6 32.1 11.6 26.2c0-5.5 4.2-10.1 9.5-10.6v7.5c-1.2.5-2 1.6-2 3 0 1.8 1.4 3.2 3.2 3.2s3.2-1.4 3.2-3.2V5h8z"/>
+									</svg>
+									社交媒体
+								</a>
+								<a href="https://github.com/xiaoshukeji" target="_blank" class="btn-primary text-sm inline-flex items-center">
+									<svg width="1em" height="1em" class="w-5 h-5 mr-2" data-icon="carbon:logo-github">
+										<symbol id="ai:carbon:logo-github" viewBox="0 0 32 32">
+											<path fill="currentColor" fill-rule="evenodd" d="M16 2a14 14 0 0 0-4.43 27.28c.7.13 1-.3 1-.67v-2.38c-3.89.84-4.71-1.88-4.71-1.88a3.7 3.7 0 0 0-1.62-2.05c-1.27-.86.1-.85.1-.85a2.94 2.94 0 0 1 2.14 1.45a3 3 0 0 0 4.08 1.16a2.93 2.93 0 0 1 .88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4 5.4 0 0 1 1.44-3.76a5 5 0 0 1 .14-3.7s1.17-.38 3.85 1.43a13.3 13.3 0 0 1 7 0c2.67-1.81 3.84-1.43 3.84-1.43a5 5 0 0 1 .14 3.7a5.4 5.4 0 0 1 1.44 3.76c0 5.38-3.27 6.56-6.39 6.91a3.33 3.33 0 0 1 .95 2.59v3.84c0 .46.25.81 1 .67A14 14 0 0 0 16 2"></path>
+										</symbol>
+										<use href="#ai:carbon:logo-github"></use>
+									</svg>
+									代码仓库
+								</a>
+							</div>
+						</div>
+						<!-- Mobile menu button -->
+						<button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700 hover:text-gray-900">
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+							</svg>
+						</button>
+					</div> 					<!-- Mobile Navigation -->
+					<div id="mobile-menu" class="lg:hidden hidden pb-4 transition-all duration-500 ease-in-out opacity-0 transform -translate-y-4 max-h-0 overflow-hidden">
+						<div class="flex flex-col space-y-4 py-2">
+							<a href="https://xiaoshukeji.ltd/xiaoshuWeather/app/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-all duration-300 transform hover:translate-x-1">树融天气</a>
+							<a href="https://xiaoshukeji.ltd/GPT/" target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-all duration-300 transform hover:translate-x-1 group">树融 AI<span class="relative -left-1 bottom-2">🔥</span></a>
+							<a href="https://xiaoshukeji.ltd/learn/index.html" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-all duration-300 transform hover:translate-x-1">树融教育</a>
+							<a href="https://xiaoshukeji.ltd/xiaoshuBBS/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-all duration-300 transform hover:translate-x-1">论坛求助</a>
+							<div class="flex flex-col space-y-3 pt-4">
+								<a href="https://www.douyin.com/user/MS4wLjABAAAAKClOsRoVCN83rNU4tcRzUW4JO3fSPbe5QFLZ0MkO6UIgKgSAr0TwIF0SduqCSRjA?from_tab_name=main" target="_blank" class="btn-secondary text-sm text-center inline-flex items-center text-gray-900 hover:text-black transition-all duration-300 transform hover:scale-105">
+									<!-- 抖音 SVG 图标（黑色） -->
+									<svg class="w-5 h-5 mr-2" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path d="M33.5 5c1.6 0 3.2.2 4.6.6v7.5c-2.2-.1-4.3-.7-6.1-1.7v14.8c0 5.9-4.8 10.7-10.7 10.7S11.6 32.1 11.6 26.2c0-5.5 4.2-10.1 9.5-10.6v7.5c-1.2.5-2 1.6-2 3 0 1.8 1.4 3.2 3.2 3.2s3.2-1.4 3.2-3.2V5h8z"/>
+									</svg>
+									社交媒体
+								</a>
 
-        body.loaded>div.preloader {
-            animation: hidePreloader .5s linear .5s forwards;
-        }
-        #cookie-consent {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-        }
-    </style>
-    <script>
-        window.addEventListener("load", function() {
-            setTimeout(function() {
-                document.querySelector('body').classList.add('loaded');
-            }, 300);
-        });
-    </script>
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/img/ShurongGroup/树融集团-徽章-透明.png" type="image/png"><!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
-    <!-- Quick CSS -->
-    <link rel="stylesheet" href="assets/css/quick-website.css" id="stylesheet">
-</head>
+								<a href="https://github.com/xiaoshukeji" target="_blank" class="btn-primary text-sm text-center transition-all duration-300 transform hover:scale-105">
+									代码仓库
+								</a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<main data-astro-cid-j7pv25f6="">
+				<section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gray-50" data-astro-cid-bbe6dxrz="">
+					<!-- Floating Geometric Shapes -->
+					<div class="absolute inset-0 overflow-hidden" data-astro-cid-bbe6dxrz="">
+						<div class="absolute top-20 left-10 w-20 h-20 rounded-full blur-2xl animate-float bg-1panel opacity-20" data-astro-cid-bbe6dxrz=""></div>
+						<div class="absolute top-40 right-20 w-32 h-32 rounded-full blur-2xl animate-float bg-1panel opacity-30" style="animation-delay: -2s;" data-astro-cid-bbe6dxrz=""></div>
+						<div class="absolute bottom-20 left-20 w-24 h-24 rounded-full blur-2xl animate-float bg-1panel opacity-40" style="animation-delay: -4s;" data-astro-cid-bbe6dxrz=""></div>
+						<div class="absolute bottom-40 right-10 w-16 h-16 rounded-full blur-2xl animate-float bg-1panel opacity-60" style="animation-delay: -6s;" data-astro-cid-bbe6dxrz=""></div>
+					</div> <!-- Main Content -->
+					<div class="relative z-10 container-custom py-20" data-astro-cid-bbe6dxrz="">
+						<div id="hero-content" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh]" data-astro-cid-bbe6dxrz="">
+							<!-- Left Content -->
+							<div id="hero-left" class="transition-all duration-1000  fade-in-up" data-astro-cid-bbe6dxrz="">
+								<div class="fade-in-up inline-flex items-center px-4 py-2 mb-4 bg-red-100 text-blue-800 rounded-full text-sm font-medium animate" data-astro-cid-bbe6dxrz="">
+									<span style="color: #dc2626">错误</span>
+								</div> <!-- Main Heading -->
+								<h1 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate" style="animation-delay: 0.2s;" data-astro-cid-bbe6dxrz="">
+									<span class="block text-1panel-gradient" data-astro-cid-bbe6dxrz="">404</span>
+									<span class="block text-gray-800 mb-2" data-astro-cid-bbe6dxrz="">没有找到任何页面！</span>
+									<a href="https://xiaoshukeji.ltd/" target="_blank" class="btn-primary text-lg px-8 py-4 group inline-flex items-center justify-center" data-astro-cid-bbe6dxrz="">
+										返回首页
+										<svg width="1em" height="1em" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" data-astro-cid-bbe6dxrz="" data-icon="carbon:link">
+											<symbol id="ai:carbon:link" viewBox="0 0 32 32">
+												<path fill="currentColor" d="M29.25 6.76a6 6 0 0 0-8.5 0l1.42 1.42a4 4 0 1 1 5.67 5.67l-8 8a4 4 0 1 1-5.67-5.66l1.41-1.42l-1.41-1.42l-1.42 1.42a6 6 0 0 0 0 8.5A6 6 0 0 0 17 25a6 6 0 0 0 4.27-1.76l8-8a6 6 0 0 0-.02-8.48"></path>
+												<path fill="currentColor" d="M4.19 24.82a4 4 0 0 1 0-5.67l8-8a4 4 0 0 1 5.67 0A3.94 3.94 0 0 1 19 14a4 4 0 0 1-1.17 2.85L15.71 19l1.42 1.42l2.12-2.12a6 6 0 0 0-8.51-8.51l-8 8a6 6 0 0 0 0 8.51A6 6 0 0 0 7 28a6.07 6.07 0 0 0 4.28-1.76l-1.42-1.42a4 4 0 0 1-5.67 0"></path>
+											</symbol>
+											<use href="#ai:carbon:link"></use>
+										</svg>
+									</a>
+								</h1> <!-- Badges -->
+							</div> <!-- Right Content - Dashboard Preview -->
+							<div id="hero-right" class="transition-all duration-1000" data-astro-cid-bbe6dxrz="">
+								<div class="fade-in-right relative hero-dashboard-preview" style="animation-delay: 0.5s;" data-astro-cid-bbe6dxrz="">
+									<!-- Dashboard Image -->
+									<div class="relative" data-astro-cid-bbe6dxrz="">
+										<div class="relative bg-white rounded-lg border border-gray-200 overflow-hidden shadow-2xl" data-astro-cid-bbe6dxrz="">
+											<div class="relative" data-astro-cid-bbe6dxrz="">
+												<div class="relative z-10" data-astro-cid-bbe6dxrz="">
+													<a href="https://www.douyin.com/user/MS4wLjABAAAAKClOsRoVCN83rNU4tcRzUW4JO3fSPbe5QFLZ0MkO6UIgKgSAr0TwIF0SduqCSRjA?from_tab_name=main" target="_blank" rel="noopener noreferrer" class="relative w-full" style="outline: none;" aria-label="播放视频" data-astro-cid-bbe6dxrz="">
+														<img src="./resource/img/overview-full.png" alt="树融创新" class="w-full h-auto rounded-lg shadow-2xl border border-gray-200" data-astro-cid-bbe6dxrz="">
+														<span class="absolute inset-0 flex items-center justify-center pointer-events-none" style="z-index: 2;" data-astro-cid-bbe6dxrz="">
+															<svg width="1em" height="1em" class="w-20 h-20 md:w-24 md:h-24 text-gray-300 animate-pulse" data-astro-cid-bbe6dxrz="" data-icon="carbon:play-outline-filled">
+																<symbol id="ai:carbon:play-outline-filled" viewBox="0 0 32 32">
+																	<path fill="none" d="M11 23a1 1 0 0 1-1-1V10a1 1 0 0 1 1.447-.894l12 6a1 1 0 0 1 0 1.788l-12 6A1 1 0 0 1 11 23m1-11.382v8.764L20.764 16Z"></path>
+																	<path fill="currentColor" d="M12 20.382L20.764 16L12 11.618z"></path>
+																	<path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m7.447 14.895l-12 6A1 1 0 0 1 10 22V10a1 1 0 0 1 1.447-.894l12 6a1 1 0 0 1 0 1.788"></path>
+																</symbol>
+																<use href="#ai:carbon:play-outline-filled"></use>
+															</svg>
+														</span>
+													</a>
+												</div>
+												<div class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-transparent rounded-lg -rotate-6 scale-105 opacity-30" data-astro-cid-bbe6dxrz=""></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="bg-dark-900 border-t border-gray-800 py-12">
+				<div class="container-custom">
+					<!-- Main Footer Content -->
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+						<!-- Company Info -->
+						<div class="col-span-1 lg:col-span-2">
+							<div class="flex items-center space-x-3 mb-4">
+								<span class="text-xl font-bold text-white">Shurong 树融创新</span>
+							</div>
+							<p class="text-gray-400 mb-6 max-w-md">
+我们秉持"项目用起来才有价值，才有改进的机会"的核心价值观，向中国数字化团队交付被广泛验证、可信赖的通用工具项目。
+							</p>
+						</div> <!-- Resources -->
+						<div>
+							<h4 class="text-lg font-semibold text-white mb-4">常用链接</h4>
+							<ul class="space-y-3">
+								<li>
+									<a href="https://github.com/xiaoshukeji" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">GitHub 仓库</a>
+								</li>
+								<li>
+									<a href="https://xiaoshukeji.ltd/xiaoshuBBS/" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">社区论坛</a>
+								</li>
+								<li>
+									<a href="https://mp.weixin.qq.com/s/5n54pCYTdRzd537V8eO4Nw" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">问题反馈</a>
+								</li>
+								<li>
+									<a href="./en" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">English Site</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="text-lg font-semibold text-white mb-4">产品发布</h4>
+							<ul class="space-y-3">
+								<li>
+									<a href="https://xiaoshukeji.ltd/xiaoshuWeather/app/" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">树融天气</a>
+								</li>
+								<li>
+									<a href="https://xiaoshukeji.ltd/GPT/" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">树融 AI-GPT</a>
+								</li>
+								<li>
+									<a href="https://xiaoshukeji.ltd/TreeDownload/" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">树融下载</a>
+								</li>
+							</ul>
+						</div> <!-- Quick Links -->
+						<div>
+							<h4 class="text-lg font-semibold text-white mb-4">友情链接</h4>
+							<ul class="space-y-3">
+								<li>
+									<a href="https://xiaoshukeji.ltd/Martian-family-main/" class="text-gray-400 hover:text-white transition-colors duration-300">火星家族</a>
+								</li>
+								<li>
+									<a href="https://xiaoshukeji.ltd/XiaoShuMusicPlayer/" class="text-gray-400 hover:text-white transition-colors duration-300">树融音乐播放器</a>
+								</li>
+								<li>
+									<a href="https://xiaoshukeji.ltd/HMCL/" class="text-gray-400 hover:text-white transition-colors duration-300">HMCL</a>
+								</li>
+								<li>
+									<a href="https://xiaoshukeji.ltd/GPT/OpenAI%20%E7%94%A8%E9%87%8F%E6%9F%A5%E8%AF%A2.html" class="text-gray-400 hover:text-white transition-colors duration-300">树融 AI-GPT用量查询</a>
+								</li>
+							</ul>
+						</div>
+					</div> <!-- Copyright -->
+					<div class="border-t border-gray-800 pt-8">
+						<div class="flex flex-col md:flex-row justify-between items-center">
+							<div class="text-gray-400 text-sm mb-4 md:mb-0">
+								© <span id="footer-year"></span> Shurong 树融创新. 保留所有权利.
+							</div>
+							<script>
+								document.addEventListener('DOMContentLoaded', function() {
+									const yearSpan = document.getElementById('footer-year');
+									if (yearSpan) {
+										yearSpan.textContent = new Date().getFullYear();
+									}
+								});
+							</script>
+							<div class="flex space-x-6 text-sm">
+								<button id="terms-button" class="text-gray-400 hover:text-white transition-colors duration-300">
+									使用条款
+								</button>
+								<button id="privacy-button" class="text-gray-400 hover:text-white transition-colors duration-300">
+									隐私政策
+								</button>
+								<button id="license-button" class="text-gray-400 hover:text-white transition-colors duration-300">
+									许可协议
+								</button>
+							</div>
+						</div>
+						<div class="mt-6 pt-6 border-t border-gray-800"> <div class="flex flex-col items-center text-center"> <div class="text-gray-400 text-sm mb-2"> <a href="tel:+8613191486995" target="_blank" class="hover:text-white transition-colors duration-300">
+							联系电话：+86 13191486995
+						</a> </div>
+						<div class="mt-6 pt-6 border-t border-gray-800">
+							<div class="flex flex-col items-center text-center">
+								<div class="text-gray-500 text-base leading-relaxed">
+									违法网站请勿向我司工作人员发起任何形式的人工服务请求，严禁客户从事任何非法活动
+								</div>
+							</div>
+						</div>
+					</div> <!-- Back to Top Button -->
+					<button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 opacity-0 invisible">
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+						</svg>
+					</button>
+				</div>
+			</footer>
+			<!-- Terms Modal -->
+			<div id="terms-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+				<div class="bg-white rounded-lg shadow-xl w-[60vw] mx-4 transform transition-all">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="flex-shrink-0">
+								<!-- Icon for terms of service -->
+								<svg width="1em" height="1em" class="w-6 h-6 text-1panel" data-icon="carbon:document">
+									<symbol id="ai:carbon:document" viewBox="0 0 32 32">
+										<path fill="currentColor" d="M8 2a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8zm12 2v20H8V4h12z"></path>
+									</symbol>
+									<use href="#ai:carbon:document"></use>
+								</svg>
+							</div>
+							<div class="ml-2">
+								<h3 class="text-lg font-medium text-gray-900">使用条款:</h3>
+							</div>
+						</div>
+						<div class="mb-6">
+							<p class="text-sm text-gray-600">
+								欢迎访问树融创新网站。请在使用本网站前仔细阅读以下条款。您的使用即表示您同意遵守这些条款。</br>
 
-<body>
-    <!-- Go Pro -->
-    <!--a href="https://xiaoshukeji.ltd/" class="btn btn-block btn-dark text-truncate rounded-0 py-2 d-none d-lg-block" style="z-index: 1000;" target="_blank">
-        <strong>这里是小树科技网络安全有限公司</strong> 点此访问小树科技网络安全有限公司官方网站 →
-    </a-->
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand" href="index-home.html">
-                <img alt="Image placeholder" id="navbar-logo" src="./assets/img/brand/dark.png" alt="pic1" onerror="this.src='./assets/img/brand/dark.png'" width="120%">
-            </a>
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Collapse -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index-home.html">首页</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./login.html">登录</a>
-                    </li>
-                </ul>
-                <!-- Button -->
-                <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="mailto:Wanghanduo2023@outlook.com">
-                    联系我们
-                </a>
-                <!-- Mobile button -->
-                <div class="d-lg-none text-center">
-                    <a href="mailto:Wanghanduo2023@outlook.com" class="btn btn-block btn-sm btn-warning">联系我们</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Main content -->
-    <section class="slice py-7">
-        <div class="container">
-            <div class="row row-grid align-items-center">
-                <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                    <!-- Image -->
-                    <figure class="w-100">
-                        <img alt="Image placeholder" src="assets/img/svg/illustrations/banner.png" class="img-fluid mw-md-120" width="100%">
-                    </figure>
-                </div>
-                <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
-                    <!-- Heading -->
-                    <h1 class="display-4 text-center text-md-left mb-3">
-                        404,页面不见了， </br><strong class="text-primary">被友商偷走了！</strong>
-                    </h1>
-                    <!-- Buttons-->
-                    <div class="text-center text-md-left mt-5">
-                        <a href="javascript:;" onClick="javascript:history.back(-1);" class="btn btn-primary btn-icon" target="_blank">
-                            <span class="btn-inner--text">返回上一页</span>
-                            <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="position-relative" id="footer-main">
-        <div class="footer pt-lg-7 footer-dark bg-dark">
-            <!-- SVG形状 -->
-            <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
-                <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class=" fill-section-secondary">
-                <polygon points="2560 0 2560 100 0 100"></polygon>
-            </svg>
-            </div>
-            <!-- 页脚 -->
-            <div class="container pt-4">
-                <div class="row">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <!-- 主题的标志 -->
-                        <a href="index-home.html">
-                            <img alt="Image placeholder" id="footer-logo" src="#" alt="pic1" onerror="this.src='./assets/img/brand/light.png'" width="80%">
-                        </a>
-                        <!-- Xiaoshu的使命 -->
-                        <p class="mt-4 text-sm opacity-8 pr-lg-4">我们致力于将科技与智慧生活无缝连接，通过资源整合和技术创新，为您提供卓越的金融科技解决方案。我们期待与您携手，共同探索更加美好的未来。</p>
-                        <!-- 社交媒体 -->
-                        <ul class="nav mt-4">
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="https://dribbble.com/xiaoshukeji" target="_blank">
-                                    <i class="fab fa-dribbble"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://github.com/xiaoshukeji" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.instagram.com/xiaoshukeji" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.facebook.com/xiaoshukeji" target="_blank">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">发布</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="http://39.104.27.195:40033/#user/login">KedaoCloud</a></li>
-                            <li><a href="https://musiczh.top/index.php">音乐解锁</a></li>
-                            <li><a href="https://xiaoshukeji.ltd/TreeScience/">树科学</a></li>
-                            <li><a href="./learn/index.html">学习</a></li>
-                            <li><a href="http://xiaoshukeji.ltd/HMCL/index.html">HMCL启动器</a></li>
-                            <li><a href="http://xiaoshukeji.ltd/bootstarp/index.html">XS-Bootstap</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">项目</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="http://xiaoshukeji.ltd/GPT/">小树AI-GPT</a></li>
-                            <li><a href="http://xiaoshukeji.ltd/XiaoShuMusicPlayer/">小树音乐</a></li>
-                            <li><a href="http://xiaoshukeji.ltd/f/">游戏柜</a></li>
-                            <li><a href="http://xiaoshukeji.ltd/X-Blog/">X-Blog</a></li>
-                            <li><a href="http://xiaoshukeji.ltd/xiaoshuBBS/">BBS 论坛</a></li>
-                            <li><a href="./GPT/OpenAI%20用量查询.html">关于小树GPT用量</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">微信公众号</h6>
-                        <img src="./file/wechat-GZHmini.png" alt="1" width="80%">
-                    </div>
-                </div>
-                <hr class="divider divider-fade divider-dark my-4">
-                <div class="row align-items-center justify-content-md-between pb-4">
-                    <div class="col-md-6">
-                        <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                            &copy;2020-2025 <a href="https://xiaoshukeji.ltd" class="font-weight-bold" target="_blank">树融网络科技集团</a>。保留所有权利
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="./article.html">
-                                    条款
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./privacy.html">
-                                    隐私
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./CookiePrivacy.html">
-                                    Cookie政策
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Core JS  -->
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/svg-injector/dist/svg-injector.min.js"></script>
-    <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
-    <!-- Quick JS -->
-    <script src="assets/js/quick-website.js"></script>
-    <!-- Feather Icons -->
-    <script>
-        feather.replace({
-            'width': '1em',
-            'height': '1em'
-        })
-    </script>
-</body>
+								1. 知识产权</br>
+								网站上的所有内容，包括但不限于文字、图像、标志、商标和软件，均属于树融创新或其许可方，受相关知识产权法律保护。</br>
 
+								2. 用户责任 </br>
+								您同意不使用本网站进行任何非法活动，不得干扰或破坏网站的正常运行。您对使用本网站的所有活动负全责。</br>
+
+								3. 隐私政策</br>
+								我们尊重您的隐私，致力于保护您的个人信息。请参阅我们的隐私政策，以了解我们如何收集、使用和保护您的信息。</br>
+
+								4. 链接和第三方内容</br>
+								本网站可能包含指向第三方网站的链接。我们对这些网站的内容不承担任何责任。访问这些网站的风险由您自行承担。</br>
+
+								5. 修改和终止</br>
+								我们保留随时修改或终止本条款的权利。修改后的条款将在本网站上发布，您继续使用本网站即表示接受修改后的条款。</br>
+
+								6. 法律适用</br>
+								本条款适用中华人民共和国法律。如有争议，应提交至树融创新所在地的法院解决。</br>
+								<br />
+								<strong>如有任何疑问或需要帮助，请联系我们。</strong> 感谢您的访问与支持!
+							</p>
+						</div>
+						<div class="flex justify-end space-x-3">
+							<button id="close-terms" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
+								关闭
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Privacy Policy Modal -->
+			<div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+				<div class="bg-white rounded-lg shadow-xl w-[60vw] mx-4 transform transition-all">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="flex-shrink-0">
+								<!-- Icon for privacy -->
+								<svg width="1em" height="1em" class="w-6 h-6 text-1panel" data-icon="carbon:locked">
+									<symbol id="ai:carbon:locked" viewBox="0 0 32 32">
+										<path fill="currentColor" d="M24 14h-2V8a6 6 0 0 0-12 0v6H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V16a2 2 0 0 0-2-2M16 26a3 3 0 1 1 3-3a3 3 0 0 1-3 3m4-12h-8V8a4 4 0 0 1 8 0Z"></path>
+									</symbol>
+									<use href="#ai:carbon:locked"></use>
+								</svg>
+							</div>
+							<div class="ml-2">
+								<h3 class="text-lg font-medium text-gray-900">隐私政策:</h3>
+							</div>
+						</div>
+						<div class="mb-6">
+							<p class="text-sm text-gray-600">
+								树融创新非常重视您的隐私保护。本隐私政策说明我们如何收集、使用、披露、处理和保护您的个人信息。</br>
+
+								1. 信息收集</br>
+								我们可能收集以下信息：个人识别信息（如姓名、电子邮件地址、电话号码）、设备信息和使用数据（如IP地址、浏览器类型和操作系统）。</br>
+
+								2. 信息使用</br>
+								我们使用收集的信息来：提供、维护和改进我们的服务；处理您的请求；与您沟通；及为市场调研分析数据。</br>
+
+								3. 信息共享</br>
+								除非获得您的明确同意，或法律要求，否则我们不会与第三方共享您的个人信息。我们可能与可信赖的第三方服务提供商共享信息，这些提供商受合同约束以保护您的信息。</br>
+
+								4. 数据安全</br>
+								我们实施各种安全措施保护您的个人信息，包括加密技术和安全服务器。然而，没有任何网络传输或电子存储方法是100%安全的。</br>
+
+								5. 您的权利</br>
+								您有权访问、更正和删除您的个人信息。如需行使这些权利，请联系我们。</br>
+
+								6. 政策更新</br>
+								我们可能会不时更新本隐私政策。更新后的政策将在网站上发布，并在实质性变更时通知您。</br>
+								<br />
+								<strong>如有任何隐私相关问题，请联系我们。</strong> 感谢您对树融创新的信任!
+							</p>
+						</div>
+						<div class="flex justify-end space-x-3">
+							<button id="close-privacy" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
+								关闭
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- License Modal -->
+			<div id="license-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+				<div class="bg-white rounded-lg shadow-xl w-[60vw] mx-4 transform transition-all">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="flex-shrink-0">
+								<!-- Icon for license -->
+								<svg width="1em" height="1em" class="w-6 h-6 text-1panel" data-icon="carbon:certificate">
+									<symbol id="ai:carbon:certificate" viewBox="0 0 32 32">
+										<path fill="currentColor" d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m0 18H4V8h24Z"></path>
+										<path fill="currentColor" d="M8 14h8v2H8zm0-4h16v2H8zm0 8h4v2H8z"></path>
+									</symbol>
+									<use href="#ai:carbon:certificate"></use>
+								</svg>
+							</div>
+							<div class="ml-2">
+								<h3 class="text-lg font-medium text-gray-900">许可协议:</h3>
+							</div>
+						</div>
+						<div class="mb-6">
+							<p class="text-sm text-gray-600">
+								树融创新软件许可协议</br>
+								<br />
+
+								1. 许可授予</br>
+								树融创新授予您一项非独家的、不可转让的许可，允许您按照本协议的条款和条件使用我们的产品和服务。</br>
+
+								2. 使用限制</br>
+								您不得：(a) 复制、修改、改编、翻译、创建衍生作品；(b) 进行逆向工程、反编译或试图获取源代码；(c) 转售、出租、租赁我们的产品；(d) 以任何方式损害我们的知识产权。</br>
+
+								3. 知识产权</br>
+								产品及其所有组件，包括但不限于软件、设计、文本和图形，均为树融创新或其许可方的财产，受版权和其他知识产权法律保护。</br>
+
+								4. 免责声明</br>
+								产品按"原样"提供，不提供任何形式的明示或暗示的保证。我们不保证产品满足您的要求，或产品将不间断、及时、安全或无错误。</br>
+
+								5. 责任限制</br>
+								在法律允许的最大范围内，树融创新不对任何直接、间接、附带、特殊、惩罚性或后果性损害负责。</br>
+
+								6. 终止</br>
+								如果您违反本协议的任何条款，我们有权终止您的许可。一旦终止，您必须停止使用我们的产品并销毁所有副本。</br>
+								<br />
+								<strong>使用我们的产品即表示您同意本许可协议的所有条款。</strong> 如有任何问题，请联系我们。
+							</p>
+						</div>
+						<div class="flex justify-end space-x-3">
+							<button id="close-license" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
+								关闭
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					// 通用函数：显示模态窗口
+					function showModal(modal) {
+						modal.classList.remove('hidden');
+						modal.classList.add('flex');
+						
+						setTimeout(() => {
+							const modalContent = modal.querySelector('.bg-white');
+							if (modalContent) {
+								modalContent.classList.add('scale-100');
+								modalContent.classList.remove('scale-95');
+							}
+						}, 10);
+					}
+					
+					// 通用函数：隐藏模态窗口
+					function hideModal(modal) {
+						const modalContent = modal.querySelector('.bg-white');
+						if (modalContent) {
+							modalContent.classList.add('scale-95');
+							modalContent.classList.remove('scale-100');
+						}
+						setTimeout(() => {
+							modal.classList.add('hidden');
+							modal.classList.remove('flex');
+						}, 200);
+					}
+					
+					// 使用条款模态窗口
+					const termsButton = document.getElementById('terms-button');
+					const termsModal = document.getElementById('terms-modal');
+					const closeTermsButton = document.getElementById('close-terms');
+					
+					if (termsButton && termsModal && closeTermsButton) {
+						termsButton.addEventListener('click', function() {
+							showModal(termsModal);
+						});
+						
+						closeTermsButton.addEventListener('click', function() {
+							hideModal(termsModal);
+						});
+						
+						termsModal.addEventListener('click', function(e) {
+							if (e.target === termsModal) {
+								hideModal(termsModal);
+							}
+						});
+					}
+					
+					// 隐私政策模态窗口
+					const privacyButton = document.getElementById('privacy-button');
+					const privacyModal = document.getElementById('privacy-modal');
+					const closePrivacyButton = document.getElementById('close-privacy');
+					
+					if (privacyButton && privacyModal && closePrivacyButton) {
+						privacyButton.addEventListener('click', function() {
+							showModal(privacyModal);
+						});
+						
+						closePrivacyButton.addEventListener('click', function() {
+							hideModal(privacyModal);
+						});
+						
+						privacyModal.addEventListener('click', function(e) {
+							if (e.target === privacyModal) {
+								hideModal(privacyModal);
+							}
+						});
+					}
+					
+					// 许可协议模态窗口
+					const licenseButton = document.getElementById('license-button');
+					const licenseModal = document.getElementById('license-modal');
+					const closeLicenseButton = document.getElementById('close-license');
+					
+					if (licenseButton && licenseModal && closeLicenseButton) {
+						licenseButton.addEventListener('click', function() {
+							showModal(licenseModal);
+						});
+						
+						closeLicenseButton.addEventListener('click', function() {
+							hideModal(licenseModal);
+						});
+						
+						licenseModal.addEventListener('click', function(e) {
+							if (e.target === licenseModal) {
+								hideModal(licenseModal);
+							}
+						});
+					}
+				});
+			</script>
+			<!-- Language Detection Modal -->
+			<div id="language-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+				<div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all">
+					<div class="p-6">
+						<div class="flex items-center mb-4">
+							<div class="flex-shrink-0">
+								<svg width="1em" height="1em" class="w-6 h-6 text-1panel" data-icon="carbon:earth-filled">
+									<symbol id="ai:carbon:earth-filled" viewBox="0 0 32 32">
+										<path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14.016 14.016 0 0 0 16 2M4.02 16.394l1.338.446L7 19.303v1.283a1 1 0 0 0 .293.707L10 24v2.377a12 12 0 0 1-5.98-9.983M16 28a12 12 0 0 1-2.572-.285L14 26l1.805-4.512a1 1 0 0 0-.097-.926l-1.411-2.117a1 1 0 0 0-.832-.445h-4.93l-1.248-1.873L9.414 14H11v2h2v-2.734l3.868-6.77l-1.736-.992L14.277 7h-2.742L10.45 5.371A11.86 11.86 0 0 1 20 4.7V8a1 1 0 0 0 1 1h1.465a1 1 0 0 0 .832-.445l.877-1.316A12 12 0 0 1 26.894 11H22.82a1 1 0 0 0-.98.804l-.723 4.47a1 1 0 0 0 .54 1.055L25 19l.685 4.056A11.98 11.98 0 0 1 16 28"></path>
+									</symbol>
+									<use href="#ai:carbon:earth-filled"></use>
+								</svg>
+							</div>
+							<div class="ml-2">
+								<h3 class="text-lg font-medium text-gray-900">Language Detection</h3>
+							</div>
+						</div>
+						<div class="mb-6">
+							<p class="text-sm text-gray-600">
+								Your browser language is not Chinese. Would you like to switch to our English site for a better experience?
+							</p>
+						</div>
+						<div class="flex justify-end space-x-3">
+							<button id="stay-here" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
+								Stay Here
+							</button>
+							<button id="go-english" class="px-4 py-2 text-sm font-medium text-white bg-1panel border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+								Go to English Site
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+								// 微信浏览器检测
+				function isWechatBrowser() {
+					const ua = navigator.userAgent.toLowerCase();
+					return ua.indexOf('micromessenger') !== -1;
+				}
+
+				function checkWechatBrowser() {
+					// 检查是否已选择不再提示
+					if (localStorage.getItem('dontShowWechatTip') === 'true') {
+						return;
+					}
+
+					const wechatTip = document.getElementById('wechat-tip');
+					const closeBtn = document.getElementById('close-wechat-tip');
+					const continueBtn = document.getElementById('continue-anyway');
+					const dontShowAgain = document.getElementById('dont-show-again');
+
+					if (isWechatBrowser() && wechatTip && closeBtn && continueBtn) {
+						// 显示提示
+						wechatTip.classList.remove('hidden');
+						wechatTip.classList.add('flex');
+						
+						// 给浏览器一点时间处理DOM变化
+						setTimeout(() => {
+							wechatTip.classList.add('opacity-100');
+							const modalContent = wechatTip.querySelector('.bg-white');
+							if (modalContent) {
+								modalContent.classList.remove('scale-95');
+								modalContent.classList.add('scale-100');
+							}
+						}, 10);
+
+						// 点击关闭按钮
+						closeBtn.addEventListener('click', function() {
+							hideWechatTip();
+						});
+
+						// 点击继续访问按钮
+						continueBtn.addEventListener('click', function() {
+							// 检查"不再提示"是否勾选
+							if (dontShowAgain && dontShowAgain.checked) {
+								localStorage.setItem('dontShowWechatTip', 'true');
+							}
+							hideWechatTip();
+						});
+						
+						// 点击背景关闭提示
+						wechatTip.addEventListener('click', function(e) {
+							if (e.target === wechatTip) {
+								hideWechatTip();
+							}
+						});
+
+						// 隐藏提示函数
+						function hideWechatTip() {
+							wechatTip.classList.remove('opacity-100');
+							const modalContent = wechatTip.querySelector('.bg-white');
+							if (modalContent) {
+								modalContent.classList.add('scale-95');
+								modalContent.classList.remove('scale-100');
+							}
+							
+							// 等待动画完成后隐藏元素
+							setTimeout(() => {
+								wechatTip.classList.add('hidden');
+								wechatTip.classList.remove('flex');
+							}, 300);
+						}
+					}
+				}
+
+				document.addEventListener('DOMContentLoaded', function() {
+					// 检测微信浏览器并显示提示
+					checkWechatBrowser();
+					
+					// 检查是否已经显示过弹框
+					const hasShownModal = sessionStorage.getItem('languageModalShown');
+					if (hasShownModal) {
+					return;
+					}
+
+					// 获取浏览器语言
+					const browserLanguage = navigator.language;
+					const isChinese = browserLanguage.startsWith('zh');
+
+					// 如果不是中文，显示弹框
+					if (!isChinese) {
+						const modal = document.getElementById('language-modal');
+						const stayButton = document.getElementById('stay-here');
+						const goButton = document.getElementById('go-english');
+
+						if (modal && stayButton && goButton) {
+							// 显示弹框
+							modal.classList.remove('hidden');
+							modal.classList.add('flex');
+
+							// 添加淡入动画
+							setTimeout(() => {
+								const modalContent = modal.querySelector('.bg-white');
+								if (modalContent) {
+									modalContent.classList.add('scale-100');
+									modalContent.classList.remove('scale-95');
+								}
+							}, 10);
+
+							// 标记已显示
+							sessionStorage.setItem('languageModalShown', 'true');
+
+							// 点击"留在这里"按钮
+							stayButton.addEventListener('click', function() {
+								hideModal();
+							});
+
+							// 点击"前往英文网站"按钮
+							goButton.addEventListener('click', function() {
+								window.location.href = './en';
+							});
+
+							// 点击背景关闭弹框
+							modal.addEventListener('click', function(e) {
+								if (e.target === modal) {
+									hideModal();
+								}
+							});
+
+							// 隐藏弹框函数
+							function hideModal() {
+								const modalContent = modal.querySelector('.bg-white');
+								if (modalContent) {
+									modalContent.classList.add('scale-95');
+									modalContent.classList.remove('scale-100');
+								}
+								setTimeout(() => {
+									modal.classList.add('hidden');
+									modal.classList.remove('flex');
+								}, 200);
+							}
+						}
+					}
+				});
+			</script>
+		</div> <!-- Global scripts -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const menuBtn = document.getElementById("mobile-menu-btn");
+				const mobileMenu = document.getElementById("mobile-menu");
+                
+				menuBtn.addEventListener("click", () => {
+					if (mobileMenu.classList.contains("hidden")) {
+						// 显示菜单
+						mobileMenu.classList.remove("hidden");
+						// 给浏览器一点时间处理DOM变化
+						setTimeout(() => {
+							mobileMenu.classList.remove("opacity-0", "transform", "-translate-y-4", "max-h-0");
+							mobileMenu.classList.add("opacity-100", "translate-y-0", "max-h-96");
+						}, 10);
+					} else {
+						// 隐藏菜单，先执行动画
+						mobileMenu.classList.remove("opacity-100", "translate-y-0", "max-h-96");
+						mobileMenu.classList.add("opacity-0", "transform", "-translate-y-4", "max-h-0");
+						// 动画完成后隐藏元素
+						setTimeout(() => {
+							mobileMenu.classList.add("hidden");
+						}, 500); // 与CSS中duration-500匹配
+					}
+				});
+
+				// 为每个菜单项添加淡入延迟效果
+				const menuItems = mobileMenu.querySelectorAll("a");
+				menuItems.forEach((item, index) => {
+					item.style.transitionDelay = `${index * 50}ms`;
+				});
+			});
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const counters = document.querySelectorAll(".counter");
+
+				counters.forEach(counter => {
+					const target = +counter.getAttribute("data-target");
+					let current = 0;
+					const duration = 3000; // 动画总时长（毫秒）
+					const frameRate = 60; // 每秒帧数
+					const increment = target / (duration / (1000 / frameRate));
+
+					const updateCount = () => {
+						current += increment;
+						if (current < target) {
+							counter.textContent = Math.floor(current).toLocaleString();
+							requestAnimationFrame(updateCount);
+						} else {
+							counter.textContent = target.toLocaleString();
+						}
+					};
+
+					updateCount();
+				});
+			});
+		</script>
+	</body>
 </html>
