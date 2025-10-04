@@ -2338,25 +2338,10 @@
 					announcementDateSpan.textContent = currentDate;
 				}
 				
-				// 检查是否已经关闭过公告（24小时内不再显示）
-				const announcementDismissed = localStorage.getItem('announcementDismissed');
-				const dismissTime = localStorage.getItem('announcementDismissTime');
-				const currentTime = new Date().getTime();
-				const oneDayInMs = 24 * 60 * 60 * 1000; // 24小时
-				
-				// 如果没有关闭过，或者已经超过24小时，则显示公告
-				if (!announcementDismissed || (dismissTime && currentTime - dismissTime > oneDayInMs)) {
-					// 页面加载后2秒显示公告
-					setTimeout(() => {
-						showAnnouncement();
-					}, 2000);
-					
-					// 如果超过24小时，清除旧的记录
-					if (dismissTime && currentTime - dismissTime > oneDayInMs) {
-						localStorage.removeItem('announcementDismissed');
-						localStorage.removeItem('announcementDismissTime');
-					}
-				}
+				// 每次打开网站都显示公告（页面加载后2秒）
+				setTimeout(() => {
+					showAnnouncement();
+				}, 2000);
 				
 				// 显示公告
 				function showAnnouncement() {
@@ -2366,31 +2351,25 @@
 					}
 				}
 				
-				// 隐藏公告
-				function hideAnnouncement(remember = false) {
+				// 隐藏公告（不保存到localStorage，每次刷新都会重新显示）
+				function hideAnnouncement() {
 					if (announcementBanner) {
 						announcementBanner.classList.remove('translate-x-0');
 						announcementBanner.classList.add('translate-x-full');
-						
-						// 如果选择记住，则保存到 localStorage
-						if (remember) {
-							localStorage.setItem('announcementDismissed', 'true');
-							localStorage.setItem('announcementDismissTime', new Date().getTime().toString());
-						}
 					}
 				}
 				
-				// 关闭按钮（暂时关闭，刷新页面会再次显示）
+				// 关闭按钮
 				if (closeAnnouncementBtn) {
 					closeAnnouncementBtn.addEventListener('click', function() {
-						hideAnnouncement(false);
+						hideAnnouncement();
 					});
 				}
 				
-				// "知道了"按钮（24小时内不再显示）
+				// "知道了"按钮
 				if (dismissAnnouncementBtn) {
 					dismissAnnouncementBtn.addEventListener('click', function() {
-						hideAnnouncement(true);
+						hideAnnouncement();
 					});
 				}
 				
@@ -2398,13 +2377,13 @@
 				const learnMoreBtn = announcementBanner.querySelector('a[href="#products"]');
 				if (learnMoreBtn) {
 					learnMoreBtn.addEventListener('click', function() {
-						hideAnnouncement(false);
+						hideAnnouncement();
 					});
 				}
 			});
 		</script>
 
-		<!-- 生日弹窗 JavaScript (10月3日专属) -->
+		<!-- 生日弹窗 JavaScript (10月4日专属) -->
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				const birthdayModal = document.getElementById('birthday-modal');
@@ -2413,21 +2392,12 @@
 				const dismissBirthdayBtn = document.getElementById('dismiss-birthday');
 				const cookieConsent = document.getElementById('cookie-consent');
 				
-				// 检查是否是10月3日
+				// 检查是否是10月4日
 				function isBirthday() {
 					const today = new Date();
 					const month = today.getMonth() + 1; // 月份从0开始，所以+1
 					const day = today.getDate();
 					return month === 10 && day === 4;
-				}
-				
-				// 检查今天是否已经显示过生日弹窗
-				function hasShownBirthdayToday() {
-					const lastShown = localStorage.getItem('birthdayModalShown');
-					if (!lastShown) return false;
-					
-					const today = new Date().toDateString();
-					return lastShown === today;
 				}
 				
 				// 显示生日弹窗
@@ -2475,15 +2445,11 @@
 								cookieConsent.classList.remove('hidden');
 							}
 						}, 500);
-						
-						// 记录今天已经显示过
-						const today = new Date().toDateString();
-						localStorage.setItem('birthdayModalShown', today);
 					}
 				}
 				
-				// 如果是10月6日且今天还没显示过，则在页面加载1秒后显示弹窗
-				if (isBirthday() && !hasShownBirthdayToday()) {
+				// 如果是10月4日，每次打开网站都在页面加载1秒后显示弹窗
+				if (isBirthday()) {
 					setTimeout(() => {
 						showBirthdayModal();
 					}, 1000);
