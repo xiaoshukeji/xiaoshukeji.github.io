@@ -2199,6 +2199,77 @@
 			</div>
 		</div>
 
+		<!-- 微信浏览器提示弹窗 -->
+		<div id="wechat-browser-modal" class="fixed inset-0 bg-black bg-opacity-90 z-[9999] opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+			<div id="wechat-modal-content" class="bg-white rounded-2xl shadow-2xl max-w-md w-full transform scale-95 transition-transform duration-300">
+				<!-- 关闭按钮 -->
+				<button id="close-wechat-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+				
+				<!-- 弹窗内容 -->
+				<div class="p-8 text-center">
+					<!-- 图标 -->
+					<div class="mb-6 flex justify-center">
+						<div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
+							<svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+							</svg>
+						</div>
+					</div>
+					
+					<!-- 标题 -->
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">
+						检测到微信浏览器
+					</h3>
+					
+					<!-- 说明文字 -->
+					<div class="text-gray-600 mb-6 space-y-3 text-left">
+						<p class="flex items-start gap-2">
+							<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+							</svg>
+							<span>微信内置浏览器限制了部分功能</span>
+						</p>
+						<p class="flex items-start gap-2">
+							<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+							</svg>
+							<span>可能无法正常使用下载、分享等功能</span>
+						</p>
+						<p class="flex items-start gap-2">
+							<svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>建议使用 Safari、Chrome 等浏览器</span>
+						</p>
+					</div>
+					
+					<!-- 操作指引 -->
+					<div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 mb-6">
+						<p class="text-sm text-gray-700 font-medium mb-2">📱 如何在外部浏览器打开？</p>
+						<p class="text-xs text-gray-600 text-left">
+							1. 点击右上角 <span class="font-bold">「···」</span> 菜单<br>
+							2. 选择 <span class="font-bold">「在浏览器中打开」</span> 或 <span class="font-bold">「在Safari中打开」</span>
+						</p>
+					</div>
+					
+					<!-- 按钮 -->
+					<div class="flex gap-3">
+						<button id="wechat-understand" class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+							我知道了
+						</button>
+					</div>
+					
+					<p class="text-xs text-gray-400 mt-4">
+						如已在外部浏览器，请忽略此提示
+					</p>
+				</div>
+			</div>
+		</div>
+
 		<!-- Cookies 同意弹窗 -->
 		<div id="cookie-consent" class="hidden fixed bottom-0 left-0 right-0 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-2xl z-50 border-t-2 border-green-500">
 			<div class="container mx-auto px-4 py-6 sm:px-6 lg:px-8">
@@ -2226,6 +2297,108 @@
 			</div>
 		</div>
 
+		<!-- 微信浏览器检测 JavaScript (最高优先级) -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				const wechatModal = document.getElementById('wechat-browser-modal');
+				const wechatModalContent = document.getElementById('wechat-modal-content');
+				const closeWechatBtn = document.getElementById('close-wechat-modal');
+				const understandBtn = document.getElementById('wechat-understand');
+				const cookieConsent = document.getElementById('cookie-consent');
+				const birthdayModal = document.getElementById('birthday-modal');
+				const announcementBanner = document.getElementById('announcement-banner');
+				
+				// 检测是否是微信浏览器
+				function isWechatBrowser() {
+					const ua = navigator.userAgent.toLowerCase();
+					return /micromessenger/i.test(ua);
+				}
+				
+				// 显示微信浏览器提示
+				function showWechatModal() {
+					if (wechatModal && wechatModalContent) {
+						// 隐藏所有其他弹窗
+						if (cookieConsent) cookieConsent.classList.add('hidden');
+						if (birthdayModal) {
+							birthdayModal.classList.remove('opacity-100', 'pointer-events-auto');
+							birthdayModal.classList.add('opacity-0', 'pointer-events-none');
+						}
+						if (announcementBanner) {
+							announcementBanner.classList.remove('translate-x-0');
+							announcementBanner.classList.add('translate-x-full');
+						}
+						
+						// 显示微信提示弹窗
+						wechatModal.classList.remove('opacity-0', 'pointer-events-none');
+						wechatModal.classList.add('opacity-100', 'pointer-events-auto');
+						
+						setTimeout(() => {
+							wechatModalContent.classList.remove('scale-95');
+							wechatModalContent.classList.add('scale-100');
+						}, 50);
+						
+						// 禁止背景滚动
+						document.body.style.overflow = 'hidden';
+					}
+				}
+				
+				// 隐藏微信浏览器提示
+				function hideWechatModal() {
+					if (wechatModal && wechatModalContent) {
+						wechatModalContent.classList.remove('scale-100');
+						wechatModalContent.classList.add('scale-95');
+						
+						setTimeout(() => {
+							wechatModal.classList.remove('opacity-100', 'pointer-events-auto');
+							wechatModal.classList.add('opacity-0', 'pointer-events-none');
+						}, 200);
+						
+						// 恢复背景滚动
+						document.body.style.overflow = '';
+						
+						// 延迟显示其他弹窗（让用户先看到微信提示）
+						setTimeout(() => {
+							// 允许其他弹窗按正常逻辑显示
+							window.wechatModalClosed = true;
+						}, 300);
+					}
+				}
+				
+				// 如果是微信浏览器，立即显示提示（最高优先级）
+				if (isWechatBrowser()) {
+					// 立即显示，不延迟
+					showWechatModal();
+					
+					// 关闭按钮
+					if (closeWechatBtn) {
+						closeWechatBtn.addEventListener('click', hideWechatModal);
+					}
+					
+					// "我知道了"按钮
+					if (understandBtn) {
+						understandBtn.addEventListener('click', hideWechatModal);
+					}
+					
+					// 点击背景关闭
+					wechatModal.addEventListener('click', function(e) {
+						if (e.target === wechatModal) {
+							hideWechatModal();
+						}
+					});
+					
+					// ESC键关闭
+					document.addEventListener('keydown', function(e) {
+						if (e.key === 'Escape' && wechatModal.classList.contains('opacity-100')) {
+							hideWechatModal();
+						}
+					});
+				} else {
+					// 如果不是微信浏览器，标记为已关闭，允许其他弹窗显示
+					window.wechatModalClosed = true;
+				}
+			});
+		</script>
+
 		<!-- Cookies 同意 JavaScript -->
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -2236,13 +2409,21 @@
 				// 检查用户是否已经做出选择
 				const hasConsented = localStorage.getItem('cookieConsent');
 				
-				// 如果用户还没有做出选择，显示弹窗
-				if (!hasConsented) {
-					setTimeout(() => {
-						cookieConsent.classList.remove('hidden');
-						cookieConsent.style.animation = 'slideUp 0.5s ease-out forwards';
-					}, 500);
+				// 等待微信弹窗关闭后再显示Cookie弹窗
+				function checkAndShowCookieConsent() {
+					if (!hasConsented && window.wechatModalClosed !== false) {
+						setTimeout(() => {
+							cookieConsent.classList.remove('hidden');
+							cookieConsent.style.animation = 'slideUp 0.5s ease-out forwards';
+						}, 500);
+					} else if (!hasConsented) {
+						// 如果微信弹窗还在，继续等待
+						setTimeout(checkAndShowCookieConsent, 100);
+					}
 				}
+				
+				// 开始检查
+				checkAndShowCookieConsent();
 				
 				// 接受按钮点击事件
 				acceptBtn.addEventListener('click', function() {
@@ -2338,10 +2519,19 @@
 					announcementDateSpan.textContent = currentDate;
 				}
 				
-				// 每次打开网站都显示公告（页面加载后2秒）
-				setTimeout(() => {
-					showAnnouncement();
-				}, 2000);
+				// 等待微信弹窗关闭后再显示公告（页面加载后2秒）
+				function checkAndShowAnnouncement() {
+					if (window.wechatModalClosed !== false) {
+						setTimeout(() => {
+							showAnnouncement();
+						}, 2000);
+					} else {
+						// 如果微信弹窗还在，继续等待
+						setTimeout(checkAndShowAnnouncement, 100);
+					}
+				}
+				
+				checkAndShowAnnouncement();
 				
 				// 显示公告
 				function showAnnouncement() {
@@ -2383,7 +2573,7 @@
 			});
 		</script>
 
-		<!-- 生日弹窗 JavaScript (10月4日专属) -->
+		<!-- 生日弹窗 JavaScript (10月3日专属) -->
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				const birthdayModal = document.getElementById('birthday-modal');
@@ -2392,7 +2582,7 @@
 				const dismissBirthdayBtn = document.getElementById('dismiss-birthday');
 				const cookieConsent = document.getElementById('cookie-consent');
 				
-				// 检查是否是10月4日
+				// 检查是否是10月3日
 				function isBirthday() {
 					const today = new Date();
 					const month = today.getMonth() + 1; // 月份从0开始，所以+1
@@ -2448,11 +2638,20 @@
 					}
 				}
 				
-				// 如果是10月4日，每次打开网站都在页面加载1秒后显示弹窗
+				// 如果是10月3日，等待微信弹窗关闭后在页面加载1秒后显示弹窗
 				if (isBirthday()) {
-					setTimeout(() => {
-						showBirthdayModal();
-					}, 1000);
+					function checkAndShowBirthday() {
+						if (window.wechatModalClosed !== false) {
+							setTimeout(() => {
+								showBirthdayModal();
+							}, 1000);
+						} else {
+							// 如果微信弹窗还在，继续等待
+							setTimeout(checkAndShowBirthday, 100);
+						}
+					}
+					
+					checkAndShowBirthday();
 				}
 				
 				// 关闭按钮事件
