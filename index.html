@@ -254,7 +254,7 @@
 			<div class="absolute w-1 h-1 bg-green-500 rounded-full opacity-20 particles" style="left: 7.50985%; top: 96.1863%; animation-delay: 1.09471s; animation-duration: 7.77054s;"></div>
 		</div> <!-- Main content -->
 		<div class="relative z-10">
-			<header class="fixed top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
+			<header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200 transition-transform duration-300">
 				<nav class="container-custom">
 					<div class="flex items-center justify-between h-16 lg:h-20">
 						<!-- Logo -->
@@ -316,6 +316,143 @@
 					</div>
 				</nav>
 			</header>
+
+		<!-- 生日弹窗 (10月3日专属) -->
+		<div id="birthday-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500">
+			<div class="relative bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 rounded-3xl shadow-2xl max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-500" id="birthday-content">
+				<!-- 关闭按钮 -->
+				<button id="close-birthday" class="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white/80 hover:bg-white rounded-full shadow-lg transition-all duration-300 hover:rotate-90">
+					<svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+
+				<!-- 装饰背景 -->
+				<div class="absolute inset-0 overflow-hidden pointer-events-none">
+					<div class="absolute top-0 left-1/4 w-32 h-32 bg-pink-300/20 rounded-full blur-3xl animate-pulse"></div>
+					<div class="absolute bottom-0 right-1/4 w-40 h-40 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 0.5s;"></div>
+				</div>
+
+				<!-- 内容 -->
+				<div class="relative p-8 text-center">
+					<!-- 生日蛋糕图标 -->
+					<div class="mb-6 flex justify-center">
+						<div class="relative">
+							<div class="text-7xl animate-bounce" style="animation-duration: 1s;">🎂</div>
+							<div class="absolute -top-2 -right-2 text-3xl animate-spin" style="animation-duration: 3s;">✨</div>
+							<div class="absolute -top-2 -left-2 text-3xl animate-spin" style="animation-duration: 3s; animation-delay: 1s;">🎉</div>
+						</div>
+					</div>
+
+					<!-- 标题 -->
+					<h2 class="text-3xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+						今天是我的生日！
+					</h2>
+
+					<!-- 副标题 -->
+					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+						感谢您访问我们的网站！<br>
+						在这个特殊的日子里，<br>
+						欢迎来我的社交媒体送上生日祝福 🎈
+					</p>
+
+					<!-- 气球装饰 -->
+					<div class="flex justify-center gap-3 mb-6 text-4xl">
+						<span class="animate-bounce" style="animation-delay: 0s;">🎈</span>
+						<span class="animate-bounce" style="animation-delay: 0.2s;">🎊</span>
+						<span class="animate-bounce" style="animation-delay: 0.4s;">🎁</span>
+						<span class="animate-bounce" style="animation-delay: 0.6s;">🎉</span>
+					</div>
+
+					<!-- 按钮组 -->
+					<div class="flex flex-col sm:flex-row gap-3 justify-center">
+						<a href="https://www.douyin.com/user/MS4wLjABAAAAKClOsRoVCN83rNU4tcRzUW4JO3fSPbe5QFLZ0MkO6UIgKgSAr0TwIF0SduqCSRjA?from_tab_name=main" 
+						   target="_blank" 
+						   class="inline-flex items-center justify-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+							<!-- 抖音图标 -->
+							<svg class="w-5 h-5 mr-2" viewBox="0 0 48 48" fill="currentColor">
+								<path d="M33.5 5c1.6 0 3.2.2 4.6.6v7.5c-2.2-.1-4.3-.7-6.1-1.7v14.8c0 5.9-4.8 10.7-10.7 10.7S11.6 32.1 11.6 26.2c0-5.5 4.2-10.1 9.5-10.6v7.5c-1.2.5-2 1.6-2 3 0 1.8 1.4 3.2 3.2 3.2s3.2-1.4 3.2-3.2V5h8z"/>
+							</svg>
+							去抖音祝我生日快乐
+						</a>
+						<button id="dismiss-birthday" class="inline-flex items-center justify-center bg-white/80 hover:bg-white text-gray-700 font-medium py-3 px-6 rounded-xl shadow transition-all duration-300 hover:shadow-md">
+							稍后再说
+						</button>
+					</div>
+
+					<!-- 底部文字 -->
+					<p class="mt-4 text-sm text-gray-500">
+						🎵 点击按钮，一起庆祝这个美好的日子！
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 公告弹窗 -->
+		<div id="announcement-banner" class="fixed top-24 lg:top-28 right-0 z-40 transform translate-x-full transition-all duration-500 ease-out">
+			<div class="bg-white text-gray-800 shadow-2xl rounded-l-2xl overflow-hidden max-w-sm border-l-4 border-green-500">
+				<!-- 公告头部 -->
+				<div class="bg-gradient-to-r from-green-500 to-emerald-600 px-4 py-2 flex items-center justify-between">
+					<div class="flex items-center space-x-2">
+						<svg class="w-5 h-5 animate-pulse text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+						</svg>
+						<span class="font-bold text-sm text-white">重要公告</span>
+					</div>
+					<button id="close-announcement" class="hover:bg-white/20 rounded-full p-1 transition-colors duration-200 text-white">
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+						</svg>
+					</button>
+				</div>
+
+				<!-- 公告内容 -->
+				<div class="p-4 space-y-3">
+					<div class="flex items-start space-x-3">
+						<div class="flex-shrink-0 bg-green-100 rounded-full p-2">
+							<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="font-bold text-base mb-1 text-gray-800">不停机更新✨</h3>
+							<p class="text-sm text-gray-600 leading-relaxed">
+								为了给您带来更好的使用体验，我们将在<strong>10月3日 下午 14:00-16:00</strong> 进行系统优化升级。期间服务<strong>不会中断</strong>，您可以正常访问所有功能。感谢您的支持！
+							</p>
+						</div>
+					</div>
+
+					<div class="flex justify-end gap-2 pt-2">
+						<button id="dismiss-announcement" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 font-medium py-2 px-4 rounded-lg text-sm transition-all duration-300 transform hover:scale-105">
+							知道了
+						</button>
+					</div>
+
+						<!--
+						公告标签
+						<div class="flex flex-wrap gap-2 pt-2">
+							<span class="bg-white/20 px-3 py-1 rounded-full text-xs font-medium">🔥 新功能</span>
+							<span class="bg-white/20 px-3 py-1 rounded-full text-xs font-medium">✨ 优惠活动</span>
+						</div>
+
+						动按钮
+						<div class="flex gap-2 pt-2">
+							<a href="#products" class="flex-1 bg-white text-green-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-lg text-center text-sm transition-all duration-300 transform hover:scale-105">
+								了解更多
+							</a>
+							<button id="dismiss-announcement" class="bg-white/20 hover:bg-white/30 font-medium py-2 px-4 rounded-lg text-sm transition-colors duration-300">
+								知道了
+							</button>
+						</div>
+						-->
+					<!-- 时间戳 -->
+					<div class="text-xs text-gray-500 text-center pt-1">
+						📅 发布时间：<span id="announcement-date"></span>
+					</div>
+					</div>
+				</div>
+			</div>
+
 			<main data-astro-cid-j7pv25f6="">
 				<section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gray-50" data-astro-cid-bbe6dxrz="">
 					<!-- Floating Geometric Shapes -->
@@ -1969,5 +2106,497 @@
 				});
 			});
 		</script>
+
+		<!-- Cookies Policy Modal -->
+		<div id="cookies-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+			<div class="bg-white rounded-lg shadow-xl w-[60vw] mx-4 transform transition-all">
+				<div class="p-6">
+					<div class="flex items-center mb-4">
+						<div class="flex-shrink-0">
+							<!-- Icon for cookies -->
+							<svg width="1em" height="1em" class="w-6 h-6 text-1panel" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+							</svg>
+						</div>
+						<div class="ml-2">
+							<h3 class="text-lg font-medium text-gray-900">Cookies 政策:</h3>
+						</div>
+					</div>
+					<div class="mb-6 max-h-[60vh] overflow-y-auto">
+						<p class="text-sm text-gray-600">
+							<strong>什么是 Cookies？</strong></br>
+							Cookies 是小型文本文件，当您访问网站时会被存储在您的设备上。它们被广泛用于使网站工作或更高效地工作，以及提供信息给网站所有者。</br>
+							<br />
+
+							<strong>1. 我们如何使用 Cookies</strong></br>
+							我们使用 Cookies 来：</br>
+							• 改善您的浏览体验和网站功能</br>
+							• 记住您的偏好设置和登录信息</br>
+							• 分析网站流量和用户行为</br>
+							• 提供个性化内容和推荐</br>
+							• 确保网站安全性和防止欺诈</br>
+							<br />
+
+							<strong>2. Cookies 的类型</strong></br>
+							<strong>必要 Cookies：</strong>这些 Cookies 对网站的运行至关重要，使您能够使用网站的基本功能。没有这些 Cookies，某些服务无法提供。</br>
+							<strong>性能 Cookies：</strong>这些 Cookies 收集有关访问者如何使用网站的信息，例如访问次数最多的页面。这些数据用于优化网站并使其更易于浏览。</br>
+							<strong>功能 Cookies：</strong>这些 Cookies 允许网站记住您的选择（如用户名、语言或地区），并提供增强的个性化功能。</br>
+							<strong>分析 Cookies：</strong>我们使用 Google Analytics 等工具来了解用户如何与我们的网站互动。这些 Cookies 帮助我们改进网站内容和用户体验。</br>
+							<br />
+
+							<strong>3. 第三方 Cookies</strong></br>
+							某些情况下，我们使用可信的第三方 Cookies，如：</br>
+							• Google Analytics - 用于网站分析</br>
+							• 社交媒体插件 - 用于内容分享</br>
+							• 广告合作伙伴 - 用于展示相关广告</br>
+							<br />
+
+							<strong>4. 管理您的 Cookies 偏好</strong></br>
+							您可以通过以下方式控制和管理 Cookies：</br>
+							• 使用我们网站上的 Cookies 同意横幅进行选择</br>
+							• 通过浏览器设置删除或阻止 Cookies</br>
+							• 使用浏览器的隐私模式或无痕模式</br>
+							• 访问第三方服务提供商的网站以选择退出</br>
+							<br />
+							<em>注意：禁用 Cookies 可能会影响网站的某些功能和您的用户体验。</em></br>
+							<br />
+
+							<strong>5. Cookies 的有效期</strong></br>
+							<strong>会话 Cookies：</strong>这些是临时 Cookies，当您关闭浏览器时会自动删除。</br>
+							<strong>持久 Cookies：</strong>这些 Cookies 会在您的设备上保留一段指定的时间，即使在浏览器关闭后也不会删除。</br>
+							<br />
+
+							<strong>6. 您的权利</strong></br>
+							根据数据保护法规（如 GDPR 和 CCPA），您有权：</br>
+							• 了解我们收集哪些数据</br>
+							• 访问和更正您的个人数据</br>
+							• 反对或限制某些数据处理</br>
+							• 随时撤回您的同意</br>
+							• 要求删除您的数据</br>
+							<br />
+
+							<strong>7. 联系我们</strong></br>
+							如果您对我们的 Cookies 使用有任何疑问或疑虑，请通过以下方式联系我们：</br>
+							• 邮箱：contact@shurongcx.com</br>
+							• 访问我们的联系页面</br>
+							<br />
+
+							<strong>8. 政策更新</strong></br>
+							我们可能会不时更新本 Cookies 政策，以反映我们实践的变化或其他运营、法律或监管原因。最新版本将始终在本网站上提供，并标注最后更新日期。</br>
+							<br />
+
+							<strong>最后更新日期：2024年10月</strong></br>
+							<br />
+							<strong>感谢您花时间了解我们的 Cookies 政策！</strong> 您的隐私和信任对我们至关重要。
+						</p>
+					</div>
+					<div class="flex justify-end space-x-3">
+						<button id="close-cookies" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
+							关闭
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Cookies 同意弹窗 -->
+		<div id="cookie-consent" class="hidden fixed bottom-0 left-0 right-0 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-2xl z-50 border-t-2 border-green-500">
+			<div class="container mx-auto px-4 py-6 sm:px-6 lg:px-8">
+				<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+					<div class="flex items-start gap-3 flex-1">
+						<svg class="w-6 h-6 text-green-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+						<div>
+							<p class="text-sm sm:text-base leading-relaxed">
+								我们使用 Cookies 来改善您的浏览体验，提供个性化内容和分析网站流量。继续使用本网站即表示您同意我们使用 Cookies。
+								<a id="cookies-policy-button" class="underline hover:text-green-400 transition-colors cursor-pointer">了解更多</a>
+							</p>
+						</div>
+					</div>
+					<div class="flex gap-3 flex-shrink-0">
+						<button id="cookie-decline" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white border border-gray-600 rounded-lg hover:border-gray-500 transition-all duration-300">
+							拒绝
+						</button>
+						<button id="cookie-accept" class="px-6 py-2 text-sm font-medium bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+							接受
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Cookies 同意 JavaScript -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				const cookieConsent = document.getElementById('cookie-consent');
+				const acceptBtn = document.getElementById('cookie-accept');
+				const declineBtn = document.getElementById('cookie-decline');
+				
+				// 检查用户是否已经做出选择
+				const hasConsented = localStorage.getItem('cookieConsent');
+				
+				// 如果用户还没有做出选择，显示弹窗
+				if (!hasConsented) {
+					setTimeout(() => {
+						cookieConsent.classList.remove('hidden');
+						cookieConsent.style.animation = 'slideUp 0.5s ease-out forwards';
+					}, 500);
+				}
+				
+				// 接受按钮点击事件
+				acceptBtn.addEventListener('click', function() {
+					localStorage.setItem('cookieConsent', 'accepted');
+					hideCookieConsent();
+				});
+				
+				// 拒绝按钮点击事件
+				declineBtn.addEventListener('click', function() {
+					localStorage.setItem('cookieConsent', 'declined');
+					hideCookieConsent();
+				});
+				
+				// 隐藏弹窗的函数
+				function hideCookieConsent() {
+					cookieConsent.style.animation = 'slideDown 0.4s ease-in forwards';
+					setTimeout(() => {
+						cookieConsent.classList.add('hidden');
+					}, 400);
+				}
+			});
+		</script>
+
+		<!-- Cookies Modal JavaScript -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// 通用函数：显示模态窗口
+				function showModal(modal) {
+					modal.classList.remove('hidden');
+					modal.classList.add('flex');
+					
+					setTimeout(() => {
+						const modalContent = modal.querySelector('.bg-white');
+						if (modalContent) {
+							modalContent.classList.add('scale-100');
+							modalContent.classList.remove('scale-95');
+						}
+					}, 10);
+				}
+				
+				// 通用函数：隐藏模态窗口
+				function hideModal(modal) {
+					const modalContent = modal.querySelector('.bg-white');
+					if (modalContent) {
+						modalContent.classList.add('scale-95');
+						modalContent.classList.remove('scale-100');
+					}
+					setTimeout(() => {
+						modal.classList.add('hidden');
+						modal.classList.remove('flex');
+					}, 200);
+				}
+				
+				// Cookies 政策模态窗口
+				const cookiesButton = document.getElementById('cookies-policy-button');
+				const cookiesModal = document.getElementById('cookies-modal');
+				const closeCookiesButton = document.getElementById('close-cookies');
+				
+				if (cookiesButton && cookiesModal && closeCookiesButton) {
+					cookiesButton.addEventListener('click', function(e) {
+						e.preventDefault();
+						showModal(cookiesModal);
+					});
+					
+					closeCookiesButton.addEventListener('click', function() {
+						hideModal(cookiesModal);
+					});
+					
+					cookiesModal.addEventListener('click', function(e) {
+						if (e.target === cookiesModal) {
+							hideModal(cookiesModal);
+						}
+					});
+				}
+			});
+		</script>
+
+		<!-- 公告弹窗 JavaScript -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const announcementBanner = document.getElementById('announcement-banner');
+				const closeAnnouncementBtn = document.getElementById('close-announcement');
+				const dismissAnnouncementBtn = document.getElementById('dismiss-announcement');
+				const announcementDateSpan = document.getElementById('announcement-date');
+				
+				// 设置公告日期
+				const currentDate = new Date().toLocaleDateString('zh-CN', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric'
+				});
+				if (announcementDateSpan) {
+					announcementDateSpan.textContent = currentDate;
+				}
+				
+				// 检查是否已经关闭过公告（24小时内不再显示）
+				const announcementDismissed = localStorage.getItem('announcementDismissed');
+				const dismissTime = localStorage.getItem('announcementDismissTime');
+				const currentTime = new Date().getTime();
+				const oneDayInMs = 24 * 60 * 60 * 1000; // 24小时
+				
+				// 如果没有关闭过，或者已经超过24小时，则显示公告
+				if (!announcementDismissed || (dismissTime && currentTime - dismissTime > oneDayInMs)) {
+					// 页面加载后2秒显示公告
+					setTimeout(() => {
+						showAnnouncement();
+					}, 2000);
+					
+					// 如果超过24小时，清除旧的记录
+					if (dismissTime && currentTime - dismissTime > oneDayInMs) {
+						localStorage.removeItem('announcementDismissed');
+						localStorage.removeItem('announcementDismissTime');
+					}
+				}
+				
+				// 显示公告
+				function showAnnouncement() {
+					if (announcementBanner) {
+						announcementBanner.classList.remove('translate-x-full');
+						announcementBanner.classList.add('translate-x-0');
+					}
+				}
+				
+				// 隐藏公告
+				function hideAnnouncement(remember = false) {
+					if (announcementBanner) {
+						announcementBanner.classList.remove('translate-x-0');
+						announcementBanner.classList.add('translate-x-full');
+						
+						// 如果选择记住，则保存到 localStorage
+						if (remember) {
+							localStorage.setItem('announcementDismissed', 'true');
+							localStorage.setItem('announcementDismissTime', new Date().getTime().toString());
+						}
+					}
+				}
+				
+				// 关闭按钮（暂时关闭，刷新页面会再次显示）
+				if (closeAnnouncementBtn) {
+					closeAnnouncementBtn.addEventListener('click', function() {
+						hideAnnouncement(false);
+					});
+				}
+				
+				// "知道了"按钮（24小时内不再显示）
+				if (dismissAnnouncementBtn) {
+					dismissAnnouncementBtn.addEventListener('click', function() {
+						hideAnnouncement(true);
+					});
+				}
+				
+				// 点击"了解更多"按钮后也隐藏公告
+				const learnMoreBtn = announcementBanner.querySelector('a[href="#products"]');
+				if (learnMoreBtn) {
+					learnMoreBtn.addEventListener('click', function() {
+						hideAnnouncement(false);
+					});
+				}
+			});
+		</script>
+
+		<!-- 生日弹窗 JavaScript (10月3日专属) -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const birthdayModal = document.getElementById('birthday-modal');
+				const birthdayContent = document.getElementById('birthday-content');
+				const closeBirthdayBtn = document.getElementById('close-birthday');
+				const dismissBirthdayBtn = document.getElementById('dismiss-birthday');
+				const cookieConsent = document.getElementById('cookie-consent');
+				
+				// 检查是否是10月3日
+				function isBirthday() {
+					const today = new Date();
+					const month = today.getMonth() + 1; // 月份从0开始，所以+1
+					const day = today.getDate();
+					return month === 10 && day === 4;
+				}
+				
+				// 检查今天是否已经显示过生日弹窗
+				function hasShownBirthdayToday() {
+					const lastShown = localStorage.getItem('birthdayModalShown');
+					if (!lastShown) return false;
+					
+					const today = new Date().toDateString();
+					return lastShown === today;
+				}
+				
+				// 显示生日弹窗
+				function showBirthdayModal() {
+					if (birthdayModal && birthdayContent) {
+						// 隐藏Cookie弹窗
+						if (cookieConsent) {
+							cookieConsent.classList.add('hidden');
+						}
+						
+						// 添加显示类
+						birthdayModal.classList.remove('opacity-0', 'pointer-events-none');
+						birthdayModal.classList.add('opacity-100', 'pointer-events-auto');
+						
+						// 弹窗内容放大动画
+						setTimeout(() => {
+							birthdayContent.classList.remove('scale-95');
+							birthdayContent.classList.add('scale-100');
+						}, 50);
+						
+						// 禁止背景滚动
+						document.body.style.overflow = 'hidden';
+					}
+				}
+				
+				// 隐藏生日弹窗
+				function hideBirthdayModal() {
+					if (birthdayModal && birthdayContent) {
+						// 缩小动画
+						birthdayContent.classList.remove('scale-100');
+						birthdayContent.classList.add('scale-95');
+						
+						// 淡出
+						setTimeout(() => {
+							birthdayModal.classList.remove('opacity-100', 'pointer-events-auto');
+							birthdayModal.classList.add('opacity-0', 'pointer-events-none');
+						}, 200);
+						
+						// 恢复背景滚动
+						document.body.style.overflow = '';
+						
+						// 恢复显示Cookie弹窗（如果用户还没同意）
+						setTimeout(() => {
+							if (cookieConsent && !localStorage.getItem('cookieConsent')) {
+								cookieConsent.classList.remove('hidden');
+							}
+						}, 500);
+						
+						// 记录今天已经显示过
+						const today = new Date().toDateString();
+						localStorage.setItem('birthdayModalShown', today);
+					}
+				}
+				
+				// 如果是10月6日且今天还没显示过，则在页面加载1秒后显示弹窗
+				if (isBirthday() && !hasShownBirthdayToday()) {
+					setTimeout(() => {
+						showBirthdayModal();
+					}, 1000);
+				}
+				
+				// 关闭按钮事件
+				if (closeBirthdayBtn) {
+					closeBirthdayBtn.addEventListener('click', hideBirthdayModal);
+				}
+				
+				// "稍后再说"按钮事件
+				if (dismissBirthdayBtn) {
+					dismissBirthdayBtn.addEventListener('click', hideBirthdayModal);
+				}
+				
+				// 点击背景关闭
+				if (birthdayModal) {
+					birthdayModal.addEventListener('click', function(e) {
+						if (e.target === birthdayModal) {
+							hideBirthdayModal();
+						}
+					});
+				}
+				
+				// ESC键关闭
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape' && birthdayModal.classList.contains('opacity-100')) {
+						hideBirthdayModal();
+					}
+				});
+			});
+		</script>
+
+		<!-- 导航栏滚动隐藏/显示 JavaScript -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const header = document.getElementById('main-header');
+				const announcementBanner = document.getElementById('announcement-banner');
+				let lastScrollTop = 0;
+				let isScrolling = false;
+				
+				window.addEventListener('scroll', function() {
+					if (!isScrolling) {
+						window.requestAnimationFrame(function() {
+							const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+							
+							// 向下滚动时隐藏导航栏
+							if (scrollTop > lastScrollTop && scrollTop > 100) {
+								header.style.transform = 'translateY(-100%)';
+								// 同时调整公告位置到顶部
+								if (announcementBanner) {
+									announcementBanner.style.top = '0.5rem';
+								}
+							} 
+							// 向上滚动时显示导航栏
+							else if (scrollTop < lastScrollTop) {
+								header.style.transform = 'translateY(0)';
+								// 恢复公告原来的位置
+								if (announcementBanner) {
+									announcementBanner.style.top = '';
+								}
+							}
+							
+							lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+							isScrolling = false;
+						});
+						
+						isScrolling = true;
+					}
+				});
+			});
+		</script>
+
+		<!-- Cookies 弹窗动画样式 -->
+		<style>
+			@keyframes slideUp {
+				from {
+					transform: translateY(100%);
+					opacity: 0;
+				}
+				to {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+			
+			@keyframes slideDown {
+				from {
+					transform: translateY(0);
+					opacity: 1;
+				}
+				to {
+					transform: translateY(100%);
+					opacity: 0;
+				}
+			}
+			
+			#cookie-consent {
+				animation: none;
+			}
+
+			/* Cookies Modal 动画样式 */
+			#cookies-modal .bg-white {
+				transition: transform 0.2s ease-out;
+			}
+			
+			#cookies-modal .scale-95 {
+				transform: scale(0.95);
+			}
+			
+			#cookies-modal .scale-100 {
+				transform: scale(1);
+			}
+		</style>
 	</body>
 </html>
