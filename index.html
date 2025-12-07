@@ -2,25 +2,113 @@
 <html lang="zh-CN">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="description" content="树融创新 - 科技智慧生活掌控者">
+		<!-- Meta Description: 网站描述，用于搜索引擎展示 -->
+		<meta name="description" content="树融创新 - 科技智慧生活掌控者。提供树融AI智能助手、树融天气查询、在线教育平台、社区论坛等创新服务，致力于将各种资源、技术进行整合，实现共同发展和增长。">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/svg+xml" href="./resource/img/favicon.png">
-		<meta name="generator" content="Astro v4.16.18"><!-- SEO Meta Tags -->
+		<meta name="generator" content="Astro v4.16.18">
+		
+		<!-- SEO Meta Tags: OpenGraph标签，用于社交媒体分享 -->
 		<meta property="og:title" content="树融创新 - 科技智慧生活掌控者">
-		<meta property="og:description" content="树融创新 - 科技智慧生活掌控者">
+		<meta property="og:description" content="树融创新提供树融AI智能助手、树融天气查询、在线教育平台、社区论坛等创新服务，致力于将各种资源、技术进行整合，实现共同发展和增长。">
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="./resource/img/overview-full.png">
+		<meta property="og:url" content="https://xiaoshukeji.ltd/">
+		<meta property="og:image" content="https://xiaoshukeji.ltd/resource/img/overview-full.png">
+		<meta property="og:site_name" content="树融创新">
+		<meta property="og:locale" content="zh_CN">
+		
+		<!-- Twitter Card Meta Tags: Twitter分享优化 -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="树融创新 - 科技智慧生活掌控者">
-		<meta name="twitter:description" content="树融创新 - 科技智慧生活掌控者"><!-- Keywords -->
-		<meta name="keywords" content="树融创新,树融文化,创新软件编程技术,项目个性化定制,小树天气,小树AI-GPT,小树音乐,XS-Bootstap,树科学,HMCL启动器">
-		<title>树融创新 - 科技智慧生活掌控者</title><!-- Preload critical fonts -->
+		<meta name="twitter:description" content="树融创新提供树融AI智能助手、树融天气查询、在线教育平台、社区论坛等创新服务，致力于将各种资源、技术进行整合，实现共同发展和增长。">
+		<meta name="twitter:image" content="https://xiaoshukeji.ltd/resource/img/overview-full.png">
+		
+		<!-- Keywords: 网站关键词，用于SEO优化 -->
+		<meta name="keywords" content="树融创新,树融文化,创新软件编程技术,项目个性化定制,小树天气,小树AI-GPT,小树音乐,XS-Bootstap,树科学,HMCL启动器,智能AI助手,天气查询,在线教育,社区论坛,开源项目">
+		
+		<title>树融创新 - 科技智慧生活掌控者</title>
+		
+		<!-- JSON-LD Structured Data: Schema.org结构化数据，用于搜索引擎Sitelinks展示 -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "树融创新",
+			"alternateName": "Shurong Innovation",
+			"url": "https://xiaoshukeji.ltd/",
+			"description": "树融创新 - 科技智慧生活掌控者。提供树融AI智能助手、树融天气查询、在线教育平台、社区论坛等创新服务。",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://xiaoshukeji.ltd/search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			},
+			"mainEntity": {
+				"@type": "ItemList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "树融 AI - 智能AI助手",
+						"url": "https://xiaoshukeji.ltd/GPT/",
+						"description": "基于GPT技术的智能AI助手，提供对话、问答、创作等多种AI服务，助力提升工作效率"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "树融天气 - 实时天气查询",
+						"url": "https://xiaoshukeji.ltd/xiaoshuWeather/app/",
+						"description": "精准的实时天气查询服务，提供天气预报、空气质量、生活指数等全方位天气信息"
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						"name": "树融教育 - 在线学习平台",
+						"url": "https://xiaoshukeji.ltd/learn/index.html",
+						"description": "专业的在线教育平台，提供Web前端、JavaScript、CSS、HTML等编程技术课程，助力技能提升"
+					},
+					{
+						"@type": "ListItem",
+						"position": 4,
+						"name": "论坛求助 - 社区交流",
+						"url": "https://xiaoshukeji.ltd/xiaoshuBBS/",
+						"description": "树融创新社区论坛，提供技术交流、问题求助、经验分享等社区服务，与开发者共同成长"
+					},
+					{
+						"@type": "ListItem",
+						"position": 5,
+						"name": "GitHub开源 - 项目仓库",
+						"url": "https://github.com/xiaoshukeji",
+						"description": "树融创新GitHub开源项目仓库，包含多个优质开源项目，欢迎Star和Fork参与贡献"
+					},
+					{
+						"@type": "ListItem",
+						"position": 6,
+						"name": "产品概况 - 了解我们",
+						"url": "https://xiaoshukeji.ltd/#overview",
+						"description": "了解树融创新的产品概况、技术架构、核心优势和服务理念，探索科技智慧生活的无限可能"
+					}
+				]
+			}
+		}
+		</script><!-- Preload critical fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com/">
 		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 		<style>
+			/* 隐藏站点导航区块: 对用户不可见，但搜索引擎爬虫可以读取 */
+			/* 用于支持搜索引擎Sitelinks功能，在主搜索结果下方展示扩展链接 */
+			.hidden-sitelinks {
+				display: none;
+				visibility: hidden;
+				position: absolute;
+				left: -9999px;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+			}
+			
 			.text-1panel {
 				color: var(--color-1panel);
 			}
@@ -1514,6 +1602,20 @@
 					</div>
 				</section>
 			</main>
+			
+			<!-- 隐藏的站点导航区块: 供搜索引擎爬虫读取，用于Sitelinks展示 -->
+			<!-- 此区块对用户不可见，但搜索引擎可以读取其中的链接结构 -->
+			<nav class="hidden-sitelinks" aria-label="站点导航链接">
+				<ul>
+					<li><a href="https://xiaoshukeji.ltd/GPT/">树融 AI - 智能AI助手</a></li>
+					<li><a href="https://xiaoshukeji.ltd/xiaoshuWeather/app/">树融天气 - 实时天气查询</a></li>
+					<li><a href="https://xiaoshukeji.ltd/learn/index.html">树融教育 - 在线学习平台</a></li>
+					<li><a href="https://xiaoshukeji.ltd/xiaoshuBBS/">论坛求助 - 社区交流</a></li>
+					<li><a href="https://github.com/xiaoshukeji">GitHub开源 - 项目仓库</a></li>
+					<li><a href="https://xiaoshukeji.ltd/#overview">产品概况 - 了解我们</a></li>
+				</ul>
+			</nav>
+			
 			<footer class="bg-dark-900 border-t border-gray-800 py-12">
 				<div class="container-custom">
 					<!-- Main Footer Content -->
