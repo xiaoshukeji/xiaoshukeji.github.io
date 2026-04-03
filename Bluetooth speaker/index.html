@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手机蓝牙扩音器</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card">
+        <h1>手机蓝牙扩音器</h1>
+        <p class="subtitle">
+          网页实时采集手机麦克风，并播放到手机当前音频输出（连接蓝牙音箱后即为蓝牙播放）。
+        </p>
+
+        <div class="controls">
+          <button id="startBtn" class="primary">开始扩音</button>
+          <button id="stopBtn" disabled>停止</button>
+        </div>
+
+        <label class="gain-wrap" for="gainRange">
+          增益（音量）
+          <input id="gainRange" type="range" min="0" max="3" step="0.01" value="1" />
+          <span id="gainValue">1.00x</span>
+        </label>
+
+        <div class="meter-wrap">
+          <div class="meter-label">输入电平</div>
+          <div class="meter-bg">
+            <div id="meterBar" class="meter-bar"></div>
+          </div>
+        </div>
+
+        <p id="status" class="status">状态：等待开始</p>
+
+        <details>
+          <summary>使用步骤（手机）</summary>
+          <ol>
+            <li>先把手机连接到蓝牙音箱，并确认系统音频输出已切到蓝牙。</li>
+            <li>打开本页面，点击“开始扩音”，允许麦克风权限。</li>
+            <li>对着手机说话，声音会从蓝牙音箱放出。</li>
+          </ol>
+          <p class="tip">
+            提示：请使用 HTTPS 或 localhost；移动端浏览器通常不支持网页手动切换输出设备，音频输出由系统控制。
+          </p>
+        </details>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
