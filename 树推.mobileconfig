@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>FullScreen</key>
+			<true/>
+			<key>Icon</key>
+			<string>data:image/png;base64,</string>
+			<key>Label</key>
+			<string>树推</string>
+			<key>PayloadDescription</key>
+			<string>在主屏幕添加“树推”网页图标</string>
+			<key>PayloadDisplayName</key>
+			<string>树推</string>
+			<key>PayloadIdentifier</key>
+			<string>com.shutui.webclip.557A4154-F296-4937-82E8-2E72337FDCB6</string>
+			<key>PayloadType</key>
+			<string>com.apple.webClip.managed</string>
+			<key>PayloadUUID</key>
+			<string>557A4154-F296-4937-82E8-2E72337FDCB6</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>URL</key>
+			<string>http://192.168.31.16:4173</string>
+			<key>IsRemovable</key>
+			<true/>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>将“树推”网页添加到 iPhone 主屏幕</string>
+	<key>PayloadDisplayName</key>
+	<string>树推</string>
+	<key>PayloadIdentifier</key>
+	<string>com.shutui.webclip.profile.07ED793A-FF3D-4883-8D46-C3258FAAD484</string>
+	<key>PayloadOrganization</key>
+	<string>树推</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>07ED793A-FF3D-4883-8D46-C3258FAAD484</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
