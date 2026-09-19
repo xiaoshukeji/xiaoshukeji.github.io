@@ -1,75 +1,37 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>安装树推</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-      background: #f5f5f7;
-      color: #1d1d1f;
-    }
-    .card {
-      width: min(420px, 100%);
-      padding: 32px 24px;
-      text-align: center;
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.08);
-    }
-    .icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 18px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      background: #111;
-      color: #fff;
-      font-size: 34px;
-      font-weight: 700;
-    }
-    h1 { margin: 0 0 10px; font-size: 28px; }
-    p { margin: 0 0 24px; color: #6e6e73; line-height: 1.6; }
-    .button {
-      display: block;
-      width: 100%;
-      padding: 15px 20px;
-      border-radius: 14px;
-      background: #007aff;
-      color: #fff;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: 600;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .hint {
-      margin-top: 18px;
-      font-size: 13px;
-      color: #8e8e93;
-      line-height: 1.5;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>安装「树推」</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f2f2f7;color:#111;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif}
+main{max-width:430px;margin:0 auto;min-height:100vh;padding:56px 22px 36px;text-align:center}
+.icon{width:88px;height:88px;margin:0 auto 20px;border-radius:20px;background:#111;color:#fff;display:grid;place-items:center;font-size:42px;font-weight:700;box-shadow:0 8px 24px #0002}
+h1{font-size:30px;margin:0 0 10px}
+p{color:#666;line-height:1.6;margin:8px 0}
+.button{display:block;margin:28px 0 20px;padding:15px 20px;border-radius:14px;background:#007aff;color:#fff;text-decoration:none;font-size:18px;font-weight:600}
+.card{text-align:left;background:#fff;border-radius:16px;padding:18px;margin-top:18px}
+.card b{display:block;margin-bottom:8px}
+.small{font-size:14px;color:#777}
+</style>
 </head>
 <body>
-  <main class="card">
-    <div class="icon">树</div>
-    <h1>安装「树推」</h1>
-    <p>点击下面的按钮安装描述文件，安装完成后「树推」会出现在 iPhone 主屏幕。</p>
-    <a class="button" href="./树推.mobileconfig">安装树推</a>
-    <div class="hint">
-      请使用 iPhone Safari 打开此页面。<br>
-      安装后前往「设置」完成描述文件安装。
-    </div>
-  </main>
+<main>
+  <div class="icon">树</div>
+  <h1>安装「树推」</h1>
+  <p>把「树推」网页添加到 iPhone 主屏幕。</p>
+  <a class="button" href="./树推.mobileconfig">安装描述文件</a>
+  <div class="card">
+    <b>安装步骤</b>
+    <p>1. 请使用 iPhone 的 Safari 打开本页面。</p>
+    <p>2. 点击上面的“安装描述文件”。</p>
+    <p>3. 如果提示已下载，请打开“设置”，进入“已下载描述文件”。</p>
+    <p>4. 点击“安装”，按提示完成即可。</p>
+  </div>
+  <p class="small">iPhone 需要能访问 192.168.31.16；「树推」网页地址为 http://192.168.31.16:4173</p>
+</main>
 </body>
 </html>

@@ -7,34 +7,32 @@
 		<dict>
 			<key>FullScreen</key>
 			<true/>
-			<key>Icon</key>
-			<string>data:image/png;base64,</string>
+			<key>IsRemovable</key>
+			<true/>
 			<key>Label</key>
 			<string>树推</string>
 			<key>PayloadDescription</key>
-			<string>在主屏幕添加“树推”网页图标</string>
+			<string>添加“树推”网页到主屏幕</string>
 			<key>PayloadDisplayName</key>
 			<string>树推</string>
 			<key>PayloadIdentifier</key>
-			<string>com.shutui.webclip.557A4154-F296-4937-82E8-2E72337FDCB6</string>
+			<string>com.example.shutui.webclip.EE884EB2-CA00-45B9-ADF6-840C8FFD47B6</string>
+			<key>PayloadOrganization</key>
+			<string>树推</string>
 			<key>PayloadType</key>
 			<string>com.apple.webClip.managed</string>
 			<key>PayloadUUID</key>
-			<string>557A4154-F296-4937-82E8-2E72337FDCB6</string>
+			<string>EE884EB2-CA00-45B9-ADF6-840C8FFD47B6</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 			<key>URL</key>
 			<string>http://192.168.31.16:4173</string>
-			<key>IsRemovable</key>
-			<true/>
 		</dict>
 	</array>
-	<key>PayloadDescription</key>
-	<string>将“树推”网页添加到 iPhone 主屏幕</string>
 	<key>PayloadDisplayName</key>
 	<string>树推</string>
 	<key>PayloadIdentifier</key>
-	<string>com.shutui.webclip.profile.07ED793A-FF3D-4883-8D46-C3258FAAD484</string>
+	<string>com.example.shutui.profile.B309C190-66CA-4695-BBC4-76C2FD2EBA92</string>
 	<key>PayloadOrganization</key>
 	<string>树推</string>
 	<key>PayloadRemovalDisallowed</key>
@@ -42,7 +40,7 @@
 	<key>PayloadType</key>
 	<string>Configuration</string>
 	<key>PayloadUUID</key>
-	<string>07ED793A-FF3D-4883-8D46-C3258FAAD484</string>
+	<string>B309C190-66CA-4695-BBC4-76C2FD2EBA92</string>
 	<key>PayloadVersion</key>
 	<integer>1</integer>
 </dict>
